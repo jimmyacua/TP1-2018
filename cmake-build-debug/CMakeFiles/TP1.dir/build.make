@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/jimmy/Descargas/clion-2018.1.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/felipe/Documentos/clion-2018.1.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/jimmy/Descargas/clion-2018.1.2/bin/cmake/bin/cmake -E remove -f
+RM = /home/felipe/Documentos/clion-2018.1.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jimmy/CLionProjects/TP1
+CMAKE_SOURCE_DIR = /home/felipe/Documentos/TP1-2018
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jimmy/CLionProjects/TP1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/felipe/Documentos/TP1-2018/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/TP1.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/TP1.dir/flags.make
 
 CMakeFiles/TP1.dir/main.cpp.o: CMakeFiles/TP1.dir/flags.make
 CMakeFiles/TP1.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimmy/CLionProjects/TP1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TP1.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP1.dir/main.cpp.o -c /home/jimmy/CLionProjects/TP1/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/felipe/Documentos/TP1-2018/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TP1.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP1.dir/main.cpp.o -c /home/felipe/Documentos/TP1-2018/main.cpp
 
 CMakeFiles/TP1.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP1.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimmy/CLionProjects/TP1/main.cpp > CMakeFiles/TP1.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/felipe/Documentos/TP1-2018/main.cpp > CMakeFiles/TP1.dir/main.cpp.i
 
 CMakeFiles/TP1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP1.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimmy/CLionProjects/TP1/main.cpp -o CMakeFiles/TP1.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/felipe/Documentos/TP1-2018/main.cpp -o CMakeFiles/TP1.dir/main.cpp.s
 
 CMakeFiles/TP1.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/TP1.dir/main.cpp.o.provides.build: CMakeFiles/TP1.dir/main.cpp.o
 
 CMakeFiles/TP1.dir/ListaPosArray.cpp.o: CMakeFiles/TP1.dir/flags.make
 CMakeFiles/TP1.dir/ListaPosArray.cpp.o: ../ListaPosArray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimmy/CLionProjects/TP1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TP1.dir/ListaPosArray.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP1.dir/ListaPosArray.cpp.o -c /home/jimmy/CLionProjects/TP1/ListaPosArray.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/felipe/Documentos/TP1-2018/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TP1.dir/ListaPosArray.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP1.dir/ListaPosArray.cpp.o -c /home/felipe/Documentos/TP1-2018/ListaPosArray.cpp
 
 CMakeFiles/TP1.dir/ListaPosArray.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP1.dir/ListaPosArray.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimmy/CLionProjects/TP1/ListaPosArray.cpp > CMakeFiles/TP1.dir/ListaPosArray.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/felipe/Documentos/TP1-2018/ListaPosArray.cpp > CMakeFiles/TP1.dir/ListaPosArray.cpp.i
 
 CMakeFiles/TP1.dir/ListaPosArray.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP1.dir/ListaPosArray.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimmy/CLionProjects/TP1/ListaPosArray.cpp -o CMakeFiles/TP1.dir/ListaPosArray.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/felipe/Documentos/TP1-2018/ListaPosArray.cpp -o CMakeFiles/TP1.dir/ListaPosArray.cpp.s
 
 CMakeFiles/TP1.dir/ListaPosArray.cpp.o.requires:
 
@@ -117,7 +117,7 @@ TP1: CMakeFiles/TP1.dir/main.cpp.o
 TP1: CMakeFiles/TP1.dir/ListaPosArray.cpp.o
 TP1: CMakeFiles/TP1.dir/build.make
 TP1: CMakeFiles/TP1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jimmy/CLionProjects/TP1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable TP1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/felipe/Documentos/TP1-2018/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable TP1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TP1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -135,6 +135,6 @@ CMakeFiles/TP1.dir/clean:
 .PHONY : CMakeFiles/TP1.dir/clean
 
 CMakeFiles/TP1.dir/depend:
-	cd /home/jimmy/CLionProjects/TP1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jimmy/CLionProjects/TP1 /home/jimmy/CLionProjects/TP1 /home/jimmy/CLionProjects/TP1/cmake-build-debug /home/jimmy/CLionProjects/TP1/cmake-build-debug /home/jimmy/CLionProjects/TP1/cmake-build-debug/CMakeFiles/TP1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/felipe/Documentos/TP1-2018/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/felipe/Documentos/TP1-2018 /home/felipe/Documentos/TP1-2018 /home/felipe/Documentos/TP1-2018/cmake-build-debug /home/felipe/Documentos/TP1-2018/cmake-build-debug /home/felipe/Documentos/TP1-2018/cmake-build-debug/CMakeFiles/TP1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/TP1.dir/depend
 

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jimmy/CLionProjects/TP1/ListaPosArray.cpp" "/home/jimmy/CLionProjects/TP1/cmake-build-debug/CMakeFiles/TP1.dir/ListaPosArray.cpp.o"
-  "/home/jimmy/CLionProjects/TP1/main.cpp" "/home/jimmy/CLionProjects/TP1/cmake-build-debug/CMakeFiles/TP1.dir/main.cpp.o"
+  "/home/felipe/Documentos/TP1-2018/ListaPosArray.cpp" "/home/felipe/Documentos/TP1-2018/cmake-build-debug/CMakeFiles/TP1.dir/ListaPosArray.cpp.o"
+  "/home/felipe/Documentos/TP1-2018/main.cpp" "/home/felipe/Documentos/TP1-2018/cmake-build-debug/CMakeFiles/TP1.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
