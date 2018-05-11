@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/TP1.dir/main.cpp.o CMakeFiles/TP1.dir/ListaPosArray.cpp.o  -o TP1 

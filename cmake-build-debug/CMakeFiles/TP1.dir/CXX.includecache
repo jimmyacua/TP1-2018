@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jimmy/CLionProjects/TP1/ListaPosArray.cpp
+ListaPosArray.h
+/home/jimmy/CLionProjects/TP1/ListaPosArray.h
+iostream
+-
+
+/home/jimmy/CLionProjects/TP1/ListaPosArray.h
+iostream
+-
+
+/home/jimmy/CLionProjects/TP1/main.cpp
+iostream
+-
+ListaPosArray.h
+/home/jimmy/CLionProjects/TP1/ListaPosArray.h
+
