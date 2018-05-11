@@ -14,7 +14,9 @@ void ListaPosArray::iniciar() {
 }
 
 void ListaPosArray::destruir(){
-
+    ultimo_lleno = -99;
+    primero = -99;
+    nElementos = 0;
 }
 
 void ListaPosArray::vaciar() {}
@@ -53,23 +55,53 @@ void ListaPosArray::agregarAlFinal(int e) {
     nElementos++;
 }
 
-void ListaPosArray::borrar(pos p) {}
+void ListaPosArray::borrar(pos p) {
+    if(p == ultimo_lleno){
+        ultimo_lleno--;
+    } else{
+        pos cont = p;
+        while(cont <= ultimo_lleno){
+            lista[cont] = lista[cont+1];
+            cont++;
+        }
+        ultimo_lleno--;
+    }
+    nElementos--;
+}
 
-int ListaPosArray::recuperar(pos p) {}
+int ListaPosArray::recuperar(pos p) {
+    return lista[p];
+}
 
-void ListaPosArray::modificarElem(pos, int) {}
+void ListaPosArray::modificarElem(pos p, int e) {
+    lista[p] = e;
+}
 
-void ListaPosArray::intercambiar(pos, pos) {}
+void ListaPosArray::intercambiar(pos p1, pos p2) {
+    int e = lista[p1];
+    lista[p1] = lista[p2];
+    lista[p2] = e;
+}
 
-pos ListaPosArray::primera() {}
+pos ListaPosArray::primera() {
+    return primero;
+}
 
-pos ListaPosArray::ultima() {}
+pos ListaPosArray::ultima() {
+    return ultimo_lleno;
+}
 
-pos ListaPosArray::siguente(pos) {}
+pos ListaPosArray::siguente(pos p) {
+    return lista[p+1];
+}
 
-pos ListaPosArray::anterior(pos) {}
+pos ListaPosArray::anterior(pos p) {
+    return  lista[p-1];
+}
 
-int ListaPosArray::numElem() {}
+int ListaPosArray::numElem() {
+    return nElementos;
+}
 
 void ListaPosArray::listar() {
     pos cont = 1;

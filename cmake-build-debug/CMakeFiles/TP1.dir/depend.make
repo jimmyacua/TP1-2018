@@ -4,6 +4,9 @@
 CMakeFiles/TP1.dir/ListaPosArray.cpp.o: ../ListaPosArray.cpp
 CMakeFiles/TP1.dir/ListaPosArray.cpp.o: ../ListaPosArray.h
 
+CMakeFiles/TP1.dir/ListaPosLSE.cpp.o: ../ListaPosLSE.cpp
+CMakeFiles/TP1.dir/ListaPosLSE.cpp.o: ../ListaPosLSE.h
+
 CMakeFiles/TP1.dir/main.cpp.o: ../ListaPosArray.h
 CMakeFiles/TP1.dir/main.cpp.o: ../main.cpp
 

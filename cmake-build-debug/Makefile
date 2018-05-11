@@ -150,6 +150,33 @@ ListaPosArray.cpp.s:
 	$(MAKE) -f CMakeFiles/TP1.dir/build.make CMakeFiles/TP1.dir/ListaPosArray.cpp.s
 .PHONY : ListaPosArray.cpp.s
 
+ListaPosLSE.o: ListaPosLSE.cpp.o
+
+.PHONY : ListaPosLSE.o
+
+# target to build an object file
+ListaPosLSE.cpp.o:
+	$(MAKE) -f CMakeFiles/TP1.dir/build.make CMakeFiles/TP1.dir/ListaPosLSE.cpp.o
+.PHONY : ListaPosLSE.cpp.o
+
+ListaPosLSE.i: ListaPosLSE.cpp.i
+
+.PHONY : ListaPosLSE.i
+
+# target to preprocess a source file
+ListaPosLSE.cpp.i:
+	$(MAKE) -f CMakeFiles/TP1.dir/build.make CMakeFiles/TP1.dir/ListaPosLSE.cpp.i
+.PHONY : ListaPosLSE.cpp.i
+
+ListaPosLSE.s: ListaPosLSE.cpp.s
+
+.PHONY : ListaPosLSE.s
+
+# target to generate assembly for a file
+ListaPosLSE.cpp.s:
+	$(MAKE) -f CMakeFiles/TP1.dir/build.make CMakeFiles/TP1.dir/ListaPosLSE.cpp.s
+.PHONY : ListaPosLSE.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... ListaPosArray.o"
 	@echo "... ListaPosArray.i"
 	@echo "... ListaPosArray.s"
+	@echo "... ListaPosLSE.o"
+	@echo "... ListaPosLSE.i"
+	@echo "... ListaPosLSE.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

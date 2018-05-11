@@ -90,6 +90,12 @@
 		<Unit filename="/home/jimmy/CLionProjects/TP1/ListaPosArray.h">
 			<Option target="TP1"/>
 		</Unit>
+		<Unit filename="/home/jimmy/CLionProjects/TP1/ListaPosLSE.cpp">
+			<Option target="TP1"/>
+		</Unit>
+		<Unit filename="/home/jimmy/CLionProjects/TP1/ListaPosLSE.h">
+			<Option target="TP1"/>
+		</Unit>
 		<Unit filename="/home/jimmy/CLionProjects/TP1/main.cpp">
 			<Option target="TP1"/>
 		</Unit>

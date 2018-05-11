@@ -1,5 +1,7 @@
 #include <iostream>
 #include "ListaPosArray.h"
+
+using namespace std;
 int main() {
     ListaPosArray l;
     l.iniciar();
@@ -8,5 +10,6 @@ int main() {
     l.insertar(44,1);
     l.agregarAlFinal(5);
     l.listar();
+    cout <<  l.siguente(2);
     return 0;
 }
