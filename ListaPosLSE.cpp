@@ -8,7 +8,7 @@
 using namespace std;
 
 void ListaPosLSE::iniciar() {
-//    primero = new Pos();
+    primero = new Pos();
     nElementos = 0;
     ultimo = primero;
 }
@@ -29,6 +29,7 @@ void ListaPosLSE::insertar(int e, pos p) {
     if(nElementos == 0){
         Pos* aux = new Pos(e);
         primero = aux;
+        ultimo = primero;
     } else{
         Pos *aux = primero;
         while(aux->sgt != p){
@@ -37,6 +38,15 @@ void ListaPosLSE::insertar(int e, pos p) {
         Pos* temp = new Pos(e);
         temp->sgt = p;
         aux->sgt = temp;
+        //--------------------------------
+        if(ultimo->sgt != NULL){
+           Pos* ult = primero;
+           while(ult->sgt != NULL){
+               ult = ult->sgt;
+           }
+           ultimo = ult;
+        }
+        //-----------------------------
     }
     nElementos++;
 }
@@ -48,7 +58,7 @@ void ListaPosLSE::borrar(pos p) {
         anterior = aux;
         aux = aux->sgt;
     }
-    if(anterior == NULL){ //si esta de primero
+    if(anterior == NULL){ //puede que no está el elemento en la lista
         primero = primero->sgt;
         delete aux;
         nElementos--;
@@ -61,22 +71,53 @@ void ListaPosLSE::borrar(pos p) {
 }
 
 void ListaPosLSE::agregarAlFinal(int e) {
-
+    Pos* p = new Pos(e);
+    Pos* aux = primero;
+    while(aux->sgt != NULL){
+        aux = aux->sgt;
+    }
+    aux->sgt = p;
+    ultimo = p;
+    nElementos++;
 }
 
-void ListaPosLSE::intercambiar(pos, pos) {}
+void ListaPosLSE::intercambiar(pos p1, pos p2) {
+    int temp = p2->elemento;
+    p2->elemento = p1->elemento;
+    p1->elemento = temp;
+}
 
-int ListaPosLSE::recuperar(pos) {}
+int ListaPosLSE::recuperar(pos p) {
+    return p->elemento;
+}
 
-void ListaPosLSE::modificarElem(pos, int) {}
+void ListaPosLSE::modificarElem(pos p, int e) {
+    p->elemento = e;
+}
 
-pos ListaPosLSE::primera() {}
+pos ListaPosLSE::primera() {
+    return primero;
+}
 
-pos ListaPosLSE::siguente(pos) {}
+pos ListaPosLSE::siguente(pos p) {
+    return p->sgt;
+}
 
-pos ListaPosLSE::anterior(pos) {}
+pos ListaPosLSE::anterior(pos p) {
+    Pos* aux = primero;
+    while(aux->sgt != p && aux->sgt != NULL){
+        aux = aux->sgt;
+    }
+    if(aux->sgt == p){
+        return aux;
+    } else{
+        return NULL;
+    }
+}
 
-pos ListaPosLSE::ultima() {}
+pos ListaPosLSE::ultima() {
+    return ultimo;
+}
 
 pos ListaPosLSE::traducePos(int e) {
     Pos* p = primero;
