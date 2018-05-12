@@ -32,6 +32,7 @@ void ListaPosLSE::vaciar() {
         delete anterior;
     }
     primero = NULL;
+    primero->sgt = NULL;
 }
 
 bool ListaPosLSE::vacia() {
@@ -134,6 +135,10 @@ pos ListaPosLSE::anterior(pos p) {
 
 pos ListaPosLSE::ultima() {
     return ultimo;
+}
+
+int ListaPosLSE::numElem() {
+    return nElementos;
 }
 
 pos ListaPosLSE::traducePos(int e) {

@@ -2,8 +2,8 @@
 // Created by jimmy on 11/05/18.
 //
 
-#ifndef TP1_LISTAPOSLSE_H
-#define TP1_LISTAPOSLSE_H
+#ifndef TP1_LISTAPOSLDE_H
+#define TP1_LISTAPOSLDE_H
 
 #include <iostream>
 
@@ -11,14 +11,17 @@ struct Pos{
 public:
     int elemento;
     Pos *sgt;
+    Pos *anterior;
 
     Pos(){
         sgt = NULL;
+        anterior = NULL;
     }
 
     Pos(int e){
         elemento = e;
         sgt = NULL;
+        anterior = NULL;
     }
 
     int obtener(Pos){
@@ -30,7 +33,7 @@ public:
 
 typedef Pos *pos;
 
-class ListaPosLSE {
+class ListaPosLDE {
 public:
 
     //EFE: Inicia la lista.
@@ -126,4 +129,4 @@ private:
 };
 
 
-#endif //TP1_LISTAPOSLSE_H
+#endif //TP1_LISTAPOSLDE_H
