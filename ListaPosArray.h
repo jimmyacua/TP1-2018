@@ -11,7 +11,7 @@ typedef int pos;
 
 class ListaPosArray {
 public:
-    void iniciar();//caca
+    void iniciar();
     void destruir();
     void vaciar();
     bool vacia();

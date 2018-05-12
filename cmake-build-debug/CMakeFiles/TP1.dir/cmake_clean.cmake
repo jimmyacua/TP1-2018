@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TP1.dir/main.cpp.o"
   "CMakeFiles/TP1.dir/ListaPosArray.cpp.o"
+  "CMakeFiles/TP1.dir/ListaIndexadaArray.cpp.o"
   "TP1.pdb"
   "TP1"
 )
