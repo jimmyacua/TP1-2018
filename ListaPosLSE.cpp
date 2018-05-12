@@ -13,9 +13,26 @@ void ListaPosLSE::iniciar() {
     ultimo = primero;
 }
 
-void ListaPosLSE::destruir() {}
+void ListaPosLSE::destruir() {
+    Pos* anterior;
+    Pos* temp = primero;
+    while(temp != NULL){
+        anterior = temp;
+        temp = temp->sgt;
+        delete anterior;
+    }
+}
 
-void ListaPosLSE::vaciar() {}
+void ListaPosLSE::vaciar() {
+    Pos* anterior;
+    Pos* temp = primero->sgt;
+    while(temp != NULL){
+        anterior = temp;
+        temp = temp->sgt;
+        delete anterior;
+    }
+    primero = NULL;
+}
 
 bool ListaPosLSE::vacia() {
     if(nElementos == 0){
