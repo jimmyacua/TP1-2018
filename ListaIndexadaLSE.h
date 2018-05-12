@@ -5,6 +5,19 @@
 #ifndef TP1_LISTAINDEXADALSE_H
 #define TP1_LISTAINDEXADALSE_H
 
+struct Caja{
+public:
+    int elemento;
+    int* sgt;
+    Caja(){
+        sgt = nullptr;
+    }
+    Caja(int elmt){
+        elemento = elmt;
+        sgt = nullptr;
+    }
+
+};
 
 class ListaIndexadaLSE {
 public:

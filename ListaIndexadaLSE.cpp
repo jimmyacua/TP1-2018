@@ -21,7 +21,11 @@ void ListaIndexadaLSE::vaciar(){
 }
 
 bool ListaIndexadaLSE::vacia(){
-
+    if(cantElem>0){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 void ListaIndexadaLSE::insertar(int elemento,int indice){
