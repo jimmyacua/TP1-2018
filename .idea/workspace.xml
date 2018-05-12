@@ -12,21 +12,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2ea7e73-ea4d-44ce-bc1f-dcdf1629eaa1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/ListaIndexadaArray.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ListaIndexadaArray.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ListaIndexadaLSE.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ListaIndexadaLSE.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ListaPosArray.h" beforeDir="false" afterPath="$PROJECT_DIR$/ListaPosArray.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/TP1" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TP1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/TP1.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TP1.cbp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -49,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListaIndexadaArray.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ListaIndexadaArray.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ListaIndexadaArray.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="385">
-              <caret line="60" column="25" lean-forward="true" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+              <caret line="73" column="1" lean-forward="true" selection-start-line="5" selection-end-line="73" selection-end-column="1" />
               <folding>
                 <element signature="e#41#72#0" expanded="true" />
               </folding>
@@ -61,11 +62,32 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ListaIndexadaLSE.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ListaIndexadaLSE.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+              <folding>
+                <element signature="e#41#70#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListaIndexadaLSE.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ListaIndexadaLSE.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="825">
+              <caret line="55" column="20" lean-forward="true" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ListaIndexadaArray.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ListaIndexadaArray.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="52" column="15" lean-forward="true" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
+            <state relative-caret-position="370">
+              <caret line="59" column="18" lean-forward="true" selection-start-line="10" selection-end-line="59" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -99,6 +121,8 @@
         <option value="$PROJECT_DIR$/ListaPosArray.h" />
         <option value="$PROJECT_DIR$/ListaIndexadaArray.h" />
         <option value="$PROJECT_DIR$/ListaIndexadaArray.cpp" />
+        <option value="$PROJECT_DIR$/ListaIndexadaLSE.h" />
+        <option value="$PROJECT_DIR$/ListaIndexadaLSE.cpp" />
       </list>
     </option>
   </component>
@@ -172,12 +196,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526067612148</updated>
-      <workItem from="1526067614533" duration="9243000" />
+      <workItem from="1526067614533" duration="11511000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9243000" />
+    <option name="totallyTimeSpent" value="11511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1533" height="875" extended-state="6" />
@@ -222,17 +246,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ListaIndexadaArray.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="52" column="15" lean-forward="true" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
+        <state relative-caret-position="370">
+          <caret line="59" column="18" lean-forward="true" selection-start-line="10" selection-end-line="59" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ListaIndexadaLSE.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="55" column="20" lean-forward="true" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ListaIndexadaArray.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
-          <caret line="60" column="25" lean-forward="true" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+          <caret line="73" column="1" lean-forward="true" selection-start-line="5" selection-end-line="73" selection-end-column="1" />
           <folding>
             <element signature="e#41#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ListaIndexadaLSE.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding>
+            <element signature="e#41#70#0" expanded="true" />
           </folding>
         </state>
       </provider>

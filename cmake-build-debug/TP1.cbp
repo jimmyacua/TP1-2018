@@ -90,6 +90,12 @@
 		<Unit filename="/home/felipe/Documentos/TP1-2018/ListaIndexadaArray.h">
 			<Option target="TP1"/>
 		</Unit>
+		<Unit filename="/home/felipe/Documentos/TP1-2018/ListaIndexadaLSE.cpp">
+			<Option target="TP1"/>
+		</Unit>
+		<Unit filename="/home/felipe/Documentos/TP1-2018/ListaIndexadaLSE.h">
+			<Option target="TP1"/>
+		</Unit>
 		<Unit filename="/home/felipe/Documentos/TP1-2018/ListaPosArray.cpp">
 			<Option target="TP1"/>
 		</Unit>

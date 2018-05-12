@@ -150,6 +150,33 @@ ListaIndexadaArray.cpp.s:
 	$(MAKE) -f CMakeFiles/TP1.dir/build.make CMakeFiles/TP1.dir/ListaIndexadaArray.cpp.s
 .PHONY : ListaIndexadaArray.cpp.s
 
+ListaIndexadaLSE.o: ListaIndexadaLSE.cpp.o
+
+.PHONY : ListaIndexadaLSE.o
+
+# target to build an object file
+ListaIndexadaLSE.cpp.o:
+	$(MAKE) -f CMakeFiles/TP1.dir/build.make CMakeFiles/TP1.dir/ListaIndexadaLSE.cpp.o
+.PHONY : ListaIndexadaLSE.cpp.o
+
+ListaIndexadaLSE.i: ListaIndexadaLSE.cpp.i
+
+.PHONY : ListaIndexadaLSE.i
+
+# target to preprocess a source file
+ListaIndexadaLSE.cpp.i:
+	$(MAKE) -f CMakeFiles/TP1.dir/build.make CMakeFiles/TP1.dir/ListaIndexadaLSE.cpp.i
+.PHONY : ListaIndexadaLSE.cpp.i
+
+ListaIndexadaLSE.s: ListaIndexadaLSE.cpp.s
+
+.PHONY : ListaIndexadaLSE.s
+
+# target to generate assembly for a file
+ListaIndexadaLSE.cpp.s:
+	$(MAKE) -f CMakeFiles/TP1.dir/build.make CMakeFiles/TP1.dir/ListaIndexadaLSE.cpp.s
+.PHONY : ListaIndexadaLSE.cpp.s
+
 ListaPosArray.o: ListaPosArray.cpp.o
 
 .PHONY : ListaPosArray.o
@@ -216,6 +243,9 @@ help:
 	@echo "... ListaIndexadaArray.o"
 	@echo "... ListaIndexadaArray.i"
 	@echo "... ListaIndexadaArray.s"
+	@echo "... ListaIndexadaLSE.o"
+	@echo "... ListaIndexadaLSE.i"
+	@echo "... ListaIndexadaLSE.s"
 	@echo "... ListaPosArray.o"
 	@echo "... ListaPosArray.i"
 	@echo "... ListaPosArray.s"
