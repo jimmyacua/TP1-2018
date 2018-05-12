@@ -5,18 +5,28 @@
 #ifndef TP1_LISTAPOSLSE_H
 #define TP1_LISTAPOSLSE_H
 
+#include <iostream>
+
 struct Pos{
 public:
-    Pos();
-    Pos(int);
-
-    int obtener(Pos);
-    void poner(int);
-
     int elemento;
-    Pos *sig;
+    Pos *sgt;
 
+    Pos(){
+        sgt = NULL;
+    }
+
+    Pos(int e){
+        elemento = e;
+        sgt = NULL;
+    }
+
+    int obtener(Pos){
+        return elemento;
+    }
+    void poner(int);
 };
+
 
 typedef Pos *pos;
 
@@ -40,10 +50,12 @@ public:
     int numElem();
     void listar();
 
+    pos traducePos(int);
+
 private:
     pos posicion;
-    pos primero;
-    pos ultimo;
+    Pos *primero;
+    Pos *ultimo;
     int nElementos;
 
 };
