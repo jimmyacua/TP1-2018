@@ -47,13 +47,13 @@ public:
     //EFE: devuelve el primer elemento de la lista
     //REQ: lista inicializada y no vacia
     //MOD: ---
-    char primero();
+    int primero();
 
     //EFE: devuelve el siguiente elemento de la lista tomando un elemento como
     //base
     //REQ: lista inicializada y no vacia
     //MOD: ---
-    char siguiente(int e);
+    int siguiente(int e);
 
     //EFE: devuelve el anterior elemento de la lista tomando un elemento como
     //base
@@ -64,7 +64,7 @@ public:
     //EFE: devuelve el ultimo elemento de la lista
     //REQ: lista inicializada y no vacia
     //MOD: ---
-    char ultimo();
+    int ultimo();
 
     //EFE: devuelve el total de elementos en la lista
     //REQ: lista inicializada y no vacia
@@ -76,9 +76,10 @@ public:
     //MOD:---
     void Listar();
 
+    void imprimir();
+
 private:
     int lista[30] = {};
-    int front;
     int rear;
     int numElementos;
 

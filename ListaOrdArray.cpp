@@ -1,14 +1,14 @@
 #include "ListaOrdArray.h"
 
 void ListaOrdArray::iniciar() {
-    this->rear = 0;
+    this->rear = -1;
     this->numElementos = 0;
 }
 
 void ListaOrdArray::destruir() {}
 
 void ListaOrdArray::vaciar() {
-    this->rear = 0;
+    this->rear = -1;
     this->numElementos = 0;
 }
 
@@ -18,20 +18,38 @@ bool ListaOrdArray::vacio() {
 
 
 void ListaOrdArray::insertar(int e) {
-    int cont = 0;
-    if(this->rear == 0){
-        this->lista[0] = e;
-        this->numElementos++;
+    if (numElementos == 0){
+        lista[0] = e;
+        numElementos++;
+        rear++;
     } else {
-        if (this->lista[cont] >= e){
-            this->rear++;
-            for (int i = this->rear; i >cont; i--){
-                this->lista[i+1] = this->lista[i];
+        int c = 0;
+        while(c < numElementos){
+            if(lista[c]>e){
+                for (int i = rear; i >= c; --i){
+                    lista[i+1] = lista[i];
+                }
+                lista[c] = e;
+                rear++;
+                numElementos++;
+                c = numElementos;
+            } else {
+                c++;
             }
-            this->lista[cont] = e;
-            cont = this->rear;
-            this->numElementos++;
         }
+
     }
-    this->rear++;
+
+}
+
+
+int ListaOrdArray::numElem() {
+    return this->numElementos;
+}
+
+
+void ListaOrdArray::imprimir() {
+    for (int i = 0; i < numElementos; ++i) {
+        cout << lista[i] << "-";
+    }
 }
