@@ -32,11 +32,11 @@ void ListaIndexadaLSE::vaciar(){
         delete anterior;
     }
     primero = NULL;
-    primero->sgt = NULL;
+    //primero->sgt = NULL;
 }
 
 bool ListaIndexadaLSE::vacia(){
-    if(cantElem>0){
+    if((cantElem==0)||(primero==NULL)){
         return true;
     }else{
         return false;
@@ -58,9 +58,10 @@ void ListaIndexadaLSE::insertar(int elemento,int indice){
         if(indice==1){
             nuevo->sgt = aux;
             primero = nuevo;
-        }
+        }else {
             nuevo->sgt = aux->sgt;
             aux->sgt = nuevo;
+        }
     }
     if(ultimo->sgt!= nullptr){
         Caja *ult = ultimo;
@@ -85,8 +86,9 @@ void ListaIndexadaLSE::borrar(int indice){
         cantElem--;
     }
     Caja *elm = aux->sgt;
+    int i = elm->elemento;
     aux->sgt = aux->sgt->sgt;
-    if(elm->sgt== nullptr){
+    if(elm->sgt== NULL){
         ultimo = aux;
     }
     delete elm;
@@ -112,7 +114,7 @@ void ListaIndexadaLSE::intercambiar(int indiceU,int indiceD){
     Caja *pri = new Caja();
     Caja *seg = new Caja();
     int contador = 1;
-    while(contador < cantElem) {
+    while(contador <= cantElem) {
         if(contador==indiceU){
             pri = aux;
         }
@@ -122,9 +124,9 @@ void ListaIndexadaLSE::intercambiar(int indiceU,int indiceD){
         aux = aux->sgt;
         contador++;
     }
-    aux->elemento = pri->elemento;
+    int respaldo = pri->elemento;
     pri->elemento = seg->elemento;
-    seg->elemento = aux->elemento;
+    seg->elemento = respaldo;
 }
 
 int ListaIndexadaLSE::recuperar(int indice){

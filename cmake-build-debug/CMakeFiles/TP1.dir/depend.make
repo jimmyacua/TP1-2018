@@ -10,6 +10,6 @@ CMakeFiles/TP1.dir/ListaIndexadaLSE.cpp.o: ../ListaIndexadaLSE.h
 CMakeFiles/TP1.dir/ListaPosArray.cpp.o: ../ListaPosArray.cpp
 CMakeFiles/TP1.dir/ListaPosArray.cpp.o: ../ListaPosArray.h
 
-CMakeFiles/TP1.dir/main.cpp.o: ../ListaPosArray.h
+CMakeFiles/TP1.dir/main.cpp.o: ../ListaIndexadaLSE.h
 CMakeFiles/TP1.dir/main.cpp.o: ../main.cpp
 

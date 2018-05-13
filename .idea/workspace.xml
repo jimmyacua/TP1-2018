@@ -13,9 +13,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e2ea7e73-ea4d-44ce-bc1f-dcdf1629eaa1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ListaIndexadaArray.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ListaIndexadaArray.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ListaIndexadaLSE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ListaIndexadaLSE.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ListaIndexadaLSE.h" beforeDir="false" afterPath="$PROJECT_DIR$/ListaIndexadaLSE.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP1.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/TP1" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TP1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +44,7 @@
       <file leaf-file-name="ListaIndexadaArray.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ListaIndexadaArray.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
+            <state relative-caret-position="585">
               <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
               <folding>
                 <element signature="e#41#72#0" expanded="true" />
@@ -49,22 +53,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="311">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListaIndexadaLSE.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ListaIndexadaLSE.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ListaIndexadaLSE.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1315">
-              <caret line="150" column="23" selection-start-line="150" selection-start-column="23" selection-end-line="150" selection-end-column="23" />
+            <state relative-caret-position="135">
+              <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
               <folding>
                 <element signature="e#41#70#0" expanded="true" />
               </folding>
@@ -114,8 +116,9 @@
         <option value="$PROJECT_DIR$/ListaPosArray.h" />
         <option value="$PROJECT_DIR$/ListaIndexadaArray.h" />
         <option value="$PROJECT_DIR$/ListaIndexadaLSE.h" />
-        <option value="$PROJECT_DIR$/ListaIndexadaLSE.cpp" />
         <option value="$PROJECT_DIR$/ListaIndexadaArray.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/ListaIndexadaLSE.cpp" />
       </list>
     </option>
   </component>
@@ -172,7 +175,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.TP1">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all" />
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="TP1" RUN_TARGET_NAME="TP1" EXPLICIT_BUILD_TARGET_NAME="all" />
     <configuration name="TP1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="TP1" TARGET_NAME="TP1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="TP1" RUN_TARGET_NAME="TP1" />
     <list>
       <item itemvalue="Application.Build All" />
@@ -192,12 +195,12 @@
       <workItem from="1526067614533" duration="11511000" />
       <workItem from="1526103055805" duration="2589000" />
       <workItem from="1526160196717" duration="596000" />
-      <workItem from="1526181656752" duration="10934000" />
+      <workItem from="1526181656752" duration="14785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25630000" />
+    <option name="totallyTimeSpent" value="29481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1533" height="875" extended-state="6" />
@@ -228,6 +231,18 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>29</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ListaPosArray.h">
@@ -374,19 +389,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ListaIndexadaLSE.cpp">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1315">
-          <caret line="150" column="23" selection-start-line="150" selection-start-column="23" selection-end-line="150" selection-end-column="23" />
-          <folding>
-            <element signature="e#41#70#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="311">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ListaIndexadaArray.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
+        <state relative-caret-position="585">
           <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
           <folding>
             <element signature="e#41#72#0" expanded="true" />
@@ -394,11 +406,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/ListaIndexadaLSE.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="135">
+          <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#41#70#0" expanded="true" />
           </folding>
         </state>
       </provider>
