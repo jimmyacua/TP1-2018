@@ -1,5 +1,5 @@
-//#include "ListaPosLSE.h"
-#include "ListaPosLDE.h"
+#include "ListaPosLSE.h"
+//#include "ListaPosLDE.h"
 #include "ListaIndexadaLSE.h"
 //#include "ListaIndexadaArray.h"
 #include "Pila.h"
