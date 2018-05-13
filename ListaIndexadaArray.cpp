@@ -70,5 +70,9 @@ int ListaIndexadaArray::numElem(){
 }
 
 void ListaIndexadaArray::listar(){
-
+    int contador = 1;
+    while(contador<= cantElem){
+        cout<<lista[contador]<<endl;
+        contador++;
+    }
 }

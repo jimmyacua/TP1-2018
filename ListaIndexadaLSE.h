@@ -8,7 +8,7 @@
 struct Caja{
 public:
     int elemento;
-    int* sgt;
+    Caja* sgt;
     Caja(){
         sgt = nullptr;
     }
@@ -66,10 +66,13 @@ public:
     //Modifica:
     void listar();
 
-    int ultimoLleno;
-    int cantElem;
+
 private:
 
+    //int ultimoLleno;
+    int cantElem;
+    Caja *primero;
+    Caja *ultimo;
 };
 
 
