@@ -109,6 +109,6 @@ int ListaOrdArray::numElem() {
 
 void ListaOrdArray::imprimir() {
     for (int i = 0; i < numElementos; ++i) {
-        cout << lista[i] << "-";
+        cout << lista[i] << "-" << endl;
     }
 }

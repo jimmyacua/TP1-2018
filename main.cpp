@@ -10,7 +10,10 @@ using namespace std;
 //#include "ListaPosArray.h"
 #include "ListaPosLSE.h"
 //#include "ListaPosLDE.h"
-//#include "Pila.h"
+
+//#include "ListaOrdArray.h"
+#include "ListaOrdLSE.h"
+#include "Pila.h"
 
     using namespace std;
 
@@ -20,8 +23,12 @@ using namespace std;
     typedef ListaOrdLSE listaOrd;
     // typedef ListaOrdArray listaOrd;
 
+//typedef ListaOrdArray listaOrd;
+typedef ListaOrdLSE listaOrd;
+
+
     int main() {
- /*       int desicion;
+        int desicion;
         bool continuar = true;
         while (continuar) {
             cout << "MENU DE OPCIONES\n" << endl;
@@ -32,6 +39,7 @@ using namespace std;
             cout << "4. Pila." << endl;
             cout << "0. Salir" << endl;
             cin >> desicion;
+
 
             switch (desicion) {
                 case 1: {
@@ -316,7 +324,7 @@ using namespace std;
                                 cout << "Ingrese la primer posicion." << endl;
                                 cin >> c1;
                                 p1 = L.traducePos(c1);
-                                cout << "Ingrese la segunda posicion." << endl;
+                                cout << "IistaOrdArray.cppngrese la segunda posicion." << endl;
                                 cin >> c2;
                                 p2 = L.traducePos(c2);
                                 L.intercambiar(p1, p2);
@@ -340,31 +348,30 @@ using namespace std;
                 }
                     break;
 
-                case 3: {  //LISTA ORDENADA
-                    int decision4;
-                    bool continuar4 = true;
-                    listaPos L; //CAMBIAR POR LISTA ORDENADA
-                    while(continuar4){
-                        cout << "MENU DE OPCIONES LISTA INDEXADA\n" << endl;
-                        cout << "¿Que desea hacer?\n (Ingrese un numero)" << endl;
-                        cout << "   1. iniciar." << endl;
-                        cout << "   2. destruir." << endl;
-                        cout << "   3. vaciar." << endl;
-                        cout << "   4. Averiguar si la lista esta vacia." << endl;
-                        cout << "   5. Insertar un elemento nuevo en la lista." << endl;
-                        cout << "   6. Agregar un elemento al final de la lista." << endl;
-                        cout << "   7. Borrar un elemento." << endl;
-                        cout << "   8. Modificar una posicion." << endl;
-                        cout << "   9. Averiguar quien esta de primero." << endl;
-                        cout << "   10. Averiguar quien esta de ultimo." << endl;
-                        cout << "   11. Averiguar que elemento esta siguiente a otro." << endl;
-                        cout << "   12. Averiguar que elemento esta antes que otro." << endl;
-                        cout << "   13. Averiguar cuantos elementos tiene la lista." << endl;
-                        cout << "   14. Intercambiar dos posiciones." << endl;
-                        cout << "   15. Ver la lista." << endl;
-                        cout << "   0. Salir" << endl;
-                        cin >> decision4;
-                        switch (decision4) {
+
+            case 3: {  //LISTA ORDENADA
+                int decision4;
+                bool continuar4 = true;
+                listaOrd L; //CAMBIAR POR LISTA ORDENADA
+                while(continuar4){
+                    cout << "MENU DE OPCIONES LISTA INDEXADA\n" << endl;
+                    cout << "¿Que desea hacer?\n (Ingrese un numero)" << endl;
+                    cout << "   1. iniciar." << endl;
+                    cout << "   2. destruir." << endl;
+                    cout << "   3. vaciar." << endl;
+                    cout << "   4. Averiguar si la lista esta vacia." << endl;
+                    cout << "   5. Insertar un elemento nuevo en la lista." << endl; //*
+                    cout << "   7. Borrar un elemento." << endl;
+                    cout << "   9. Averiguar quien esta de primero." << endl;
+                    cout << "   10. Averiguar quien esta de ultimo." << endl;
+                    cout << "   11. Averiguar que elemento esta siguiente a otro." << endl;
+                    cout << "   12. Averiguar que elemento esta antes que otro." << endl;
+                    cout << "   13. Averiguar cuantos elementos tiene la lista." << endl;
+                    cout << "   15. Ver la lista." << endl;
+                    cout << "   0. Salir" << endl;
+                    cin >> decision4;
+                    switch (decision4) {
+
                             case 1: {
                                 L.iniciar();
                             }
@@ -489,6 +496,8 @@ using namespace std;
                             default:
                                 cout << "Ingrese un numero valido" << endl;
                         }
+
+         
                     }
 
                 }
