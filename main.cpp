@@ -1,12 +1,14 @@
 #include <iostream>
 //#include "ListaPosArray.h"
 //#include "ListaPosLSE.h"
-#include "ListaOrdArray.h"
+//#include "ListaOrdArray.h"
+#include "ListaOrdLSE.h"
 
 using namespace std;
 int main() {
 
-    ListaOrdArray L;
+   // ListaOrdArray L;
+    ListaOrdLSE L;
     L.iniciar();
     L.insertar(10);
     L.insertar(1);
@@ -16,6 +18,8 @@ int main() {
     L.insertar(3);
     L.insertar(4);
 
+
+
     L.imprimir();
 
     L.borrar(10);
@@ -23,10 +27,12 @@ int main() {
 
     cout<<"Borrados: " << endl;
 
+
     L.imprimir();
 
-    cout<<"siguiente 9: " << L.siguiente(9) << endl;
-    cout<<"anterior 3: " << L.anterior(3) << endl;
+    cout<<"siguiente 5: " << L.siguiente(5) << endl;
+    cout<<"anterior 5: " << L.anterior(5) << endl;
+    cout<<"numElem " << L.numElem() << endl;
 
     return 0;
 }

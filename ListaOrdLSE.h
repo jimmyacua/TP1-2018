@@ -1,15 +1,35 @@
-#ifndef TP1_LISTAORDARRAY_H
-#define TP1_LISTAORDARRAY_H
+#ifndef TP1_LISTAORDLSE_H
+#define TP1_LISTAORDLSE_H
 
 #include <iostream>
 
 using namespace std;
 
-class ListaOrdArray {
-public:
+class ListaOrdLSE {
 
-    /*ListaOrdArray();
-    ~ListaOrdArray();*/
+private:
+    struct nodo {
+        int elemento = 0; // o int elemento;
+        nodo* sgt;
+
+        nodo(int e){
+            elemento = e;
+            sgt = nullptr;
+        };
+        int getElem(){
+            return elemento;
+        }
+    };
+    nodo *front;
+    nodo *rear;
+    int numElementos;
+
+    //EFE: Limpia la lista de nodos
+    //REQ: L incializada
+    //MOD: L
+    void limpiarLista();
+
+public:
 
     //EFE: Inicializa la lista
     //REQ: ---
@@ -41,7 +61,6 @@ public:
     //REQ: lista inicializada y no vacia
     //MOD: lista
     void borrar(int e);
-
 
     //EFE: devuelve el primer elemento de la lista
     //REQ: lista inicializada y no vacia
@@ -75,10 +94,7 @@ public:
     //MOD: ---
     void imprimir();
 
-private:
-    int lista[30] = {};
-    int rear;
-    int numElementos;
 };
 
-#endif //TP1_LISTAORDARRAY_H
+
+#endif //TP1_LISTAORDLSE_H

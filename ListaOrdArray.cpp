@@ -76,7 +76,7 @@ int ListaOrdArray::siguiente(int e) {
         return -1;
     } else {
         return lista[c + 1];
-    }
+    } //return (this->head == nullptr) ? 0 : this->head->content;
 }
 
 int ListaOrdArray::anterior(int e) {
