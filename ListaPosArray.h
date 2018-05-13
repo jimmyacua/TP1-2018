@@ -92,6 +92,11 @@ public:
     //MOD:
     void listar();
 
+    //EFE: convierte de tipo de dato entero a tipo posicion
+    //REQ:
+    //MOD:
+    pos traducePos(int);
+
 
     pos primero;
     pos ultimo_lleno;

@@ -32,8 +32,6 @@ void ListaPosLDE::vaciar() {
         delete ant;
     }
     primero = NULL;
-    primero->sgt = NULL;
-    primero->anterior = NULL;
 }
 
 bool ListaPosLDE::vacia() {

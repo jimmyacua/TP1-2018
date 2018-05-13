@@ -32,7 +32,6 @@ void ListaPosLSE::vaciar() {
         delete anterior;
     }
     primero = NULL;
-    primero->sgt = NULL;
 }
 
 bool ListaPosLSE::vacia() {
