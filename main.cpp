@@ -30,7 +30,7 @@ int main() {
     l.destruir();
     l.iniciar();
     if(l.vacia()){
-        cout<<"La lista esta vvacia"<<endl;
+        cout<<"La lista esta vacia"<<endl;
     }
     return 0;
 }
