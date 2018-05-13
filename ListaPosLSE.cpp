@@ -8,7 +8,7 @@
 using namespace std;
 
 void ListaPosLSE::iniciar() {
-    primero = new Pos();
+ //   primero = new Pos();
     nElementos = 0;
     ultimo = primero;
 }
