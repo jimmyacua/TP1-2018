@@ -2,6 +2,8 @@
 //#include "ListaPosArray.h"
 #include "ListaPosLSE.h"
 //#include "ListaPosLDE.h"
+//#include "ListaOrdArray.h"
+#include "ListaOrdLSE.h"
 #include "Pila.h"
 
 using namespace std;
@@ -9,6 +11,9 @@ using namespace std;
 typedef ListaPosLSE listaPos;
 //typedef ListaPosArray listaPos;
 //typedef ListaPosLDE listaPos;
+
+//typedef ListaOrdArray listaOrd;
+typedef ListaOrdLSE listaOrd;
 
 
 int main() {
@@ -334,7 +339,7 @@ int main() {
             case 3: {  //LISTA ORDENADA
                 int decision4;
                 bool continuar4 = true;
-                listaPos L; //CAMBIAR POR LISTA ORDENADA
+                listaOrd L; //CAMBIAR POR LISTA ORDENADA
                 while(continuar4){
                     cout << "MENU DE OPCIONES LISTA INDEXADA\n" << endl;
                     cout << "¿Que desea hacer?\n (Ingrese un numero)" << endl;
@@ -342,16 +347,13 @@ int main() {
                     cout << "   2. destruir." << endl;
                     cout << "   3. vaciar." << endl;
                     cout << "   4. Averiguar si la lista esta vacia." << endl;
-                    cout << "   5. Insertar un elemento nuevo en la lista." << endl;
-                    cout << "   6. Agregar un elemento al final de la lista." << endl;
+                    cout << "   5. Insertar un elemento nuevo en la lista." << endl; //*
                     cout << "   7. Borrar un elemento." << endl;
-                    cout << "   8. Modificar una posicion." << endl;
                     cout << "   9. Averiguar quien esta de primero." << endl;
                     cout << "   10. Averiguar quien esta de ultimo." << endl;
                     cout << "   11. Averiguar que elemento esta siguiente a otro." << endl;
                     cout << "   12. Averiguar que elemento esta antes que otro." << endl;
                     cout << "   13. Averiguar cuantos elementos tiene la lista." << endl;
-                    cout << "   14. Intercambiar dos posiciones." << endl;
                     cout << "   15. Ver la lista." << endl;
                     cout << "   0. Salir" << endl;
                     cin >> decision4;
@@ -369,7 +371,7 @@ int main() {
                         }
                             break;
                         case 4: {
-                            if (L.vacia()) {
+                            if (L.vacio()) {
                                 cout << "       La lista esta vacía." << endl;
                             } else {
                                 cout << "       La lista no esta vacía." << endl;
@@ -382,50 +384,27 @@ int main() {
                             int c2;
                             cout << "       Ingrese el elemento nuevo que desea ingresar." << endl;
                             cin >> c;
-                            cout << "       Ingrese la posicion donde desea ingresar ese nuevo caracter."
-                                 << endl;
-                            cin >> c2;
-                            p = L.traducePos(c2);
-                            L.insertar(c, p);
+                            L.insertar(c);
                         }
                             break;
-                        case 6: {
-                            //agregar al final
-                            int c;
-                            cout << "       Ingrese el elemento nuevo que desea agregar al final." << endl;
-                            cin >> c;
-                            L.agregarAlFinal(c);
-                        }
-                            break;
+
                         case 7: {
                             //borrar
                             int c;
                             cout << "       Ingrese la posicion que desea borrar." << endl;
                             cin >> c;
-                            pos p = L.traducePos(c);
-                            L.borrar(p);
+                            L.borrar(c);
                         }
                             break;
-                        case 8: {
-                            //modificar
-                            int c;
-                            int c2;
-                            cout << "Ingrese la posicion que desea modificar." << endl;
-                            cin >> c2;
-                            cout << "Ingrese el nuevo caracter." << endl;
-                            cin >> c;
-                            pos p = L.traducePos(c2);
-                            L.modificarElem(p, c);
-                        }
-                            break;
+
                         case 9: {
                             //primera
-                            cout << "El elemento de la primera posicion es: " << L.recuperar(L.primera()) << endl;
+                            cout << "El elemento de la primera posicion es: " << L.primero() << endl;
                         }
                             break;
                         case 10: {
                             //ultima
-                            cout << "El elemento de la ultima posicion es: " << L.recuperar(L.ultima()) << endl;
+                            cout << "El elemento de la ultima posicion es: " << L.ultimo() << endl;
                         }
                             break;
                         case 11: {
@@ -433,8 +412,7 @@ int main() {
                             int c;
                             cout << "Ingrese la posicion." << endl;
                             cin >> c;
-                            pos p = L.traducePos(c);
-                            cout << "El elemneto que esta despues de " << p->elemento << " es " << L.siguente(p)->elemento
+                            cout << "El elemneto que esta despues de " << c << " es " <<L.siguiente(c)
                                  << endl;
                         }
                             break;
@@ -443,33 +421,18 @@ int main() {
                             int c;
                             cout << "Ingrese el caracter." << endl;
                             cin >> c;
-                            pos p = L.traducePos(c);
-                            cout << "El elemeneto que esta antes de " << p->elemento << " es " << L.anterior(p)->elemento << endl;
+                            cout << "El elemeneto que esta antes de " << c << " es " << L.anterior(c) << endl;
                         }
                             break;
                         case 13: {
                             //nelementos
-                            cout << "La lista tiene " << L.numElem() << " elementos/posiciones." << endl;
+                            cout << "La lista tiene " << L.numElem() << " elementos" << endl;
                         }
                             break;
-                        case 14: {
-                            //intercambiar
-                            int c1;
-                            pos p1;
-                            int c2;
-                            pos p2;
-                            cout << "Ingrese la primer posicion." << endl;
-                            cin >> c1;
-                            p1 = L.traducePos(c1);
-                            cout << "Ingrese la segunda posicion." << endl;
-                            cin >> c2;
-                            p2 = L.traducePos(c2);
-                            L.intercambiar(p1, p2);
-                        }
-                            break;
+
                         case 15: {
                             //ver
-                            L.listar();
+                            L.imprimir();
                         }
                             break;
                         case 0: {
