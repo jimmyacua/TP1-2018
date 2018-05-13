@@ -6,11 +6,11 @@
 
 using namespace std;
 
-//typedef ListaPosLSE listaPos;
+typedef ListaPosLSE listaPos;
 //typedef ListaPosArray listaPos;
 //typedef ListaPosLDE listaPos;
-//typedef ListaIndexadaArray listaPos;
-typedef ListaIndexadaLSE listaPos;
+//typedef ListaIndexadaArray listaInd;
+typedef ListaIndexadaLSE listaInd;
 
 int main() {
     int desicion;
@@ -183,7 +183,7 @@ int main() {
             case 2: { //Lista INDEXADA
                 int desicion3;
                 bool continuar3 = true;
-                listaPos L; //CAMBIAR POR LISTA INDEXADA
+                listaInd L; //CAMBIAR POR LISTA INDEXADA
                 while (continuar3) {
                     cout << "MENU DE OPCIONES LISTA INDEXADA\n" << endl;
                     cout << "¿Que desea hacer?\n (Ingrese un numero)" << endl;
@@ -291,6 +291,7 @@ int main() {
                     }
 
                 }
+            }
                 break;
 
                 case 3: {  //LISTA ORDENADA
@@ -533,7 +534,7 @@ int main() {
                 }
             }
         }
-    }
+
     cout << "\nFin de la prueba!" << endl;
 
     return 0;

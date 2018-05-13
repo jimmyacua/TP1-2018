@@ -4,5 +4,5 @@ project(TP1)
 set(CMAKE_CXX_STANDARD 11)
 
 
-add_executable(TP1 main.cpp ListaPosArray.cpp ListaPosArray.h ListaPosLSE.cpp ListaPosLSE.h)
+add_executable(TP1 main.cpp ListaPosArray.cpp ListaPosArray.h ListaPosLSE.cpp ListaPosLSE.h ListaIndexadaArray.cpp ListaIndexadaArray.h ListaIndexadaLSE.cpp ListaIndexadaLSE.h)
 
