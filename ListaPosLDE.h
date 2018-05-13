@@ -1,11 +1,39 @@
-#ifndef TP1_LISTAPOS_H
-#define TP1_LISTAPOS_H
+//
+// Created by jimmy on 11/05/18.
+//
+
+#ifndef TP1_LISTAPOSLDE_H
+#define TP1_LISTAPOSLDE_H
 
 #include <iostream>
 
-typedef int pos;
+struct Pos{
+public:
+    int elemento;
+    Pos *sgt;
+    Pos *anterior;
 
-class ListaPosArray {
+    Pos(){
+        sgt = NULL;
+        anterior = NULL;
+    }
+
+    Pos(int e){
+        elemento = e;
+        sgt = NULL;
+        anterior = NULL;
+    }
+
+    int obtener(Pos){
+        return elemento;
+    }
+    void poner(int);
+};
+
+
+typedef Pos *pos;
+
+class ListaPosLDE {
 public:
 
     //EFE: Inicia la lista.
@@ -86,11 +114,6 @@ public:
     //EFE: lista los elementos que hay en la lista
     //REQ: lista inicializada y no vacía
     //MOD:
-
-    //EFE: Devuelve una lista con todas las etiquetas de L
-    //REQ: L inicializada y con almenos un elemento
-    //MOD: ---
-
     void listar();
 
     //EFE: convierte de tipo de dato entero a tipo posicion
@@ -98,16 +121,12 @@ public:
     //MOD:
     pos traducePos(int);
 
-
-    pos primero;
-    pos ultimo_lleno;
-    int nElementos;
-
-
 private:
-    pos lista[30];
+    Pos *primero;
+    Pos *ultimo;
+    int nElementos;
 
 };
 
 
-#endif //TP1_LISTAPOS_H
+#endif //TP1_LISTAPOSLDE_H

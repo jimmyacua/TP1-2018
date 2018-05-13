@@ -110,3 +110,11 @@ void ListaPosArray::listar() {
         cont++;
     }
 }
+
+pos ListaPosArray::traducePos(int e) {
+    pos p = primero;
+    while(p < ultimo_lleno && lista[p] != e){
+        p++;
+    }
+    return p;
+}
