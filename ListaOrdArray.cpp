@@ -39,13 +39,72 @@ void ListaOrdArray::insertar(int e) {
         }
 
     }
-
 }
+
+void ListaOrdArray::borrar(int e) {
+    bool borrado = false;
+    int c = 0;
+    while(c <= this->numElementos && !borrado){
+        if(lista[c] != e){
+            c++;
+        } else {
+            for(int i = c; i <= this->rear; i++){
+                lista[i]=lista[i+1];
+            }
+            this->rear--;
+            this->numElementos--;
+            borrado = true;
+        }
+    }
+}
+
+int ListaOrdArray::primero() {
+    return lista[0];
+}
+
+int ListaOrdArray::siguiente(int e) {
+    int c = 0;
+    bool encontrado = false;
+    while (c <= this->rear && !encontrado) {
+        if (lista[c] != e) {
+            c++;
+        } else {
+            encontrado = true;
+        }
+    }
+    if (c = this->rear) { //cambiar
+        return -1;
+    } else {
+        return lista[c + 1];
+    }
+}
+
+int ListaOrdArray::anterior(int e) {
+    if (lista[0] == e){
+        return -1;
+    }
+    int c = 0;
+    bool encontrado = false;
+    while (c <= this->rear && !encontrado) {
+        if (lista[c] != e) {
+            c++;
+        } else {
+            encontrado = true;
+        }
+    }
+    return lista[c - 1];
+}
+
+int ListaOrdArray::ultimo() {
+    return lista[this->rear];
+}
+
 
 
 int ListaOrdArray::numElem() {
     return this->numElementos;
 }
+
 
 
 void ListaOrdArray::imprimir() {

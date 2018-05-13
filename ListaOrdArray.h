@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 class ListaOrdArray {
 public:
 
@@ -59,7 +58,7 @@ public:
     //base
     //REQ: lista inicializada y no vacia
     //MOD: ---
-    char anterior(int e);
+    int anterior(int e);
 
     //EFE: devuelve el ultimo elemento de la lista
     //REQ: lista inicializada y no vacia
@@ -71,11 +70,6 @@ public:
     //MOD: ---
     int numElem();
 
-    //EFE: Lista todas las etiquetas de una lista
-    //REQ: Lista inicializada y con almenos un elemento
-    //MOD:---
-    void Listar();
-
     void imprimir();
 
 private:
@@ -84,7 +78,5 @@ private:
     int numElementos;
 
 };
-
-
 
 #endif //TP1_LISTAORDARRAY_H

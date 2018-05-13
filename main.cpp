@@ -18,26 +18,15 @@ int main() {
 
     L.imprimir();
 
-   /* for (int i = 0; i < L.numElem(); ++i) {
-        x = L[i];
-        cout << x << " - ";
-    }
+    L.borrar(10);
+    L.borrar(1);
 
-    /*
-    //ListaPosArray l;
-    ListaPosLSE l;
-    l.iniciar();
-    l.insertar(12,l.traducePos(1));
-    l.insertar(27,l.traducePos(2));
-    l.insertar(44,l.traducePos(3));
-    l.listar();
-    cout << "intercambiando..." << endl;
-    l.intercambiar(l.traducePos(1), l.traducePos(3));
-     l.listar();
+    cout<<"Borrados: " << endl;
 
-    l.listar();
-    //cout << l.recuperar(l.siguente(l.primera()));
-    cout << l.recuperar(l.ultima()) << endl;
-    */
+    L.imprimir();
+
+    cout<<"siguiente 9: " << L.siguiente(9) << endl;
+    cout<<"anterior 3: " << L.anterior(3) << endl;
+
     return 0;
 }
