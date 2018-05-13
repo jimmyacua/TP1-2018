@@ -1,2 +1,2 @@
 # ignore idea
-*.idea u cmake-build-debug
+\.idea/
