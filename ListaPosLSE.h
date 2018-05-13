@@ -32,6 +32,7 @@ typedef Pos *pos;
 
 class ListaPosLSE {
 public:
+
     //EFE: Inicia la lista
     //REQ: ---
     //MOD: ---
@@ -112,10 +113,12 @@ public:
     //MOD: ---
     void listar();
 
+    //EFE: convierte de tipo de dato entero a tipo posicion
+    //REQ:
+    //MOD:
     pos traducePos(int);
 
 private:
-    pos posicion;
     Pos *primero;
     Pos *ultimo;
     int nElementos;
