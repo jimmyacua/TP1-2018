@@ -1,5 +1,3 @@
-#include <iostream>
-//#include "ListaPosArray.h"
 #include "ListaPosLSE.h"
 //#include "ListaPosLDE.h"
 #include "Pila.h"
@@ -571,5 +569,6 @@ int main() {
     }
 //******************************************************************************************************************************/
     cout << "\nFin de la prueba!" << endl;
+
     return 0;
 }
