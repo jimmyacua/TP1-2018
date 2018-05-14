@@ -5,13 +5,17 @@
 //#include "ListaOrdArray.h"
 #include "ListaOrdLSE.h"
 #include "ListaIndexadaLSE.h"
+<<<<<<< HEAD
 //#include "ListaIndexadaArray.h"INDEXADA
+=======
+//#include "ListaIndexadaArray.h"
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
 #include "Pila.h"
 
 using namespace std;
 
 typedef ListaPosLSE listaPos;
-//typedef ListaPosArray listaPos;
+//    typedef ListaPosArray listaPos;
 //typedef ListaPosLDE listaPos;
 //typedef ListaIndexadaArray listaInd;
 typedef ListaIndexadaLSE listaInd;
@@ -44,7 +48,11 @@ typedef ListaOrdLSE listaOrd;
                         cout << "   1. iniciar." << endl;
                         cout << "   2. destruir." << endl;
                         cout << "   3. vaciar." << endl;
+<<<<<<< HEAD
                         cout << "   4. Averiguar si la li 2sta esta vacia." << endl;
+=======
+                        cout << "   4. Averiguar si la lista esta vacia." << endl;
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                         cout << "   5. Insertar un elemento nuevo en la lista." << endl;
                         cout << "   6. Agregar un elemento al final de la lista." << endl;
                         cout << "   7. Borrar un elemento." << endl;
@@ -137,8 +145,12 @@ typedef ListaOrdLSE listaOrd;
                                 cout << "Ingrese la posicion." << endl;
                                 cin >> c;
                                 pos p = L.traducePos(c);
+<<<<<<< HEAD
                                 cout << "El elemneto que esta despues de " << p->elemento << " es "
                                      << L.siguente(p)->elemento
+=======
+                                cout << "El elemneto que esta despues de " << p->elemento << " es " << L.siguente(p)->elemento
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                                      << endl;
                             }
                                 break;
@@ -148,8 +160,12 @@ typedef ListaOrdLSE listaOrd;
                                 cout << "Ingrese el caracter." << endl;
                                 cin >> c;
                                 pos p = L.traducePos(c);
+<<<<<<< HEAD
                                 cout << "El elemeneto que esta antes de " << p->elemento << " es "
                                      << L.anterior(p)->elemento << endl;
+=======
+                                cout << "El elemeneto que esta antes de " << p->elemento << " es " << L.anterior(p)->elemento << endl;
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                             }
                                 break;
                             case 13: {
@@ -185,13 +201,20 @@ typedef ListaOrdLSE listaOrd;
                             default:
                                 cout << "Ingrese un numero valido" << endl;
                         }
+<<<<<<< HEAD
                     }
                 }
+=======
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                 break;
             case 2: { //Lista INDEXADA
                 int desicion3;
                 bool continuar3 = true;
+<<<<<<< HEAD
                 listaInd L;
+=======
+                listaInd L; //CAMBIAR POR LISTA INDEXADA
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                 while (continuar3) {
                     cout << "MENU DE OPCIONES LISTA INDEXADA\n" << endl;
                     cout << "¿Que desea hacer?\n (Ingrese un numero)" << endl;
@@ -203,7 +226,11 @@ typedef ListaOrdLSE listaOrd;
                     cout << "   6. Borrar un elemento." << endl;
                     cout << "   7. Modificar un elemento." << endl;
                     cout << "   8. Averiguar cuantos elementos tiene la lista." << endl;
+<<<<<<< HEAD
                     cout << "   9. Intercambiar dos elementos." << endl;
+=======
+                    cout << "   9. Intercambiar dos posiciones." << endl;
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                     cout << "   10. Recuperar elemento." << endl;
                     cout << "   11. Ver la lista." << endl;
                     cout << "   0. Salir" << endl;
@@ -225,11 +252,19 @@ typedef ListaOrdLSE listaOrd;
                             if (L.vacia()) {
                                 cout << "       La lista esta vacía." << endl;
                             } else {
+<<<<<<< HEAD
                                 cout << "       La lista no esta vacía." << endl;
                             }
                         }
                         break;
                         case 5: {
+=======
+                                cout << "       La lista no esta vacía." << endl
+                    }
+                }
+                    break;
+                      case 5: {
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                             int c;
                             int c2;
                             cout << "       Ingrese el elemento nuevo que desea ingresar." << endl;
@@ -256,7 +291,11 @@ typedef ListaOrdLSE listaOrd;
                                 cin >> c2;
                                 cout << "Ingrese el nuevo elemento." << endl;
                                 cin >> c;
+<<<<<<< HEAD
                                 L.modificarElem(c, c2);
+=======
+                                L.modificarElem(c2, c);
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                             }
                             break;
                             case 8: {
@@ -337,7 +376,11 @@ typedef ListaOrdLSE listaOrd;
                             }
                                 break;
                             case 4: {
+<<<<<<< HEAD
                                 if (L.vacio()) {
+=======
+                                if (L.vacia()) {
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                                     cout << "       La lista esta vacía." << endl;
                                 } else {
                                     cout << "       La lista no esta vacía." << endl;
@@ -345,6 +388,7 @@ typedef ListaOrdLSE listaOrd;
                             }
                                 break;
                             case 5: {
+<<<<<<< HEAD
                                 int c;
                                 cout << "       Ingrese el elemento nuevo que desea ingresar." << endl;
                                 cin >> c;
@@ -431,6 +475,135 @@ typedef ListaOrdLSE listaOrd;
                         cout << "   0. Salir." << endl;
                         cin >> desicion2;
 
+=======
+                                pos p;
+                                int c;
+                                int c2;
+                                cout << "       Ingrese el elemento nuevo que desea ingresar." << endl;
+                                cin >> c;
+                                cout << "       Ingrese la posicion donde desea ingresar ese nuevo caracter."
+                                     << endl;
+                                cin >> c2;
+                                p = L.traducePos(c2);
+                                L.insertar(c, p);
+                            }
+                                break;
+                            case 6: {
+                                //agregar al final
+                                int c;
+                                cout << "       Ingrese el elemento nuevo que desea agregar al final." << endl;
+                                cin >> c;
+                                L.agregarAlFinal(c);
+                            }
+                                break;
+                            case 7: {
+                                //borrar
+                                int c;
+                                cout << "       Ingrese la posicion que desea borrar." << endl;
+                                cin >> c;
+                                pos p = L.traducePos(c);
+                                L.borrar(p);
+                            }
+                                break;
+                            case 8: {
+                                //modificar
+                                int c;
+                                int c2;
+                                cout << "Ingrese la posicion que desea modificar." << endl;
+                                cin >> c2;
+                                cout << "Ingrese el nuevo caracter." << endl;
+                                cin >> c;
+                                pos p = L.traducePos(c2);
+                                L.modificarElem(p, c);
+                            }
+                                break;
+                            case 9: {
+                                //primera
+                                cout << "El elemento de la primera posicion es: " << L.recuperar(L.primera()) << endl;
+                            }
+                                break;
+                            case 10: {
+                                //ultima
+                                cout << "El elemento de la ultima posicion es: " << L.recuperar(L.ultima()) << endl;
+                            }
+                                break;
+                            case 11: {
+                                //siguiente
+                                int c;
+                                cout << "Ingrese la posicion." << endl;
+                                cin >> c;
+                                pos p = L.traducePos(c);
+                                cout << "El elemneto que esta despues de " << p->elemento << " es " << L.siguente(p)->elemento
+                                     << endl;
+                            }
+                                break;
+                            case 12: {
+                                //anterior
+                                int c;
+                                cout << "Ingrese el caracter." << endl;
+                                cin >> c;
+                                pos p = L.traducePos(c);
+                                cout << "El elemeneto que esta antes de " << p->elemento << " es " << L.anterior(p)->elemento << endl;
+                            }
+                                break;
+                            case 13: {
+                                //nelementos
+                                cout << "La lista tiene " << L.numElem() << " elementos/posiciones." << endl;
+                            }
+                                break;
+                            case 14: {
+                                //intercambiar
+                                int c1;
+                                pos p1;
+                                int c2;
+                                pos p2;
+                                cout << "Ingrese la primer posicion." << endl;
+                                cin >> c1;
+                                p1 = L.traducePos(c1);
+                                cout << "Ingrese la segunda posicion." << endl;
+                                cin >> c2;
+                                p2 = L.traducePos(c2);
+                                L.intercambiar(p1, p2);
+                            }
+                                break;
+                            case 15: {
+                                //ver
+                                L.listar();
+                            }
+                                break;
+                            case 0: {
+                                //salir
+                                continuar4 = false;
+                            }
+                                break;
+                            default:
+                                cout << "Ingrese un numero valido" << endl;
+                        }
+
+                    }
+
+                }
+                    break;
+
+                case 4: {
+                    int desicion2;
+                    bool continuar2 = true;
+                    Pila<int> P;
+                    while (continuar2) {
+                        cout << "MENU DE OPCIONES PILA\n" << endl;
+                        cout << "¿Que desea hacer?\n (Ingrese un numero)" << endl;
+                        cout << "   1. iniciar." << endl;
+                        cout << "   2. destruir." << endl;
+                        cout << "   3. vaciar." << endl;
+                        cout << "   4. vacia." << endl;
+                        cout << "   5. meter." << endl;
+                        cout << "   6. sacar." << endl;
+                        cout << "   7. tope." << endl;
+                        cout << "   8. Averiguar el numero de elementos." << endl;
+                        cout << "   0. Salir." << endl;
+                        cin >> desicion2;
+
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                         switch (desicion2) {
                             case 1: {
                                 P.iniciar();
