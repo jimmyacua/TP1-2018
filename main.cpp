@@ -5,7 +5,11 @@
 //#include "ListaOrdArray.h"
 #include "ListaOrdLSE.h"
 #include "ListaIndexadaLSE.h"
+<<<<<<< HEAD
+//#include "ListaIndexadaArray.h"INDEXADA
+=======
 //#include "ListaIndexadaArray.h"
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
 #include "Pila.h"
 
 using namespace std;
@@ -44,7 +48,11 @@ typedef ListaOrdLSE listaOrd;
                         cout << "   1. iniciar." << endl;
                         cout << "   2. destruir." << endl;
                         cout << "   3. vaciar." << endl;
+<<<<<<< HEAD
+                        cout << "   4. Averiguar si la li 2sta esta vacia." << endl;
+=======
                         cout << "   4. Averiguar si la lista esta vacia." << endl;
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                         cout << "   5. Insertar un elemento nuevo en la lista." << endl;
                         cout << "   6. Agregar un elemento al final de la lista." << endl;
                         cout << "   7. Borrar un elemento." << endl;
@@ -137,7 +145,12 @@ typedef ListaOrdLSE listaOrd;
                                 cout << "Ingrese la posicion." << endl;
                                 cin >> c;
                                 pos p = L.traducePos(c);
+<<<<<<< HEAD
+                                cout << "El elemneto que esta despues de " << p->elemento << " es "
+                                     << L.siguente(p)->elemento
+=======
                                 cout << "El elemneto que esta despues de " << p->elemento << " es " << L.siguente(p)->elemento
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                                      << endl;
                             }
                                 break;
@@ -147,7 +160,12 @@ typedef ListaOrdLSE listaOrd;
                                 cout << "Ingrese el caracter." << endl;
                                 cin >> c;
                                 pos p = L.traducePos(c);
+<<<<<<< HEAD
+                                cout << "El elemeneto que esta antes de " << p->elemento << " es "
+                                     << L.anterior(p)->elemento << endl;
+=======
                                 cout << "El elemeneto que esta antes de " << p->elemento << " es " << L.anterior(p)->elemento << endl;
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                             }
                                 break;
                             case 13: {
@@ -183,11 +201,20 @@ typedef ListaOrdLSE listaOrd;
                             default:
                                 cout << "Ingrese un numero valido" << endl;
                         }
+<<<<<<< HEAD
+                    }
+                }
+=======
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                 break;
             case 2: { //Lista INDEXADA
                 int desicion3;
                 bool continuar3 = true;
+<<<<<<< HEAD
+                listaInd L;
+=======
                 listaInd L; //CAMBIAR POR LISTA INDEXADA
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                 while (continuar3) {
                     cout << "MENU DE OPCIONES LISTA INDEXADA\n" << endl;
                     cout << "¿Que desea hacer?\n (Ingrese un numero)" << endl;
@@ -199,7 +226,11 @@ typedef ListaOrdLSE listaOrd;
                     cout << "   6. Borrar un elemento." << endl;
                     cout << "   7. Modificar un elemento." << endl;
                     cout << "   8. Averiguar cuantos elementos tiene la lista." << endl;
+<<<<<<< HEAD
+                    cout << "   9. Intercambiar dos elementos." << endl;
+=======
                     cout << "   9. Intercambiar dos posiciones." << endl;
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                     cout << "   10. Recuperar elemento." << endl;
                     cout << "   11. Ver la lista." << endl;
                     cout << "   0. Salir" << endl;
@@ -221,16 +252,24 @@ typedef ListaOrdLSE listaOrd;
                             if (L.vacia()) {
                                 cout << "       La lista esta vacía." << endl;
                             } else {
+<<<<<<< HEAD
+                                cout << "       La lista no esta vacía." << endl;
+                            }
+                        }
+                        break;
+                        case 5: {
+=======
                                 cout << "       La lista no esta vacía." << endl
                     }
                 }
                     break;
                       case 5: {
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                             int c;
                             int c2;
                             cout << "       Ingrese el elemento nuevo que desea ingresar." << endl;
                             cin >> c;
-                            cout << "       Ingrese la posicion donde desea ingresar ese nuevo caracter."
+                            cout << "       Ingrese el indice donde desea ingresar ese nuevo caracter."
                                  << endl;
                             cin >> c2;
                             L.insertar(c, c2);
@@ -252,7 +291,11 @@ typedef ListaOrdLSE listaOrd;
                                 cin >> c2;
                                 cout << "Ingrese el nuevo elemento." << endl;
                                 cin >> c;
+<<<<<<< HEAD
+                                L.modificarElem(c, c2);
+=======
                                 L.modificarElem(c2, c);
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                             }
                             break;
                             case 8: {
@@ -303,20 +346,20 @@ typedef ListaOrdLSE listaOrd;
                 bool continuar4 = true;
                 listaOrd L; //CAMBIAR POR LISTA ORDENADA
                 while(continuar4){
-                    cout << "MENU DE OPCIONES LISTA INDEXADA\n" << endl;
+                    cout << "\nMENU DE OPCIONES LISTA ORDENADA\n" << endl;
                     cout << "¿Que desea hacer?\n (Ingrese un numero)" << endl;
                     cout << "   1. iniciar." << endl;
                     cout << "   2. destruir." << endl;
                     cout << "   3. vaciar." << endl;
                     cout << "   4. Averiguar si la lista esta vacia." << endl;
                     cout << "   5. Insertar un elemento nuevo en la lista." << endl; //*
-                    cout << "   7. Borrar un elemento." << endl;
-                    cout << "   9. Averiguar quien esta de primero." << endl;
-                    cout << "   10. Averiguar quien esta de ultimo." << endl;
-                    cout << "   11. Averiguar que elemento esta siguiente a otro." << endl;
-                    cout << "   12. Averiguar que elemento esta antes que otro." << endl;
-                    cout << "   13. Averiguar cuantos elementos tiene la lista." << endl;
-                    cout << "   15. Ver la lista." << endl;
+                    cout << "   6. Borrar un elemento." << endl;
+                    cout << "   7. Averiguar quien esta de primero." << endl;
+                    cout << "   8. Averiguar quien esta de ultimo." << endl;
+                    cout << "   9. Averiguar que elemento esta siguiente a otro." << endl;
+                    cout << "   10. Averiguar que elemento esta antes que otro." << endl;
+                    cout << "   11. Averiguar cuantos elementos tiene la lista." << endl;
+                    cout << "   12. Ver lista." << endl;
                     cout << "   0. Salir" << endl;
                     cin >> decision4;
                     switch (decision4) {
@@ -333,7 +376,11 @@ typedef ListaOrdLSE listaOrd;
                             }
                                 break;
                             case 4: {
+<<<<<<< HEAD
+                                if (L.vacio()) {
+=======
                                 if (L.vacia()) {
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                                     cout << "       La lista esta vacía." << endl;
                                 } else {
                                     cout << "       La lista no esta vacía." << endl;
@@ -341,6 +388,94 @@ typedef ListaOrdLSE listaOrd;
                             }
                                 break;
                             case 5: {
+<<<<<<< HEAD
+                                int c;
+                                cout << "       Ingrese el elemento nuevo que desea ingresar." << endl;
+                                cin >> c;
+                                L.insertar(c);
+                            }
+                                break;
+                            case 6: {
+                                //borrar
+                                int c;
+                                cout << "       Ingrese el elemento que desea borrar." << endl;
+                                cin >> c;
+                                L.borrar(c);
+                            }
+                                break;
+                            case 7: {
+                                //primera
+                                cout << "El primer elemento es: " << L.primero() << endl;
+
+                            }
+                                break;
+                            case 8: {
+                                //ultima
+                                cout << "El ultimo elemento  es: " << L.ultimo() << endl;
+
+                            }
+                                break;
+                            case 9: {
+                                //siguiente
+                                int c;
+                                cout << "Ingrese el elemento." << endl;
+                                cin >> c;
+                                cout << "El elemneto que esta despues de " << c << " es " << L.siguiente(c) << endl;
+
+                            }
+                                break;
+                            case 10: {
+                                //anterior
+                                int c;
+                                cout << "Ingrese el elemento." << endl;
+                                cin >> c;
+                                cout << "El elemeneto que esta antes de " << c << " es " << L.anterior(c) << endl;
+                            }
+                                break;
+                            case 11: {
+                                //nelementos
+                                cout << "La lista tiene " << L.numElem() << " elementos." << endl;
+                            }
+                                break;
+                            case 12: {
+                                //ver
+                                L.imprimir();
+
+                            }
+                                break;
+                            case 0: {
+                                //salir
+                                continuar4 = false;
+                            }
+                                break;
+                            default:
+                                cout << "Ingrese un numero valido" << endl;
+                        }
+
+                    }
+
+                }
+                    break;
+
+                case 4: {
+                    int desicion2;
+                    bool continuar2 = true;
+                    Pila<int> P;
+                    while (continuar2) {
+                        cout << "MENU DE OPCIONES PILA\n" << endl;
+                        cout << "¿Que desea hacer?\n (Ingrese un numero)" << endl;
+                        cout << "   1. iniciar." << endl;
+                        cout << "   2. destruir." << endl;
+                        cout << "   3. vaciar." << endl;
+                        cout << "   4. vacia." << endl;
+                        cout << "   5. meter." << endl;
+                        cout << "   6. sacar." << endl;
+                        cout << "   7. tope." << endl;
+                        cout << "   8. Averiguar el numero de elementos." << endl;
+                        cout << "   0. Salir." << endl;
+                        cin >> desicion2;
+
+=======
                                 pos p;
                                 int c;
                                 int c2;
@@ -468,6 +603,7 @@ typedef ListaOrdLSE listaOrd;
                         cout << "   0. Salir." << endl;
                         cin >> desicion2;
 
+>>>>>>> 9ce544d92f0ca3f7f571c455b67b3b8f89b52135
                         switch (desicion2) {
                             case 1: {
                                 P.iniciar();
