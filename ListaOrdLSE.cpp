@@ -117,6 +117,7 @@ void ListaOrdLSE::imprimir() {
     }
 }
 
+
 void ListaOrdLSE::limpiarLista() {
     nodo* p = this->front;
     while(p != nullptr){

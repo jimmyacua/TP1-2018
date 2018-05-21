@@ -1,3 +1,7 @@
+//
+// Created by jimmy on 11/05/18.
+//
+
 #ifndef TP1_LISTAPOS_H
 #define TP1_LISTAPOS_H
 
@@ -86,11 +90,6 @@ public:
     //EFE: lista los elementos que hay en la lista
     //REQ: lista inicializada y no vacía
     //MOD:
-
-    //EFE: Devuelve una lista con todas las etiquetas de L
-    //REQ: L inicializada y con almenos un elemento
-    //MOD: ---
-
     void listar();
 
     //EFE: convierte de tipo de dato entero a tipo posicion
