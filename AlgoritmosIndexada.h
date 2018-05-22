@@ -23,7 +23,7 @@ public:
     //Efecto:
     //Requiere:
     //Modifica:
-    lista invertir(lista);
+    void invertir(lista);
     //Efecto:
     //Requiere:
     //Modifica:
@@ -47,7 +47,7 @@ public:
     //Efecto:
     //Requiere:
     //Modifica:
-    void borbujaBiDireccional(lista);
+    void burbujaBiDireccional(lista);
     //Efecto:
     //Requiere:
     //Modifica:
