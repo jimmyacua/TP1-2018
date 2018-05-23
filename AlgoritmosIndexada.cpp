@@ -208,8 +208,15 @@ void AlgoritmosIndexada::seleccionrecursivaPila(lista){
 
 }
 
-void AlgoritmosIndexada::insercion(lista){
-
+void AlgoritmosIndexada::insercion(lista l){
+    int indice;
+    for(int i=1;i<=l.numElem();i++){
+        indice = i;
+        while((indice>1)&&(l.recuperar(indice)<l.recuperar(indice-1))){
+            l.intercambiar(indice,indice-1);
+            indice--;
+        }
+    }
 }
 
 void AlgoritmosIndexada::quickSortAho(lista){
