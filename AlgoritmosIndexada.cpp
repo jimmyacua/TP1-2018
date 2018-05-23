@@ -71,15 +71,54 @@ bool AlgoritmosIndexada::subLista(lista l1,lista l2){
     int indiceL1 = 1;
     int indiceL2 = 1;
     int max = l2.numElem();
-    while(indiceL2<=max){
-        while(l1.recuperar(indiceL1)==l2.recuperar(indiceL2)){
-            
+    bool esSublista = false;
+    while((indiceL2<=max)&&!esSublista){
+        if(l1.recuperar(indiceL1)==l2.recuperar(indiceL2)){
+            bool seguir = true;
+            while(seguir){
+                indiceL1++;
+                indiceL2++;
+                if(l1.recuperar(indiceL1)==l2.recuperar(indiceL2)){
+                    if((indiceL1+1)>l1.numElem()){
+                        seguir = false;
+                        esSublista = true;
+                    }
+                }else{
+                    indiceL1 = 1;
+                    seguir = false;
+                }
+            }
+        }else{
+            indiceL2++;
         }
     }
+    return esSublista;
 }
 
-bool AlgoritmosIndexada::iguales(lista,lista){
-
+bool AlgoritmosIndexada::iguales(lista l1,lista l2){
+    int indiceL1 = 1;
+    int indiceL2 = 1;
+    int max = l1.numElem();
+    bool seguir = true;
+    bool iguales = false;
+    if(l1.numElem()!=l2.numElem()){
+        return false;
+    }
+    if(l1.recuperar(indiceL1)!=l2.recuperar(indiceL2)){
+        return false;
+    }
+    while((indiceL1<=max)&&(seguir)){
+        if(l1.recuperar(indiceL1)==l2.recuperar(indiceL2)){
+            indiceL1++;
+            indiceL2++;
+        }else{
+            seguir = false;
+        }
+    }
+    if(seguir){
+        iguales = true;
+    }
+    return iguales;
 }
 
 void AlgoritmosIndexada::burbujaOriginal(lista){
