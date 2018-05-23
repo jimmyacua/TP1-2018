@@ -5,7 +5,7 @@
 //#include "ListaOrdArray.h"
 #include "ListaOrdLSE.h"
 #include "Pila.h"
-#include "Algoritmos.h"
+#include "AlgoritmosListaPos.h"
 
 using namespace std;
 
@@ -544,21 +544,26 @@ int main() {
 
 
     l.iniciar();
-    l.insertar(1,l.traducePos(1));
-    l.insertar(3,l.traducePos(2));
-    l.insertar(7,l.traducePos(3));
+    l.insertar(10,l.traducePos(1));
+    l.insertar(31,l.traducePos(2));
+    l.insertar(75,l.traducePos(3));
+    l.insertar(145,l.traducePos(4));
+    l.insertar(4, l.traducePos(5));
+    l.insertar(13,l.traducePos(6));  //l= 4,10,13,31,75,145
 
-    l2.iniciar();
+    /*l2.iniciar();
 
-    l2.insertar(10, l2.traducePos(1));
-    l2.insertar(1, l2.traducePos(2));
-    l2.insertar(9, l2.traducePos(3));
-    l2.insertar(1, l2.traducePos(4));
-    l2.insertar(3, l2.traducePos(5));
-    l2.insertar(7, l2.traducePos(6));
-    l2.insertar(2, l2.traducePos(7));
+    l2.insertar(1, l2.traducePos(1));
+    l2.insertar(3, l2.traducePos(2));
+    l2.insertar(7, l2.traducePos(3));
+    l2.insertar(11, l2.traducePos(4));
 
-    bool r = a.sublista(l,l2);
+
+    bool r = a.iguales(l,l2);
     cout << r << endl;
+
+     */
+    a.quickSortMod(l,l.primera(), l.ultima());
+    l.listar();
     return 0;
 }

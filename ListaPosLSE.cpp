@@ -106,6 +106,7 @@ void ListaPosLSE::intercambiar(pos p1, pos p2) {
 
 int ListaPosLSE::recuperar(pos p) {
     return p->elemento;
+
 }
 
 void ListaPosLSE::modificarElem(pos p, int e) {
