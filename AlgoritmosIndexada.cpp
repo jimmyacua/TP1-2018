@@ -13,6 +13,7 @@ void AlgoritmosIndexada::listar(lista l){
         cout<<l.recuperar(contador)<<", ";
         contador++;
     }
+    cout<<endl;
 }
 
 bool AlgoritmosIndexada::simetrica(lista l){
@@ -121,12 +122,46 @@ bool AlgoritmosIndexada::iguales(lista l1,lista l2){
     return iguales;
 }
 
-void AlgoritmosIndexada::burbujaOriginal(lista){
-
+void AlgoritmosIndexada::burbujaOriginal(lista l){
+    int max = l.numElem();
+    int indice = 1;
+    bool seguir = true;
+    while((indice<max)&&seguir){
+        seguir = false;
+        for(int j=1;j<max;j++){
+            if(l.recuperar(j)<l.recuperar(j+1)){
+                l.intercambiar(j,j+1);
+                seguir = true;
+            }
+        }
+        indice++;
+    }
 }
 
-void AlgoritmosIndexada::burbujaBiDireccional(lista){
-
+void AlgoritmosIndexada::burbujaBiDireccional(lista l){
+    int max = l.numElem();
+    int indice = 1;
+    bool seguir = true;
+    while((indice<max)&&seguir){
+        seguir = false;
+        for(int j=1;j<max;j++){
+            if(l.recuperar(j)<l.recuperar(j+1)){
+                l.intercambiar(j,j+1);
+                seguir = true;
+            }
+        }
+        if(!seguir){
+            return;
+        }
+        seguir = false;
+        for(int k=max;k=2;k--){
+            if(l.recuperar(k)<l.recuperar(k-1)){
+                l.intercambiar(k,k-1);
+                seguir = true;
+            }
+        }
+        indice++;
+    }
 }
 
 void AlgoritmosIndexada::seleccionIterativa(lista){

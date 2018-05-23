@@ -1,25 +1,45 @@
 #include <iostream>
 //#include "ListaPosArray.h"
-#include "ListaPosLSE.h"
+//#include "ListaPosLSE.h"
 //#include "ListaPosLDE.h"
 //#include "ListaOrdArray.h"
-#include "ListaOrdLSE.h"
+//#include "ListaOrdLSE.h"
 #include "ListaIndexadaLSE.h"
 //#include "ListaIndexadaArray.h"
 #include "Pila.h"
-
+#include "AlgoritmosIndexada.h"
 using namespace std;
 
-typedef ListaPosLSE listaPos;
+//typedef ListaPosLSE listaPos;
 //    typedef ListaPosArray listaPos;
 //typedef ListaPosLDE listaPos;
 //typedef ListaIndexadaArray listaInd;
 typedef ListaIndexadaLSE listaInd;
 //typedef ListaOrdArray listaOrd;
-typedef ListaOrdLSE listaOrd;
+//typedef ListaOrdLSE listaOrd;
 
-
-    int main() {
+int main(){
+    listaInd l;
+    l.iniciar();
+    l.insertar(12,1);
+    l.insertar(32,2);
+    l.insertar(3,3);
+    l.insertar(15,4);
+    l.insertar(4,5);
+    l.insertar(23,6);
+    l.insertar(1,7);
+    l.insertar(6,8);
+    l.insertar(43,9);
+    l.insertar(15,10);
+    //l.listar();
+    AlgoritmosIndexada alg;
+    alg.listar(l);
+    alg.eliminarRepetidos(l);
+    //alg.burbujaOriginal(l);
+    alg.listar(l);
+    return 0;
+}
+    /*int main() {
         int desicion;
         bool continuar = true;
         while (continuar) {
@@ -499,10 +519,11 @@ typedef ListaOrdLSE listaOrd;
             }
         }
 
-//******************************************************************************************************************************/
+
         cout << "\nFin de la prueba!" << endl;
         return 0;
     }
+    */
 
 
 
