@@ -59,12 +59,17 @@ bool AlgoritmosIndexada::buscar(int indice, lista l){
 
 void AlgoritmosIndexada::eliminarRepetidos(lista l){
     int indice = 1;
+    int recorrido;
     while(indice < l.numElem()){
-        if(l.recuperar(indice)==l.recuperar(indice+1)){
-            l.borrar(indice+1);
-        }else{
-            indice++;
+        recorrido = indice+1;
+        while(recorrido <= l.numElem()){
+            if(l.recuperar(indice)==l.recuperar(recorrido)){
+                l.borrar(recorrido);
+            }else{
+                recorrido++;
+            }
         }
+        indice++;
     }
 }
 
@@ -129,7 +134,7 @@ void AlgoritmosIndexada::burbujaOriginal(lista l){
     while((indice<max)&&seguir){
         seguir = false;
         for(int j=1;j<max;j++){
-            if(l.recuperar(j)<l.recuperar(j+1)){
+            if(l.recuperar(j)>l.recuperar(j+1)){
                 l.intercambiar(j,j+1);
                 seguir = true;
             }
@@ -145,7 +150,7 @@ void AlgoritmosIndexada::burbujaBiDireccional(lista l){
     while((indice<max)&&seguir){
         seguir = false;
         for(int j=1;j<max;j++){
-            if(l.recuperar(j)<l.recuperar(j+1)){
+            if(l.recuperar(j)>l.recuperar(j+1)){
                 l.intercambiar(j,j+1);
                 seguir = true;
             }
@@ -154,7 +159,7 @@ void AlgoritmosIndexada::burbujaBiDireccional(lista l){
             return;
         }
         seguir = false;
-        for(int k=max;k=2;k--){
+        for(int k=max;k>2;k--){
             if(l.recuperar(k)<l.recuperar(k-1)){
                 l.intercambiar(k,k-1);
                 seguir = true;
@@ -164,12 +169,39 @@ void AlgoritmosIndexada::burbujaBiDireccional(lista l){
     }
 }
 
-void AlgoritmosIndexada::seleccionIterativa(lista){
-
+void AlgoritmosIndexada::seleccionIterativa(lista l){
+    int max = l.numElem();
+    int min;
+    for(int i=1;i<max;i++){
+        min = i;
+        for(int j=i+1;j<=max;j++){
+            if(l.recuperar(j)<l.recuperar(min)){
+                min=j;
+            }
+        }
+        l.intercambiar(i,min);
+    }
 }
 
-void AlgoritmosIndexada::seleccionRecursiva(lista){
+void AlgoritmosIndexada::seleccionRecursiva(lista l){
+    int indice = 1;
+    int menor = indice;
+    seleccionR(l,indice,menor);
+}
 
+void AlgoritmosIndexada::seleccionR(lista l, int indice, int menor) {
+    int max = l.numElem();
+    if(indice<=max){
+        for(int i = indice;i<=max;i++){
+            menor=indice;
+            if(l.recuperar(i)<l.recuperar(menor)){
+                menor = i;
+                l.intercambiar(menor,indice);
+            }
+        }
+        indice++;
+        seleccionR(l,indice,menor);
+    }
 }
 
 void AlgoritmosIndexada::seleccionrecursivaPila(lista){

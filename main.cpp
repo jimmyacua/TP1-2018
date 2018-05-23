@@ -34,8 +34,10 @@ int main(){
     //l.listar();
     AlgoritmosIndexada alg;
     alg.listar(l);
-    alg.eliminarRepetidos(l);
-    //alg.burbujaOriginal(l);
+    //alg.eliminarRepetidos(l);
+    //cout<<l.numElem();
+    //l.listar();
+    alg.seleccionRecursiva(l);
     alg.listar(l);
     return 0;
 }

@@ -56,6 +56,8 @@ public:
     //Requiere:
     //Modifica:
     void seleccionRecursiva(lista);
+
+    void seleccionR(lista,int,int);
     //Efecto:
     //Requiere:
     //Modifica:

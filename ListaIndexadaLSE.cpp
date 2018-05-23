@@ -75,18 +75,24 @@ void ListaIndexadaLSE::insertar(int elemento,int indice){
 
 void ListaIndexadaLSE::borrar(int indice){
     Caja *aux = primero;
-    if(indice == 1){
+    Caja *anterior = NULL;
+    int contador = 1;
+    while((aux!=NULL)&&(contador<indice)){
+        anterior = aux;
+        aux = aux->sgt;
+        contador++;
+    }
+    if(anterior==NULL){
         primero = primero->sgt;
         delete aux;
-    } else{
-        int contador = 2;
-        while(contador < indice -1){
-            aux = aux->sgt;
-            contador++;
-        }
-        aux->sgt = aux->sgt->sgt;
+        cantElem--;
+    }else{
+        anterior->sgt=aux->sgt;
+        delete aux;
+        cantElem--;
     }
-    cantElem--;
+    int a = cantElem;
+
 }
 
 void ListaIndexadaLSE::modificarElem(int elemento,int indice){
@@ -125,15 +131,15 @@ void ListaIndexadaLSE::intercambiar(int indiceU,int indiceD){
 
 int ListaIndexadaLSE::recuperar(int indice){
     Caja *aux = primero;
-    int contador = 2;
+    if(indice==1){
+        return aux->elemento;
+    }
+    int contador = 1;
     while(contador < indice) {
         aux = aux->sgt;
         contador++;
     }
-    if(indice==1){
-        return primero->elemento;
-    }
-    return aux->sgt->elemento;
+    return aux->elemento;
 }
 
 int ListaIndexadaLSE::numElem(){
