@@ -70,6 +70,7 @@ public:
     //Requiere:
     //Modifica:
     void quickSortAho(lista);
+    int pivote();
     //Efecto:
     //Requiere:
     //Modifica:
