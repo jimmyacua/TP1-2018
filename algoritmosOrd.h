@@ -28,7 +28,7 @@ public:
     //EFE: Retorna true si e está en l1
     //REQ: l1 inicializada no vacía
     //MOD: ---
-    bool pertenece(lista l1);
+    bool pertenece(lista l1, int e);
 
     //EFE: Elimina de l1 los ementos que estánen l2
     //REQ:  l1 y l2 inicializadas no vacía

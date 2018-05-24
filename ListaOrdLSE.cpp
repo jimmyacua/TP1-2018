@@ -46,7 +46,7 @@ void ListaOrdLSE::insertar(int e) {
             this->numElementos++;
         }
     }
-    cout << this->front->getElem();
+    //cout << this->front->getElem();
 }
 
 void ListaOrdLSE::borrar(int e) {
@@ -90,7 +90,8 @@ int ListaOrdLSE::siguiente(int e) {
             encontrado = true;
         }
     }
-    return tmp->sgt->getElem();
+    int ret = tmp->sgt->getElem();
+    return ret;
 }
 
 int ListaOrdLSE::anterior(int e) {
