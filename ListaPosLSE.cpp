@@ -31,7 +31,8 @@ void ListaPosLSE::vaciar() {
         temp = temp->sgt;
         delete anterior;
     }
-    primero = NULL;
+    primero->sgt = NULL;
+    nElementos = 0;
 }
 
 bool ListaPosLSE::vacia() {
@@ -47,7 +48,13 @@ void ListaPosLSE::insertar(int e, pos p) {
         Pos* aux = new Pos(e);
         primero = aux;
         ultimo = primero;
-    } else{
+    } else if(p == primero){
+            Pos* aux = new Pos(e);
+            Pos* copia = primero;
+            aux->sgt = copia;
+            primero = aux;
+    }
+    else {
         Pos *aux = primero;
         while(aux->sgt != p){
             aux = aux->sgt;
@@ -89,12 +96,16 @@ void ListaPosLSE::borrar(pos p) {
 
 void ListaPosLSE::agregarAlFinal(int e) {
     Pos* p = new Pos(e);
-    Pos* aux = primero;
-    while(aux->sgt != NULL){
-        aux = aux->sgt;
+    if(nElementos==0){
+        primero = p;
+    }else {
+        Pos *aux = primero;
+        while (aux->sgt != NULL) {
+            aux = aux->sgt;
+        }
+        aux->sgt = p;
+        ultimo = p;
     }
-    aux->sgt = p;
-    ultimo = p;
     nElementos++;
 }
 

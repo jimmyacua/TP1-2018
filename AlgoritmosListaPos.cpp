@@ -276,8 +276,21 @@ void Algoritmos::quickSortMod(lista l, pos inicio, pos final) {
 }
 
 void Algoritmos::mergeSort(lista l, pos inicio, pos final) {
-    if(inicio != final){
-        Pos* mitad = l.traducePos(l.numElem()/2);
+    if(inicio != final && l.siguente(inicio) != final){
+        int mid = 1;
+        Pos* c = inicio;
+        while(c != final){
+            mid++;
+            c = l.siguente(c);
+        }
+        mid = mid/2;
+        Pos* mitad = inicio;
+        int con = 1;
+        while(con < mid){
+            mitad = l.siguente(mitad);
+            con++;
+        }
+
         mergeSort(l,inicio,mitad);
         mergeSort(l,l.siguente(mitad),final);
 
@@ -286,33 +299,162 @@ void Algoritmos::mergeSort(lista l, pos inicio, pos final) {
 }
 
 void Algoritmos::merge(lista l, pos inicio, pos mitad, pos final) {
-    lista l1;
-    l1.iniciar();
+    if(l.numElem() > 1) {
+        lista l1;
+        l1.iniciar();
 
-    lista l2;
-    l2.iniciar();
+        lista l2;
+        l2.iniciar();
 
-    Pos* p = l.primera();
-    while(p != l.siguente(mitad)){
-        l1.agregarAlFinal(l.recuperar(p));
-        p = l.siguente(p);
-    }
+        //Pos* i,j;
+        //i = l.primera();
 
-    p = mitad;
-    while(p != NULL){
-        l2.agregarAlFinal(l.recuperar(p));
-        p = l.siguente(p);
+        //---------copiar en los arrays--------------
+
+        Pos *p = inicio;
+        while (p != l.siguente(mitad)) {
+            l1.agregarAlFinal(l.recuperar(p));
+            p = l.siguente(p);
+        }
+
+        p = l.siguente(mitad);
+        while (p != l.siguente(final)) {
+            l2.agregarAlFinal(l.recuperar(p));
+            p = l.siguente(p);
+        }
+        //--------------------------------------------
+        Pos *aux1 = l1.primera();
+        Pos *aux2 = l2.primera();
+        l.vaciar();
+        while (aux1 != mitad && aux2 != NULL) {
+            if (l1.recuperar(aux1) <= l2.recuperar(aux2)) {
+                l.agregarAlFinal(l1.recuperar(aux1));
+                aux1 = l1.siguente(aux1);
+            } else {
+                l.agregarAlFinal(l2.recuperar(aux2));
+                aux2 = l2.siguente(aux2);
+            }
+        }
+
+        while (aux1 != NULL) {
+            l.agregarAlFinal(l1.recuperar(aux1));
+            aux1 = l1.siguente(aux1);
+        }
+        while (aux2 != NULL) {
+            l.agregarAlFinal(l2.recuperar(aux2));
+            aux2 = l2.siguente(aux2);
+        }
     }
 }
 
-void Algoritmos::unionOrdenadas(lista, lista) {}
+void Algoritmos::unionOrdenadas(lista l1, lista l2) {
+    Pos* p2 = l2.primera();
+    while(p2 != NULL){
+        Pos* p1 = l1.primera();
+        bool existe = false;
+        while(p1 != NULL && !existe && l1.recuperar(p1) <= l2.recuperar(p2)){
+            if(l1.recuperar(p1) == l2.recuperar(p2)){
+                existe = true;
+            }
+            p1 = l1.siguente(p1);
+        }
+        if(!existe){
+            l1.insertar(l2.recuperar(p2), p1);
+        }
+        p2 = l2.siguente(p2);
+    }
+}
 
-void Algoritmos::unionDesord(lista, lista) {}
+void Algoritmos::unionDesord(lista l1, lista l2) {
+    Pos* p2 = l2.primera();
+    while(p2 != NULL){
+        Pos* p1 = l1.primera();
+        bool existe = false;
+        while(p1 != NULL && !existe){
+            if(l1.recuperar(p1) == l2.recuperar(p2)){
+                existe = true;
+            }
+            p1 = l1.siguente(p1);
+        }
+        if(!existe){
+            l1.agregarAlFinal(l2.recuperar(p2));
+        }
+        p2 = l2.siguente(p2);
+    }
+}
 
-void Algoritmos::interseccionOrd(lista, lista) {}
+void Algoritmos::interseccionOrd(lista l1, lista l2, lista& l3) {
+    l3.iniciar();
+    Pos* p1 = l1.primera();
+    while(p1 != NULL){
+        Pos* p2 = l2.primera();
+        bool existe = false;
+        while(p2 != NULL && !existe && l1.recuperar(p1) >= l2.recuperar(p2)){
+            if(l1.recuperar(p1) == l2.recuperar(p2)){
+                existe = true;
+            }
+            p2 = l2.siguente(p2);
+        }
+        if(existe){
+            l3.agregarAlFinal(l1.recuperar(p1));
+        }
+        p1 = l1.siguente(p1);
+    }
+}
 
-void Algoritmos::interseccionDesord(lista, lista, lista) {}
+void Algoritmos::interseccionDesord(lista l1, lista l2, lista& l3) {
+    l3.iniciar();
+    Pos* p1 = l1.primera();
+    while(p1 != NULL){
+        Pos* p2 = l2.primera();
+        bool existe = false;
+        while(p2 != NULL && !existe){
+            if(l1.recuperar(p1) == l2.recuperar(p2)){
+                existe = true;
+            }
+            p2 = l2.siguente(p2);
+        }
+        if(existe){
+            l3.agregarAlFinal(l1.recuperar(p1));
+        }
+        p1 = l1.siguente(p1);
+    }
+}
 
-void Algoritmos::eliminarOrde(lista, lista) {}
+void Algoritmos::eliminarOrde(lista l1, lista l2) {
+    Pos* p1 = l1.primera();
+    while(p1 != NULL){
+        Pos* p2 = l2.primera();
+        bool existe = false;
+        while(p2 != NULL && !existe && l1.recuperar(p1) >= l2.recuperar(p2)){
+            if(l1.recuperar(p1) == l2.recuperar(p2)){
+                existe = true;
+            }
+            p2 = l2.siguente(p2);
+        }
+        if(existe){
+            Pos* aux = p1;
+            l1.borrar(aux);
+        }
+        p1 = l1.siguente(p1);
+    }
+}
 
-void Algoritmos::eliminarDesord(lista, lista) {}
+void Algoritmos::eliminarDesord(lista l1, lista l2) {
+    Pos* p1 = l1.primera();
+    while(p1 != NULL){
+        Pos* p2 = l2.primera();
+        bool existe = false;
+        while(p2 != NULL && !existe){
+            if(l1.recuperar(p1) == l2.recuperar(p2)){
+                existe = true;
+            }
+            p2 = l2.siguente(p2);
+        }
+        if(existe){
+            Pos* aux = p1;
+            l1.borrar(aux);
+        }
+        p1 = l1.siguente(p1);
+    }
+}

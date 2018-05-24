@@ -108,12 +108,12 @@ public:
     /* EFE:
      * REQ:
      * MOD: */
-    void interseccionOrd(lista, lista);
+    void interseccionOrd(lista, lista, lista&);
 
     /* EFE:
      * REQ:
      * MOD: */
-    void interseccionDesord(lista, lista, lista);
+    void interseccionDesord(lista, lista, lista&);
 
     /* EFE:
      * REQ:
