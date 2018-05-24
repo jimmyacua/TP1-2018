@@ -81,7 +81,7 @@ public:
     //Efecto:
     //Requiere:
     //Modifica:
-    void quickSortMod(lista);
+    void quickSortMod(lista,int,int);
     //Efecto:
     //Requiere:
     //Modifica:

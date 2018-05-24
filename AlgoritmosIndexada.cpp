@@ -224,7 +224,7 @@ int AlgoritmosIndexada::pivote(lista l, int inicio, int final) {
         return 0;
     }
     int indice = inicio+1;
-    while(indice<=l.numElem()){
+    while(indice<=final){
         if(l.recuperar(indice)>l.recuperar(inicio)){
             return indice;
         }else if(l.recuperar(indice)<l.recuperar(inicio)){
@@ -263,8 +263,18 @@ void AlgoritmosIndexada::quickSortAho(lista l, int inicio, int final){
         quickSortAho(l,part,final);
     }
 }
-void AlgoritmosIndexada::quickSortMod(lista){
+void AlgoritmosIndexada::quickSortMod(lista l, int inicio, int final){
+    int p = pivote(l,inicio,final);
+    if(p>0){
+        int part = particion(l,p,inicio,final);
+        if(part>10){//Para la prueba completa se hace con 50
+            quickSortAho(l,inicio,part-1);
+            quickSortAho(l,part,final);
+        }else{
+            insercion(l);
+        }
 
+    }
 }
 
 void AlgoritmosIndexada::mergeSort(lista){
