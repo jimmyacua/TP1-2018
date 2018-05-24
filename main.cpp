@@ -73,10 +73,8 @@ typedef ListaOrdArray lista;
         lc1.insertar(2);
         lc1.insertar(5);
         lc1.insertar(1);
+        a.eliminar(l1, lc1);
         l1.imprimir();
-        lc1.imprimir();
-        //a.eliminar(l1, lc1);
-        //l1.imprimir();
 
 
 

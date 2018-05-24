@@ -76,7 +76,7 @@ void algoritmosOrd::eliminar(lista l1, lista l2) {
     auto eaux = e1;
     int c = 0;
     bool eliminado = false;
-    while(l1.numElem() > c){
+    while(l1.numElem() >= c){
         eliminado = false;
         while(e1 >= e2 && !eliminado){
             if (e1 == e2){
@@ -93,5 +93,8 @@ void algoritmosOrd::eliminar(lista l1, lista l2) {
             e1 = l1.siguiente(e1);
             c++;
         }
+    }
+    if (l2.ultimo() == l1.ultimo()){
+        l1.borrar(l1.ultimo());
     }
 }
