@@ -18,6 +18,22 @@ bool ListaOrdArray::vacio() {
 
 
 void ListaOrdArray::insertar(int e) {
+/*
+    int counter = 0;
+    if (this->rear == 0){
+        this->lista[0] = e;
+    } else {
+        if (this->lista[counter] >= e){
+            this->rear++;
+            for(int i = this->rear; i > counter; i--){
+                this->lista[i+1] = this->lista[i];
+            }
+            this->lista[counter] = e;
+            counter = rear;
+        }
+    }
+    this->rear++;
+*/
     if (numElementos == 0){
         lista[0] = e;
         numElementos++;
@@ -35,9 +51,12 @@ void ListaOrdArray::insertar(int e) {
                 c = numElementos;
             } else {
                 c++;
+                rear++;
+                lista[rear] = e;
+                numElementos++;
+                c = numElementos;
             }
         }
-
     }
 }
 

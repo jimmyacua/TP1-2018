@@ -2,24 +2,52 @@
 //#include "ListaPosArray.h"
 #include "ListaPosLSE.h"
 //#include "ListaPosLDE.h"
-//#include "ListaOrdArray.h"
+#include "ListaOrdArray.h"
 #include "ListaOrdLSE.h"
 #include "ListaIndexadaLSE.h"
 //#include "ListaIndexadaArray.h"
 #include "Pila.h"
+#include "algoritmosOrd.h"
 
 using namespace std;
 
-typedef ListaPosLSE listaPos;
+//typedef ListaPosLSE listaPos;
 //    typedef ListaPosArray listaPos;
 //typedef ListaPosLDE listaPos;
 //typedef ListaIndexadaArray listaInd;
-typedef ListaIndexadaLSE listaInd;
-//typedef ListaOrdArray listaOrd;
+//typedef ListaIndexadaLSE listaInd;
+
+//typedef ListaOrdArray lista;
 typedef ListaOrdLSE listaOrd;
 
 
     int main() {
+
+        lista l1;
+        lista l2;
+
+        l1.iniciar();
+        l2.iniciar();
+
+        l1.insertar(5);
+        l1.insertar(3);
+        l1.insertar(2);
+        l1.insertar(4);
+        l1.insertar(1);
+
+        l2.insertar(1);
+        l2.insertar(2);
+        l2.insertar(5);
+        l2.insertar(4);
+        l2.insertar(3);
+
+        algoritmosOrd a;
+
+        bool iguales = a.iguales(l1,l2); // 1 = true 0 = false
+
+        cout << iguales << endl;
+
+        /*
         int desicion;
         bool continuar = true;
         while (continuar) {
@@ -500,7 +528,7 @@ typedef ListaOrdLSE listaOrd;
         }
 
 //******************************************************************************************************************************/
-        cout << "\nFin de la prueba!" << endl;
+        //cout << "\nFin de la prueba!" << endl;
         return 0;
     }
 
