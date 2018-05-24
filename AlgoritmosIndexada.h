@@ -69,8 +69,15 @@ public:
     //Efecto:
     //Requiere:
     //Modifica:
-    void quickSortAho(lista);
-    int pivote();
+    int pivote(lista,int,int);
+    //Efecto:
+    //Requiere:
+    //Modifica:
+    int particion(lista,int,int,int);
+    //Efecto:
+    //Requiere:
+    //Modifica:
+    void quickSortAho(lista,int,int);
     //Efecto:
     //Requiere:
     //Modifica:

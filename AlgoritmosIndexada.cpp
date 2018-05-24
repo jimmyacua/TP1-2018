@@ -219,8 +219,49 @@ void AlgoritmosIndexada::insercion(lista l){
     }
 }
 
-void AlgoritmosIndexada::quickSortAho(lista){
+int AlgoritmosIndexada::pivote(lista l, int inicio, int final) {
+    if(inicio==final){
+        return 0;
+    }
+    int indice = inicio+1;
+    while(indice<=l.numElem()){
+        if(l.recuperar(indice)>l.recuperar(inicio)){
+            return indice;
+        }else if(l.recuperar(indice)<l.recuperar(inicio)){
+            return inicio;
+        }
+        indice++;
+    }
+    return 0;
+}
 
+int AlgoritmosIndexada::particion(lista l, int pivote, int inicio, int final) {
+    if(pivote>0){
+        int derecha = final;
+        int izquierda = inicio;
+        int p = l.recuperar(pivote);
+        do{
+            l.intercambiar(izquierda,derecha);
+            while(l.recuperar(izquierda)<p){
+                izquierda++;
+            }
+            while(l.recuperar(derecha)>=p){
+                derecha--;
+            }
+        }while(izquierda<=derecha);
+        return izquierda;
+    }else{
+        return 0;
+    }
+}
+
+void AlgoritmosIndexada::quickSortAho(lista l, int inicio, int final){
+    int p = pivote(l,inicio,final);
+    if(p>0){
+        int part = particion(l,p,inicio,final);
+        quickSortAho(l,inicio,part-1);
+        quickSortAho(l,part,final);
+    }
 }
 void AlgoritmosIndexada::quickSortMod(lista){
 

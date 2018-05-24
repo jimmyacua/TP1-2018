@@ -37,7 +37,7 @@ int main(){
     //alg.eliminarRepetidos(l);
     //cout<<l.numElem();
     //l.listar();
-    alg.insercion(l);
+    alg.quickSortAho(l,1,l.numElem());
     alg.listar(l);
     return 0;
 }
