@@ -193,7 +193,28 @@ void Algoritmos::seleccionR(lista l, pos inicio, pos menor) {
     }
 }
 
-void Algoritmos::seleccionRecSinCom(lista l) {}
+void Algoritmos::seleccionRecSinCom(lista l) {
+    pila.iniciar();
+    pila.meter(l.primera());
+    Pos* inicio = l.primera();
+    Pos* menor = inicio;
+    Pos* aux;
+    while(!pila.vacia() && inicio != NULL){
+        aux = inicio;
+        menor = pila.sacar();
+        while(aux != NULL){
+            if (l.recuperar(menor) > l.recuperar(aux)) {
+                menor = aux;
+                pila.meter(aux);
+                l.intercambiar(menor, inicio);
+            }
+            aux = l.siguente(aux);
+            //pila.meter(aux);
+        }
+        inicio = l.siguente(inicio);
+        //pila.meter(inicio);
+    }
+}
 
 void Algoritmos::insercion(lista l) {
     Pos *p = l.primera();
@@ -292,58 +313,61 @@ void Algoritmos::mergeSort(lista l, pos inicio, pos final) {
         }
 
         mergeSort(l,inicio,mitad);
-        mergeSort(l,l.siguente(mitad),final);
+        mergeSort(l, l.siguente(mitad), final);
 
         merge(l,inicio, mitad, final);
     }
 }
 
 void Algoritmos::merge(lista l, pos inicio, pos mitad, pos final) {
-    if(l.numElem() > 1) {
-        lista l1;
-        l1.iniciar();
+    lista l1;
+    l1.iniciar();
 
-        lista l2;
-        l2.iniciar();
+    lista l2;
+    l2.iniciar();
 
-        //Pos* i,j;
-        //i = l.primera();
 
-        //---------copiar en los arrays--------------
+    //---------copiar en los arrays--------------
 
-        Pos *p = inicio;
-        while (p != l.siguente(mitad)) {
-            l1.agregarAlFinal(l.recuperar(p));
-            p = l.siguente(p);
+    Pos *p = inicio;
+    while (p != NULL && p != l.siguente(mitad)) {
+        l1.agregarAlFinal(l.recuperar(p));
+        p = l.siguente(p);
+    }
+    p = l.siguente(mitad);
+    while (p != NULL && p != l.siguente(final)) {
+        l2.agregarAlFinal(l.recuperar(p));
+        p = l.siguente(p);
+    }
+    //--------------------------------------------
+
+
+         //l.vaciar();
+    Pos* i = l1.primera();
+    Pos* j = l2.primera();
+    Pos* aux = l.primera();
+    while(i != NULL && i != mitad && j !=NULL){
+        if(l1.recuperar(i) <= l2.recuperar(j)){
+            l.modificarElem(aux,l1.recuperar(i));
+            i = l1.siguente(i);
+        } else{
+            l.modificarElem(aux, l2.recuperar(j));
+            j = l2.siguente(j);
         }
+        aux = l.siguente(aux);
+    }
 
-        p = l.siguente(mitad);
-        while (p != l.siguente(final)) {
-            l2.agregarAlFinal(l.recuperar(p));
-            p = l.siguente(p);
-        }
-        //--------------------------------------------
-        Pos *aux1 = l1.primera();
-        Pos *aux2 = l2.primera();
-        l.vaciar();
-        while (aux1 != mitad && aux2 != NULL) {
-            if (l1.recuperar(aux1) <= l2.recuperar(aux2)) {
-                l.agregarAlFinal(l1.recuperar(aux1));
-                aux1 = l1.siguente(aux1);
-            } else {
-                l.agregarAlFinal(l2.recuperar(aux2));
-                aux2 = l2.siguente(aux2);
-            }
-        }
 
-        while (aux1 != NULL) {
-            l.agregarAlFinal(l1.recuperar(aux1));
-            aux1 = l1.siguente(aux1);
-        }
-        while (aux2 != NULL) {
-            l.agregarAlFinal(l2.recuperar(aux2));
-            aux2 = l2.siguente(aux2);
-        }
+    while(i != NULL && i != mitad){
+        l.modificarElem(aux,l1.recuperar(i));
+        i = l1.siguente(i);
+        aux = l.siguente(aux);
+    }
+
+    while(j != NULL && j != final){
+        l.modificarElem(aux,l2.recuperar(j));
+        j = l2.siguente(j);
+        aux = l.siguente(aux);
     }
 }
 

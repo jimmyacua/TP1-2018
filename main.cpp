@@ -544,14 +544,14 @@ int main() {
 
 
     l.iniciar();
-    l.insertar(4,l.traducePos(1));
-    l.insertar(11,l.traducePos(2));
-    l.insertar(3,l.traducePos(3));
-    l.insertar(7,l.traducePos(4));
-    l.insertar(1, l.traducePos(5));
-    l.insertar(8,l.traducePos(6));  //l= 4,10,13,31,75,145
+    l.insertar(10,l.traducePos(1));
+    l.insertar(31,l.traducePos(2));
+    l.insertar(75,l.traducePos(3));
+    l.insertar(145,l.traducePos(4));
+    l.insertar(4, l.traducePos(5));
+    l.insertar(13,l.traducePos(6));
 
-    l2.iniciar();
+    /*l2.iniciar();
 
     l2.insertar(12, l2.traducePos(1));
     l2.insertar(9, l2.traducePos(2));
@@ -560,10 +560,10 @@ int main() {
     l2.insertar(5, l2.traducePos(5));
     l2.insertar(2, l2.traducePos(6));
     l2.insertar(8, l2.traducePos(7));
+    */
+    //a.seleccionRecSinCom(l);
 
-    a.eliminarDesord(l,l2);
-
-    //a.mergeSort(l,l.primera(), l.ultima());
+    a.mergeSort(l,l.primera(), l.ultima());
     //l.vaciar();
     //l.agregarAlFinal(34);
     l.listar();

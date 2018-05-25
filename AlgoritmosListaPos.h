@@ -8,6 +8,7 @@
 //#include "ListaPosArray.h"
 #include "ListaPosLSE.h"
 //#include "ListaPosLDE.h"
+#include "Pila.h"
 
 //typedef ListaPosArray lista;
 typedef ListaPosLSE lista;
@@ -130,6 +131,8 @@ private:
     pos pivote(lista, pos, pos);
     pos particion(lista, pos, pos, pos);
     void merge(lista, pos, pos, pos);
+    Pila<pos> pila;
+    void seleccionRecPila(lista, pos, pos);
 
 };
 
