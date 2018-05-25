@@ -33,13 +33,16 @@ void ListaOrdArray::insertar(int e) {
                 rear++;
                 numElementos++;
                 c = numElementos;
-            }
-            else if (lista[rear] < e) {
+            } else if(lista[rear] == 0){
+                lista[rear] = e;
+                numElementos++;
+                c = numElementos;
+            } else if (lista[rear] < e) {
                 rear++;
                 lista[rear] = e;
                 numElementos++;
                 c = numElementos;
-            } else {
+            }else {
                 c++;
             }
         }

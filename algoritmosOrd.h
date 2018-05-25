@@ -33,27 +33,27 @@ public:
     //EFE: Elimina de l1 los ementos que estánen l2
     //REQ:  l1 y l2 inicializadas no vacía
     //MOD: l1
-    void eliminar(lista l1, lista l2);
+    void eliminar(lista &l1, lista &l2);
 
     //EFE: Agrega a l1 los elementos de l2
     //REQ: l1y l2 inicializadas no vacías
     //MOD: l1
-    void unionV1(lista l1, lista l2);
+    void unionV1(lista &l1, lista &l2);
 
     //EFE: Deja en l3 el resultado de la unión
     //REQ: l1 y l2 inicializada no vacía
     //MOD: l3
-    lista unionV2(lista l1, lista l2);
+    lista unionV2(lista &l1, lista &l2);
 
     //EFE: Elimina a l1 los elementos de l2
     //REQ: l1y l2 inicializadas no vacías
     //MOD: l3
-    void interseccionV1(lista l1, lista l2);
+    void interseccionV1(lista &l1, lista &l2);
 
     //EFE: Deja en l3 el resultado de la intersección
     //REQ: l1y l2 inicializadas no vacías
     //MOD: l3
-    lista interseccionV2(lista l1, lista l2) ;
+    lista interseccionV2(lista &l1, lista &l2) ;
 
 };
 

@@ -30,16 +30,16 @@ typedef ListaOrdArray lista;
         l2.iniciar();
 
         l1.insertar(5);
-        l1.insertar(3);
+        l1.insertar(6);
         l1.insertar(2);
         l1.insertar(4);
-        l1.insertar(1);
+        l1.insertar(7);
 
-        l2.insertar(1);
-        l2.insertar(2);
-        l2.insertar(5);
-        l2.insertar(4);
         l2.insertar(3);
+        l2.insertar(1);
+        l2.insertar(8);
+        //l2.insertar(4);
+        //l2.insertar(3)  ;
 
         algoritmosOrd a;
 
@@ -68,15 +68,19 @@ typedef ListaOrdArray lista;
         //bool pertenece = a.pertenece(l1, 6);
         //cout << pertenece;
 
-        lista lc1;
+        /*lista lc1;
         lc1.iniciar();
         lc1.insertar(2);
         lc1.insertar(5);
         lc1.insertar(1);
         a.eliminar(l1, lc1);
-        l1.imprimir();
+        l1.imprimir();*/
 
+        //a.unionV1(l1, l2); //l1 = 2 4 5 6 7  l2 = 3 1 8
+        //l1.imprimir();
 
+        //lista l3 = a.unionV2(l1, l2);
+        //l3.imprimir();
 
 /*
 int desicion;

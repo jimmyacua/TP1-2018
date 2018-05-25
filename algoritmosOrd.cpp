@@ -70,7 +70,7 @@ bool algoritmosOrd::pertenece(lista l1, int e) {
     return false;
 }
 
-void algoritmosOrd::eliminar(lista l1, lista l2) {
+void algoritmosOrd::eliminar(lista &l1, lista &l2) {
     auto e1 = l1.primero();
     auto e2 = l2.primero();
     auto eaux = e1;
@@ -97,4 +97,51 @@ void algoritmosOrd::eliminar(lista l1, lista l2) {
     if (l2.ultimo() == l1.ultimo()){
         l1.borrar(l1.ultimo());
     }
+}
+
+void algoritmosOrd::unionV1(lista &l1, lista &l2) {
+    auto e2 = l2.primero();
+    int numElem = l2.numElem();
+    for(int i = 0; i < numElem; i++){
+        l1.insertar(e2);
+        e2 = l2.siguiente(e2);
+    }
+}
+
+lista algoritmosOrd::unionV2(lista &l1, lista &l2) {
+    lista l3 = lista();
+    auto e1 = l1.primero();
+    auto e2 = l2.primero();
+    int i = 0;
+    int j = 0;
+    int numElem1 = l1.numElem();
+    int numElem2 = l2.numElem();
+    while(i < numElem1 && j < numElem2){
+        if(e1>e2){
+            l3.insertar(e2);
+            e2 = l2.siguiente(e2);
+            j++;
+        } else if (e1 < e2){
+            l3.insertar(e1);
+            e1 = l1.siguiente(e1);
+            i++;
+        } else {
+            l3.insertar(e1);
+            e1 = l1.siguiente(e1);
+            e2 = l2.siguiente(e2);
+            i++;
+            j++;
+        }
+    }
+    while(i < numElem1){
+        l3.insertar(e1);
+        e1 = l1.siguiente(e1);
+        i++;
+    }
+    while(j < numElem2){
+        l3.insertar(e2);
+        e2 = l2.siguiente(e2);
+        j++;
+    }
+    return l3;
 }
