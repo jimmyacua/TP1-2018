@@ -23,7 +23,6 @@ bool algoritmosOrd::iguales(lista l1, lista l2) {
 
 lista algoritmosOrd::copiar(lista l1) {
     lista l2 = lista();
-    l2.iniciar();
     auto e1 = l1.primero();
     for(int i = 0;i < l1.numElem(); i++){
         l2.insertar(e1);
@@ -142,6 +141,47 @@ lista algoritmosOrd::unionV2(lista &l1, lista &l2) {
         l3.insertar(e2);
         e2 = l2.siguiente(e2);
         j++;
+    }
+    return l3;
+}
+
+lista algoritmosOrd::interseccionV1(lista &l1, lista &l2) {
+    lista l3;
+    l3.iniciar();
+    auto e = l1.primero();
+    int numElem = l1.numElem();
+    for (int i = 0; i < numElem; i++){
+            if (pertenece(l2, e)){
+                l3.insertar(e);
+            }
+            e = l1.siguiente(e);
+    }
+    return l3;
+}
+
+lista algoritmosOrd::interseccionV2(lista &l1, lista &l2) {
+    lista l3;
+    l3.iniciar();
+    auto e1 = l1.primero();
+    auto e2 = l2.primero();
+    int numElem1 = l1.numElem();
+    int numElem2 = l2.numElem();
+    int i = 0;
+    int j = 0;
+    while(i < numElem1 && j < numElem2){
+        if (e1 > e2){
+            e2 = l2.siguiente(e2);
+            j++;
+        } else if(e1 < e2){
+            e1 = l2.siguiente(e1);
+            i++;
+        } else {
+            l3.insertar(e1);
+            e1 = l1.siguiente(e1);
+            e2 = l2.siguiente(e2);
+            i++;
+            j++;
+        }
     }
     return l3;
 }

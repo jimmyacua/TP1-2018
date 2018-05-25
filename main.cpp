@@ -33,11 +33,11 @@ typedef ListaOrdArray lista;
         l1.insertar(6);
         l1.insertar(2);
         l1.insertar(4);
-        l1.insertar(7);
+        l1.insertar(1);
 
-        l2.insertar(3);
+        l2.insertar(5);
         l2.insertar(1);
-        l2.insertar(8);
+        l2.insertar(2);
         //l2.insertar(4);
         //l2.insertar(3)  ;
 
@@ -78,6 +78,12 @@ typedef ListaOrdArray lista;
 
         //a.unionV1(l1, l2); //l1 = 2 4 5 6 7  l2 = 3 1 8
         //l1.imprimir();
+
+        //lista l3 = a.unionV2(l1, l2);
+        //l3.imprimir();
+
+        lista l3 = a.interseccionV1(l1, l2); //l1 = 2 4 5 6  l2 = 1 5 8
+        l3.imprimir();
 
         //lista l3 = a.unionV2(l1, l2);
         //l3.imprimir();

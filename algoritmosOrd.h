@@ -45,12 +45,12 @@ public:
     //MOD: l3
     lista unionV2(lista &l1, lista &l2);
 
-    //EFE: Elimina a l1 los elementos de l2
+    //EFE: Elimina de l1 los elementos de l2 utilizando pertenece
     //REQ: l1y l2 inicializadas no vacías
     //MOD: l3
-    void interseccionV1(lista &l1, lista &l2);
+    lista interseccionV1(lista &l1, lista &l2);
 
-    //EFE: Deja en l3 el resultado de la intersección
+    //EFE: Elimina de l1 los elementos de l2 sin usar pertenece
     //REQ: l1y l2 inicializadas no vacías
     //MOD: l3
     lista interseccionV2(lista &l1, lista &l2) ;
