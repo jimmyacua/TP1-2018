@@ -5,8 +5,8 @@
 #include "ListaOrdArray.h"
 
 
-//typedef ListaOrdLSE lista;
-typedef ListaOrdArray lista;
+typedef ListaOrdLSE lista;
+//typedef ListaOrdArray lista;
 
 class algoritmosOrd {
 public:

@@ -65,24 +65,24 @@ public:
     //EFE: devuelve el primer elemento de la lista
     //REQ: lista inicializada y no vacia
     //MOD: ---
-    int primero();
+    int primero() const;
 
     //EFE: devuelve el siguiente elemento de la lista tomando un elemento como
     //base
     //REQ: lista inicializada y no vacia
     //MOD: ---
-    int siguiente(int e);
+    int siguiente(int e) const;
 
     //EFE: devuelve el anterior elemento de la lista tomando un elemento como
     //base
     //REQ: lista inicializada y no vacia
     //MOD: ---
-    int anterior(int e);
+    int anterior(int e) const;
 
     //EFE: devuelve el ultimo elemento de la lista
     //REQ: lista inicializada y no vacia
     //MOD: ---
-    int ultimo();
+    int ultimo() const;
 
     //EFE: devuelve el total de elementos en la lista
     //REQ: lista inicializada y no vacia

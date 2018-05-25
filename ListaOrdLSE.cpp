@@ -72,16 +72,22 @@ void ListaOrdLSE::borrar(int e) {
     }
 }
 
-int ListaOrdLSE::primero(){
+int ListaOrdLSE::primero() const {
     return this->front->getElem();
 }
 
-int ListaOrdLSE::ultimo() {
+int ListaOrdLSE::ultimo() const {
     return this->rear->getElem();
 }
 
-int ListaOrdLSE::siguiente(int e) {
-    nodo *tmp = this->front;
+int ListaOrdLSE::siguiente(int e) const {
+    nodo* pos = this->front;
+    while (pos->sgt != nullptr && pos->elemento != e){
+        pos = pos->sgt;
+    }
+    pos = pos->sgt;
+    return (pos == nullptr) ? 0 : pos->elemento;
+    /*nodo *tmp = this->front;
     bool encontrado = false;
     while (tmp != nullptr && !encontrado){
         if (tmp->getElem() != e){
@@ -90,11 +96,10 @@ int ListaOrdLSE::siguiente(int e) {
             encontrado = true;
         }
     }
-    int ret = tmp->sgt->getElem();
-    return ret;
+    return tmp->sgt->getElem();*/
 }
 
-int ListaOrdLSE::anterior(int e) {
+int ListaOrdLSE::anterior(int e) const {
     if (this->front->getElem() == e) {
         return -1;
     }
