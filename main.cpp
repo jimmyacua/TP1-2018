@@ -17,8 +17,8 @@ using namespace std;
 //typedef ListaIndexadaArray listaInd;
 //typedef ListaIndexadaLSE listaInd;
 
-typedef ListaOrdArray lista;
-//typedef ListaOrdLSE listaOrd;
+//typedef ListaOrdArray lista;
+typedef ListaOrdLSE listaOrd;
 
 
     int main() {
@@ -38,8 +38,8 @@ typedef ListaOrdArray lista;
         l2.insertar(5);
         l2.insertar(1);
         l2.insertar(2);
-        //l2.insertar(4);
-        //l2.insertar(3)  ;
+        l2.insertar(4);
+        l2.insertar(3)  ;
 
         algoritmosOrd a;
 
@@ -82,8 +82,8 @@ typedef ListaOrdArray lista;
         //lista l3 = a.unionV2(l1, l2);
         //l3.imprimir();
 
-        lista l3 = a.interseccionV1(l1, l2); //l1 = 2 4 5 6  l2 = 1 5 8
-        l3.imprimir();
+        //lista l3 = a.interseccionV1(l1, l2); //l1 = 2 4 5 6  l2 = 1 5 8
+        //l3.imprimir();
 
         //lista l3 = a.unionV2(l1, l2);
         //l3.imprimir();
