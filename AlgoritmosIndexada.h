@@ -97,11 +97,11 @@ public:
     //Efecto:
     //Requiere:
     //Modifica:
-    void interseccionOrd(lista,lista);
+    lista interseccionOrd(lista,lista);
     //Efecto:
     //Requiere:
     //Modifica:
-    void interseccionDes(lista,lista);
+    lista interseccionDes(lista,lista);
     //Efecto:
     //Requiere:
     //Modifica:

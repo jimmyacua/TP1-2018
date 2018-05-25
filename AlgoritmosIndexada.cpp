@@ -281,26 +281,139 @@ void AlgoritmosIndexada::mergeSort(lista){
 
 }
 
-void AlgoritmosIndexada::unionOrd(lista,lista){
-
+void AlgoritmosIndexada::unionOrd(lista l1,lista l2){
+    int indice = 1;
+    int recorrido;
+    int max = l2.numElem();
+    bool esta = false;
+    while(indice<=max){
+        recorrido = 1;
+        esta = false;
+        while((recorrido<=l1.numElem())&&!esta){
+            if(l2.recuperar(indice)==l1.recuperar(recorrido)){
+                esta = true;
+            }else if(l2.recuperar(indice)<l1.recuperar(recorrido)){
+                int corrimiento = recorrido;
+                if(corrimiento == l1.numElem()){
+                    l1.insertar(corrimiento+1,l2.recuperar(indice));
+                }else{
+                    int insertar = l1.numElem();
+                    while(corrimiento!=insertar){
+                        l1.insertar(l1.recuperar(insertar-1),insertar);
+                        insertar--;
+                    }
+                    l1.insertar(l2.recuperar(indice),insertar);
+                }
+            }
+        }
+        indice++;
+    }
 }
 
-void AlgoritmosIndexada::unionDes(lista,lista){
-
+void AlgoritmosIndexada::unionDes(lista l1,lista l2){
+    int indice = 1;
+    int recorrido;
+    int max = l2.numElem();
+    bool esta = false;
+    while(indice<=max){
+        recorrido = 1;
+        esta = false;
+        while((recorrido<=l1.numElem())&&!esta){
+            if(l2.recuperar(indice)==l2.recuperar(recorrido)){
+                esta = true;
+            }
+        }
+        if(!esta){
+            l1.insertar(l2.recuperar(indice),l1.numElem()+1);
+        }
+        indice++;
+    }
 }
 
-void AlgoritmosIndexada::interseccionOrd(lista,lista){
-
+lista AlgoritmosIndexada::interseccionOrd(lista l1,lista l2){
+    int indice = 1;
+    int recorrido;
+    int insertar = 1;
+    bool esta;
+    lista l3;
+    l3.iniciar();
+    while(indice<=l1.numElem()){
+        recorrido = 1;
+        esta = false;
+        while((recorrido<=l2.numElem())&&!esta){
+            if(l1.recuperar(indice)==l2.recuperar(recorrido)){
+                l3.insertar(l1.recuperar(indice),insertar);
+                insertar++;
+                esta = true;
+            }else if(l1.recuperar(indice)<l2.recuperar(recorrido)){
+                esta = true;
+            }
+            recorrido++;
+        }
+        indice++;
+    }
+    return l3;
 }
 
-void AlgoritmosIndexada::interseccionDes(lista,lista){
-
+lista AlgoritmosIndexada::interseccionDes(lista l1,lista l2){
+    int indice = 1;
+    int recorrido;
+    int insertar = 1;
+    bool esta;
+    lista l3;
+    l3.iniciar();
+    while(indice<=l1.numElem()){
+        recorrido = 1;
+        esta = false;
+        while((recorrido<=l2.numElem())&&!esta){
+            if(l1.recuperar(indice)==l2.recuperar(recorrido)){
+                l3.insertar(l1.recuperar(indice),insertar);
+                insertar++;
+                esta = true;
+            }
+            recorrido++;
+        }
+        indice++;
+    }
+    return l3;
 }
 
-void AlgoritmosIndexada::eliminarOrd(lista,lista){
-
+void AlgoritmosIndexada::eliminarOrd(lista l1,lista l2){
+    int indice = 1;
+    int recorrido;
+    bool esta;
+    while(indice<=l1.numElem()){
+        recorrido = 1;
+        esta = false;
+        while((recorrido<=l2.numElem())&&!esta){
+            if(l1.recuperar(indice)==l2.recuperar(recorrido)){
+                l1.borrar(indice);
+                indice--;
+                esta = true;
+            }else if(l1.recuperar(indice)<l2.recuperar(recorrido)){
+                esta = true;
+            }
+            recorrido++;
+        }
+        indice++;
+    }
 }
 
-void AlgoritmosIndexada::eliminarDes(lista,lista){
-
+void AlgoritmosIndexada::eliminarDes(lista l1,lista l2){
+    int indice = 1;
+    int recorrido;
+    bool esta;
+    while(indice<=l1.numElem()){
+        recorrido = 1;
+        esta = false;
+        while((recorrido<=l2.numElem())&&!esta){
+            if(l1.recuperar(indice)==l2.recuperar(recorrido)){
+                l1.borrar(indice);
+                indice--;
+                esta = true;
+            }
+            recorrido++;
+        }
+        indice++;
+    }
 }
