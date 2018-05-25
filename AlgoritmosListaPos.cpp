@@ -345,7 +345,7 @@ void Algoritmos::merge(lista l, pos inicio, pos mitad, pos final) {
          //l.vaciar();
     Pos* i = l1.primera();
     Pos* j = l2.primera();
-    Pos* aux = l.primera();
+    Pos* aux = inicio;
     while(i != NULL && i != mitad && j !=NULL){
         if(l1.recuperar(i) <= l2.recuperar(j)){
             l.modificarElem(aux,l1.recuperar(i));
