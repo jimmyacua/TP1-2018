@@ -278,8 +278,66 @@ void AlgoritmosIndexada::quickSortMod(lista l, int inicio, int final){
     }
 }
 
-void AlgoritmosIndexada::mergeSort(lista){
+void AlgoritmosIndexada::mergeSort(lista& l, int inicio, int final){
+    if(inicio<final){
+        int mitad = inicio;
+        while(mitad<final){
+            mitad++;
+        }
+        mitad = mitad/2;
+        mergeSort(l,inicio,mitad);
+        mergeSort(l,mitad+1,final);
 
+        merge(l,inicio,mitad,final);
+    }
+}
+
+void AlgoritmosIndexada::merge(lista& l, int inicio, int medio, int final){
+    lista l1;
+    l1.iniciar();
+    lista l2;
+    l2.iniciar();
+    int insertar = 1;
+    int recorrido = inicio;
+    while((recorrido>0)&&(recorrido<=medio)){
+        l1.insertar(l.recuperar(recorrido),insertar);
+        recorrido++;
+        insertar++;
+    }
+    recorrido = medio+1;
+    insertar = 1;
+    while((recorrido>0)&&(recorrido<=final)){
+        l2.insertar(l.recuperar(recorrido),insertar);
+        recorrido++;
+        insertar++;
+    }
+    insertar = l2.numElem();
+    int indice = 1;
+    int indiceL1 = 1;
+    int indiceL2 = 1;/*******CUIDADO AQUI***************/
+    while((indiceL1<=medio)&&(indiceL2<=insertar)){
+        if(l1.recuperar(indiceL1)<=l2.recuperar(indiceL2)){
+            l.modificarElem(l1.recuperar(indiceL1),indice);
+            indiceL1++;
+        }else{
+            l.modificarElem(l2.recuperar(indiceL2),indice);
+            indiceL2++;
+        }
+        indice++;
+    }
+    /*****Meter los que "sobran"*****/
+    while(indiceL1<=medio){
+        l.modificarElem(l1.recuperar(indiceL1),indice);
+        indiceL1++;
+        indice++;
+    }
+
+    while(indiceL2<=insertar){
+        l.modificarElem(l2.recuperar(indiceL2),indice);
+        indiceL2++;
+        indice++;
+    }
+    //-------------------------------------------------------------
 }
 
 void AlgoritmosIndexada::unionOrd(lista l1,lista l2){

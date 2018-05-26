@@ -85,7 +85,11 @@ public:
     //Efecto:
     //Requiere:
     //Modifica:
-    void mergeSort(lista);
+    void mergeSort(lista&,int, int);
+    //Efecto:
+    //Requiere:
+    //Modifica:
+    void merge(lista&, int, int, int);
     //Efecto:
     //Requiere:
     //Modifica:
