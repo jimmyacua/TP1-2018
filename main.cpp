@@ -538,8 +538,8 @@ int main() {
 //******************************************************************************************************************************/
     //cout << "\nFin de la prueba!" << endl;
 
-    //ListaPosLDE l;
-    //ListaPosLSE l;
+    //ListaPosLDE l2;
+    //ListaPosLSE l2;
     ListaPosArray l2;
     Algoritmos a;
 
@@ -547,21 +547,24 @@ int main() {
     l2.iniciar();
 
 
-    l2.insertar(10,l2.traducePos(1));
-    l2.insertar(31,l2.traducePos(2));
-    l2.insertar(75,l2.traducePos(3));
-    l2.insertar(145,l2.traducePos(4));
-    l2.insertar(4, l2.traducePos(5));
+    l2.insertar(145,l2.traducePos(1));
+    l2.insertar(4,l2.traducePos(2));
+    l2.insertar(10,l2.traducePos(3));
+    l2.insertar(31,l2.traducePos(4));
+    l2.insertar(75, l2.traducePos(5));
     l2.insertar(13,l2.traducePos(6));
 
-    /*ListaPosArray l1;
+    ListaPosArray l1;
     l1.iniciar();
-    l1.insertar(75,l1.traducePos(1));
-    l1.insertar(14,l1.traducePos(2));
-    l1.insertar(4, l1.traducePos(3));
-    */
+    l1.insertar(10,l1.traducePos(1));
+    l1.insertar(13,l1.traducePos(2));
+    l1.insertar(145, l1.traducePos(3));
+    l1.insertar(4, l1.traducePos(4));
 
-    a.seleccionIter(l2);
+
+    ListaPosArray l3;
+    l3.iniciar();
+    a.eliminarDesord(l2,l1);
     a.listar(l2);
 
     return 0;

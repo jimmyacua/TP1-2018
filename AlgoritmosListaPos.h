@@ -72,22 +72,22 @@ public:
     /* EFE: ordena la lista ascendentemente usando la recursividad del compilador
      * REQ: lista inicializada y no vacía
      * MOD: lista L*/
-    void seleccionRec(lista);
+    void seleccionRec(lista&);
 
     /* EFE: ordena la lista ascendentemente sin usar la pila del compilador.
      * REQ: lista inicializada y no vacía
      * MOD: lista L*/
-    void seleccionRecSinCom(lista);
+    void seleccionRecSinCom(lista&);
 
     /* EFE: ordena la lista ascendentemente
      * REQ: lista inicializada y no vacía
      * MOD: lista L*/
-    void insercion(lista);
+    void insercion(lista&);
 
     /* EFE: ordena la lista ascendentemente
      * REQ: lista inicializada, vacía y posiciones validas
      * MOD: lista L*/
-    void quickSortAho(lista, pos, pos);
+    void quickSortAho(lista&, pos, pos);
 
     /* EFE: ordena la lista ascendentemente tal que si n es menor a 50 se usa inserción
      * REQ: lista inicializada, no vacía y posiciones validas
@@ -97,45 +97,44 @@ public:
     /* EFE: ordena la lista ascendentemente
      * REQ: lista inicializada, no vacía y posiciones validas
      * MOD: lista L*/
-    void mergeSort(lista, pos, pos);
+    void mergeSort(lista&, pos, pos);
 
     /* EFE: agrega a L1 los elementos que están en L2, de manera que en L1 no queden elementos repetidos
      * REQ: listas inicializadas, no vacias y  ordenadas. Que no hayan elementos repetidos
      * MOD: lista L1*/
-    void unionOrdenadas(lista, lista);
+    void unionOrdenadas(lista&, lista&);
 
     /* EFE: agrega a L1 los elementos que están en L2, de manera que en L1 no queden elementos repetidos
      * REQ: listas inicializadas y  no vacias. Que no hayan elementos repetidos.
      * MOD: lista L1*/
-    void unionDesord(lista, lista);
+    void unionDesord(lista&, lista&);
 
     /* EFE: deja en L3 el resultado de la intersección de L1 y L2
      * REQ: que L1 y L2 no tengan elementos repetidos, listas inicializadas, no vacias y ordenadas
      * MOD:  L3*/
-    void interseccionOrd(lista, lista, lista&);
+    void interseccionOrd(lista&, lista&, lista&);
 
     /* EFE: deja en L3 el resultado de la intersección de L1 y L2
      * REQ: que L1 y L2 no tengan elementos repetidos, listas inicializadas y no vacias
      * MOD:  L3*/
-    void interseccionDesord(lista, lista, lista&);
+    void interseccionDesord(lista&, lista&, lista&);
 
     /* EFE: Elimina de L1 los elementos que están en L2.
      * REQ: Listas inicializadas, no vacias y ordenadas.
      * MOD: lista L1*/
-    void eliminarOrde(lista, lista);
+    void eliminarOrde(lista&, lista&);
 
     /* EFE:Elimina de L1 los elementos que están en L2.
      * REQ: Listas inicializadas y no vacias.
      * MOD: lista L1*/
-    void eliminarDesord(lista, lista);
+    void eliminarDesord(lista&, lista&);
 
 private:
-    void seleccionR(lista, pos, pos);
-    pos pivote(lista, pos, pos);
-    pos particion(lista, pos, pos, pos);
-    void merge(lista, pos, pos, pos);
+    void seleccionR(lista&, pos, pos, int);
+    pos pivote(lista&, pos, pos);
+    pos particion(lista&, pos, pos, pos);
+    void merge(lista&, pos, pos, pos);
     Pila<pos> pila;
-    void seleccionRecPila(lista, pos, pos);
 
 };
 
