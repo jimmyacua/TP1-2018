@@ -31,7 +31,7 @@ public:
     //Efecto:
     //Requiere:
     //Modifica:
-    void eliminarRepetidos(lista);
+    void eliminarRepetidos(lista&);
     //Efecto:
     //Requiere:
     //Modifica:

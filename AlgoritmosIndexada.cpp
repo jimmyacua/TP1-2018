@@ -9,7 +9,8 @@ using namespace std;
 
 void AlgoritmosIndexada::listar(lista l){
     int contador = 1;
-    while(contador <= l.numElem()){
+    int max = l.numElem();
+    while(contador <= max){
         cout<<l.recuperar(contador)<<", ";
         contador++;
     }
@@ -57,7 +58,7 @@ bool AlgoritmosIndexada::buscar(int indice, lista l){
     return encontrado;
 }
 
-void AlgoritmosIndexada::eliminarRepetidos(lista l){
+void AlgoritmosIndexada::eliminarRepetidos(lista& l){
     int indice = 1;
     int recorrido;
     while(indice < l.numElem()){

@@ -29,15 +29,16 @@ int main(){
     l.insertar(23,6);
     l.insertar(1,7);
     l.insertar(6,8);
-    l.insertar(43,9);
-    l.insertar(15,10);
+    l.insertar(15,9);
+    l.insertar(43,10);
     //l.listar();
     AlgoritmosIndexada alg;
     alg.listar(l);
     //alg.eliminarRepetidos(l);
     //cout<<l.numElem();
     //l.listar();
-    alg.quickSortMod(l,1,l.numElem());
+    alg.eliminarRepetidos(l);
+    //cout<<l.numElem();
     alg.listar(l);
     return 0;
 }
