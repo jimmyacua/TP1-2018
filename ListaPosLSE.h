@@ -13,18 +13,13 @@ public:
     Pos *sgt;
 
     Pos(){
-        sgt = NULL;
+        sgt = 0;
     }
 
     Pos(int e){
         elemento = e;
-        sgt = NULL;
+        sgt = 0;
     }
-
-    int obtener(Pos){
-        return elemento;
-    }
-    void poner(int);
 };
 
 

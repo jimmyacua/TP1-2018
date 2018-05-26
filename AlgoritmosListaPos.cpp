@@ -7,17 +7,19 @@
 
 using namespace std;
 
-void Algoritmos::listar(lista l) {
-    Pos* p = l.primera();
-    while(p != NULL){
+void Algoritmos::listar(lista& l) {
+    pos p = l.primera();
+    int cont = 1;
+    while(p != 0 && cont <= l.numElem()){
         cout << l.recuperar(p) << endl;
         p = l.siguente(p);
+        cont++;
     }
 }
 
-bool Algoritmos::simetrica(lista l) {
-    Pos* inicio = l.primera();
-    Pos* final = l.ultima();
+bool Algoritmos::simetrica(lista& l) {
+    pos inicio = l.primera();
+    pos final = l.ultima();
     bool simetricas = true;
     while(simetricas && (inicio != final) && (l.siguente(final) != inicio)){ //mientras no se traslapen
         if(l.recuperar(inicio) != l.recuperar(final)){
@@ -29,9 +31,9 @@ bool Algoritmos::simetrica(lista l) {
     return simetricas;
 }
 
-void Algoritmos::invertir(lista l) {
-    Pos* inicio = l.primera();
-    Pos* final = l.ultima();
+void Algoritmos::invertir(lista& l) {
+    pos inicio = l.primera();
+    pos final = l.ultima();
     while((inicio != final) && (l.siguente(final) != inicio)){
         l.intercambiar(inicio, final);
         inicio = l.siguente(inicio);
@@ -40,9 +42,9 @@ void Algoritmos::invertir(lista l) {
 }
 
 bool Algoritmos::buscar(lista l, int e) {
-    Pos* p = l.primera();
+    pos p = l.primera();
     bool encontrado = false;
-    while(p != NULL && !encontrado){
+    while(p != 0 && !encontrado){
         if(l.recuperar(p) == e){
             encontrado = true;
         }
@@ -51,35 +53,43 @@ bool Algoritmos::buscar(lista l, int e) {
     return encontrado;
 }
 
-void Algoritmos::elimRepetidos(lista l) {
-    Pos* p = l.primera();
-    while(p != NULL){
-        Pos* aux = l.siguente(p);
-        while(aux != NULL){
+void Algoritmos::elimRepetidos(lista& l) {
+    pos p = l.primera();
+    int cont = 1;
+    while(p != 0 && cont <= l.numElem()){
+        int cont2 = cont+1;
+        pos aux = l.siguente(p);
+        while(aux != 0 && cont2 <= l.numElem()){
             if(l.recuperar(p) == l.recuperar(aux)){
                 l.borrar(aux);
             }
             aux = l.siguente(aux);
+            cont2++;
         }
         p = l.siguente(p);
+        cont++;
     }
 }
 
-bool Algoritmos::sublista(lista l1, lista l2) {
-    Pos* p2 = l2.primera();
-    Pos* p1 = l1.primera();
+bool Algoritmos::sublista(lista& l1, lista& l2) {
+    pos p2 = l2.primera();
+    pos p1 = l1.primera();
     bool esSublista = false;
+    int cont2 = 1;
     while(!esSublista){
         if(l2.recuperar(p2) !=l1.recuperar(p1)){
             p2 = l2.siguente(p2);
-            if(p2 == NULL){
+            cont2++;
+            if(p2 == 0 || cont2 > l2.numElem()){
                 return esSublista;
             }
         }
+        int cont1 = 1;
         while(l2.recuperar(p2) == l1.recuperar(p1)){
             p1 = l1.siguente(p1);
             p2 = l2.siguente(p2);
-            if(p1 == NULL){
+            cont1++;
+            if(p1 == 0 || cont1 > l1.numElem()){
                 return true;
             }
         }
@@ -93,23 +103,26 @@ bool Algoritmos::iguales(lista l1, lista l2) {
     }
     else {
         bool iguales = true;
-        Pos *p1 = l1.primera();
-        Pos *p2 = l2.primera();
-        while (iguales && p1 != NULL && p2 != NULL) {
+        pos p1 = l1.primera();
+        pos p2 = l2.primera();
+        int cont = 1;
+        while (iguales && p1 != 0 && p2 != 0 && cont <= l1.numElem()) {
             if (l1.recuperar(p1) != l2.recuperar(p2)) {
                 iguales = false;
             }
             p1 = l1.siguente(p1);
             p2 = l2.siguente(p2);
+            cont++;
         }
         return iguales;
     }
 }
 
-void Algoritmos::burbuja(lista l) {
-    Pos* p = l.siguente(l.primera());
-    while(p != NULL){
-        Pos* aux = l.primera();
+void Algoritmos::burbuja(lista& l) {
+    pos p = l.siguente(l.primera());
+    int cont1 = 1;
+    while(p != 0 && cont1 <= l.numElem()){
+        pos aux = l.primera();
         while(aux != l.ultima()){
             if(l.recuperar(aux) > l.recuperar(p)){
                 l.intercambiar(p, aux);
@@ -117,16 +130,17 @@ void Algoritmos::burbuja(lista l) {
             aux = l.siguente(aux);
         }
         p = l.siguente(p);
+        cont1++;
     }
 }
 
-void Algoritmos::burbujaBidireccinal(lista l) {
+void Algoritmos::burbujaBidireccinal(lista& l) {
     bool listo = true;
-    Pos* inicio = l.primera();
-    Pos* final = l.ultima();
+    pos inicio = l.primera();
+    pos final = l.ultima();
     while(listo){
         listo = false;
-        Pos* p = inicio;
+        pos p = inicio;
         while(p != final){
             if(l.recuperar(p) > l.recuperar(l.siguente(p))){
                 l.intercambiar(p,l.siguente(p));
@@ -141,7 +155,7 @@ void Algoritmos::burbujaBidireccinal(lista l) {
 
         final = l.anterior(final);
 
-        Pos* aux = final;
+        pos aux = final;
         while(aux != inicio){
             if(l.recuperar(aux) < l.recuperar(l.anterior(aux))){
                 l.intercambiar(aux, l.anterior(aux));
@@ -153,34 +167,38 @@ void Algoritmos::burbujaBidireccinal(lista l) {
     }
 }
 
-void Algoritmos::seleccionIter(lista l){
-    Pos* min;
-    Pos* p = l.primera();
-    while(p != l.ultima()){
+void Algoritmos::seleccionIter(lista& l){
+    pos min;
+    pos p = l.primera();
+    int cont1 = 1;
+    while(p != 0 && cont1 <= l.numElem()){
         min = p;
-        Pos* aux = l.siguente(p);
-        while(aux != NULL){
+        pos aux = l.siguente(p);
+        int cont2 = cont1;
+        while(aux != 0 && cont2 <= l.numElem()){
             if(l.recuperar(min) > l.recuperar(aux)){
                 min = aux;
                 l.intercambiar(min, p);
             }
 
             aux = l.siguente(aux);
+            cont2++;
         }
         p = l.siguente(p);
+        cont1++;
     }
 }
 
 void Algoritmos::seleccionRec(lista l) {
-    Pos* inicio = l.primera();
-    Pos* menor = inicio;
+    pos inicio = l.primera();
+    pos menor = inicio;
     seleccionR(l,inicio, menor);
 }
 
 void Algoritmos::seleccionR(lista l, pos inicio, pos menor) {
-    if(inicio != NULL){
-        Pos* aux = inicio;
-        while(aux != NULL){
+    if(inicio != 0){
+        pos aux = inicio;
+        while(aux != 0){
             menor = inicio;
             if(l.recuperar(menor) > l.recuperar(aux)){
                 menor = aux;
@@ -196,30 +214,29 @@ void Algoritmos::seleccionR(lista l, pos inicio, pos menor) {
 void Algoritmos::seleccionRecSinCom(lista l) {
     pila.iniciar();
     pila.meter(l.primera());
-    Pos* inicio = l.primera();
-    Pos* menor = inicio;
-    Pos* aux;
-    while(!pila.vacia() && inicio != NULL){
+    pos inicio = l.primera();
+    pos menor = inicio;
+    pos aux;
+    while(!pila.vacia() && inicio != 0){
         aux = inicio;
         menor = pila.sacar();
-        while(aux != NULL){
+        while(aux != 0){
             if (l.recuperar(menor) > l.recuperar(aux)) {
                 menor = aux;
                 pila.meter(aux);
                 l.intercambiar(menor, inicio);
             }
             aux = l.siguente(aux);
-            //pila.meter(aux);
         }
         inicio = l.siguente(inicio);
-        //pila.meter(inicio);
+        pila.meter(inicio);
     }
 }
 
 void Algoritmos::insercion(lista l) {
-    Pos *p = l.primera();
+    pos p = l.primera();
     while (p != l.ultima()) {
-        Pos *p2 = l.siguente(p);
+        pos p2 = l.siguente(p);
         while (p2 != l.primera()) {
             if (l.recuperar(p2) < l.recuperar(l.anterior(p2))) {
                 l.intercambiar(p2, l.anterior(p2));
@@ -232,10 +249,10 @@ void Algoritmos::insercion(lista l) {
 
 pos Algoritmos::pivote(lista l, pos inicio, pos final){
     if(inicio == final){
-        return NULL;
+        return 0;
     }
-    Pos* p = l.siguente(inicio);
-    while(p != NULL){
+    pos p = l.siguente(inicio);
+    while(p != 0){
         int i = l.recuperar(inicio);
         if(l.recuperar(p) > i){
             return p;
@@ -245,13 +262,13 @@ pos Algoritmos::pivote(lista l, pos inicio, pos final){
         }
         p = l.siguente(p);
     }
-    return NULL;
+    return 0;
 }
 
 pos Algoritmos::particion(lista l, pos pivot, pos inicio, pos final) {
-    if (pivot != NULL) {
-        Pos *z = inicio;
-        Pos *d = final;
+    if (pivot != 0) {
+        pos z = inicio;
+        pos d = final;
         int pi = l.recuperar(pivot);
         do {
             l.intercambiar(z, d);
@@ -264,25 +281,25 @@ pos Algoritmos::particion(lista l, pos pivot, pos inicio, pos final) {
         } while (l.siguente(d) != z);
         return z;
     } else{
-        return NULL;
+        return 0;
     }
 }
 
 void Algoritmos::quickSortAho(lista l, pos inicio, pos final) {
-    Pos* pivot = pivote(l, inicio, final);
-    if(pivot != NULL){
-        Pos* part = particion(l,pivot, inicio, final);
+    pos pivot = pivote(l, inicio, final);
+    if(pivot != 0){
+        pos part = particion(l,pivot, inicio, final);
         quickSortAho(l,inicio, l.anterior(part));
         quickSortAho(l,part, final);
     }
 }
 
 void Algoritmos::quickSortMod(lista l, pos inicio, pos final) {
-    Pos* pivot = pivote(l, inicio, final);
-    if(pivot != NULL){
-        Pos* part = particion(l,pivot, inicio, final);
+    pos pivot = pivote(l, inicio, final);
+    if(pivot != 0){
+        pos part = particion(l,pivot, inicio, final);
         int contador = 1;
-        Pos* cont = l.primera();
+        pos cont = l.primera();
         while(cont != part){
             cont = l.siguente(cont);
             contador++;
@@ -299,13 +316,13 @@ void Algoritmos::quickSortMod(lista l, pos inicio, pos final) {
 void Algoritmos::mergeSort(lista l, pos inicio, pos final) {
     if(inicio != final && l.siguente(inicio) != final){
         int mid = 1;
-        Pos* c = inicio;
+        pos c = inicio;
         while(c != final){
             mid++;
             c = l.siguente(c);
         }
         mid = mid/2;
-        Pos* mitad = inicio;
+        pos mitad = inicio;
         int con = 1;
         while(con < mid){
             mitad = l.siguente(mitad);
@@ -329,24 +346,22 @@ void Algoritmos::merge(lista l, pos inicio, pos mitad, pos final) {
 
     //---------copiar en los arrays--------------
 
-    Pos *p = inicio;
-    while (p != NULL && p != l.siguente(mitad)) {
+    pos p = inicio;
+    while (p != 0 && p != l.siguente(mitad)) {
         l1.agregarAlFinal(l.recuperar(p));
         p = l.siguente(p);
     }
     p = l.siguente(mitad);
-    while (p != NULL && p != l.siguente(final)) {
+    while (p != 0 && p != l.siguente(final)) {
         l2.agregarAlFinal(l.recuperar(p));
         p = l.siguente(p);
     }
     //--------------------------------------------
 
-
-         //l.vaciar();
-    Pos* i = l1.primera();
-    Pos* j = l2.primera();
-    Pos* aux = inicio;
-    while(i != NULL && i != mitad && j !=NULL){
+    pos i = l1.primera();
+    pos j = l2.primera();
+    pos aux = inicio;
+    while(i != 0 && i != mitad && j !=0){
         if(l1.recuperar(i) <= l2.recuperar(j)){
             l.modificarElem(aux,l1.recuperar(i));
             i = l1.siguente(i);
@@ -358,13 +373,13 @@ void Algoritmos::merge(lista l, pos inicio, pos mitad, pos final) {
     }
 
 
-    while(i != NULL && i != mitad){
+    while(i != 0 && i != mitad){
         l.modificarElem(aux,l1.recuperar(i));
         i = l1.siguente(i);
         aux = l.siguente(aux);
     }
 
-    while(j != NULL && j != final){
+    while(j != 0 && j != final){
         l.modificarElem(aux,l2.recuperar(j));
         j = l2.siguente(j);
         aux = l.siguente(aux);
@@ -372,11 +387,11 @@ void Algoritmos::merge(lista l, pos inicio, pos mitad, pos final) {
 }
 
 void Algoritmos::unionOrdenadas(lista l1, lista l2) {
-    Pos* p2 = l2.primera();
-    while(p2 != NULL){
-        Pos* p1 = l1.primera();
+    pos p2 = l2.primera();
+    while(p2 != 0){
+        pos p1 = l1.primera();
         bool existe = false;
-        while(p1 != NULL && !existe && l1.recuperar(p1) <= l2.recuperar(p2)){
+        while(p1 != 0 && !existe && l1.recuperar(p1) <= l2.recuperar(p2)){
             if(l1.recuperar(p1) == l2.recuperar(p2)){
                 existe = true;
             }
@@ -390,11 +405,11 @@ void Algoritmos::unionOrdenadas(lista l1, lista l2) {
 }
 
 void Algoritmos::unionDesord(lista l1, lista l2) {
-    Pos* p2 = l2.primera();
-    while(p2 != NULL){
-        Pos* p1 = l1.primera();
+    pos p2 = l2.primera();
+    while(p2 != 0){
+        pos p1 = l1.primera();
         bool existe = false;
-        while(p1 != NULL && !existe){
+        while(p1 != 0 && !existe){
             if(l1.recuperar(p1) == l2.recuperar(p2)){
                 existe = true;
             }
@@ -409,11 +424,11 @@ void Algoritmos::unionDesord(lista l1, lista l2) {
 
 void Algoritmos::interseccionOrd(lista l1, lista l2, lista& l3) {
     l3.iniciar();
-    Pos* p1 = l1.primera();
-    while(p1 != NULL){
-        Pos* p2 = l2.primera();
+    pos p1 = l1.primera();
+    while(p1 != 0){
+        pos p2 = l2.primera();
         bool existe = false;
-        while(p2 != NULL && !existe && l1.recuperar(p1) >= l2.recuperar(p2)){
+        while(p2 != 0 && !existe && l1.recuperar(p1) >= l2.recuperar(p2)){
             if(l1.recuperar(p1) == l2.recuperar(p2)){
                 existe = true;
             }
@@ -428,11 +443,11 @@ void Algoritmos::interseccionOrd(lista l1, lista l2, lista& l3) {
 
 void Algoritmos::interseccionDesord(lista l1, lista l2, lista& l3) {
     l3.iniciar();
-    Pos* p1 = l1.primera();
-    while(p1 != NULL){
-        Pos* p2 = l2.primera();
+    pos p1 = l1.primera();
+    while(p1 != 0){
+        pos p2 = l2.primera();
         bool existe = false;
-        while(p2 != NULL && !existe){
+        while(p2 != 0 && !existe){
             if(l1.recuperar(p1) == l2.recuperar(p2)){
                 existe = true;
             }
@@ -446,18 +461,18 @@ void Algoritmos::interseccionDesord(lista l1, lista l2, lista& l3) {
 }
 
 void Algoritmos::eliminarOrde(lista l1, lista l2) {
-    Pos* p1 = l1.primera();
-    while(p1 != NULL){
-        Pos* p2 = l2.primera();
+    pos p1 = l1.primera();
+    while(p1 != 0){
+        pos p2 = l2.primera();
         bool existe = false;
-        while(p2 != NULL && !existe && l1.recuperar(p1) >= l2.recuperar(p2)){
+        while(p2 != 0 && !existe && l1.recuperar(p1) >= l2.recuperar(p2)){
             if(l1.recuperar(p1) == l2.recuperar(p2)){
                 existe = true;
             }
             p2 = l2.siguente(p2);
         }
         if(existe){
-            Pos* aux = p1;
+            pos aux = p1;
             l1.borrar(aux);
         }
         p1 = l1.siguente(p1);
@@ -465,18 +480,18 @@ void Algoritmos::eliminarOrde(lista l1, lista l2) {
 }
 
 void Algoritmos::eliminarDesord(lista l1, lista l2) {
-    Pos* p1 = l1.primera();
-    while(p1 != NULL){
-        Pos* p2 = l2.primera();
+    pos p1 = l1.primera();
+    while(p1 != 0){
+        pos p2 = l2.primera();
         bool existe = false;
-        while(p2 != NULL && !existe){
+        while(p2 != 0 && !existe){
             if(l1.recuperar(p1) == l2.recuperar(p2)){
                 existe = true;
             }
             p2 = l2.siguente(p2);
         }
         if(existe){
-            Pos* aux = p1;
+            pos aux = p1;
             l1.borrar(aux);
         }
         p1 = l1.siguente(p1);

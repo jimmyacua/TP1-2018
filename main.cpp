@@ -1,20 +1,20 @@
 #include <iostream>
-//#include "ListaPosArray.h"
-#include "ListaPosLSE.h"
+#include "ListaPosArray.h"
+//#include "ListaPosLSE.h"
 //#include "ListaPosLDE.h"
 //#include "ListaOrdArray.h"
-#include "ListaOrdLSE.h"
+//#include "ListaOrdLSE.h"
 #include "Pila.h"
 #include "AlgoritmosListaPos.h"
 
 using namespace std;
 
-typedef ListaPosLSE listaPos;
-//typedef ListaPosArray listaPos;
+//typedef ListaPosLSE listaPos;
+typedef ListaPosArray listaPos;
 //typedef ListaPosLDE listaPos;
 
 //typedef ListaOrdArray listaOrd;
-typedef ListaOrdLSE listaOrd;
+//typedef ListaOrdLSE listaOrd;
 
 
 int main() {
@@ -538,34 +538,31 @@ int main() {
 //******************************************************************************************************************************/
     //cout << "\nFin de la prueba!" << endl;
 
-    ListaPosLSE l;
-    ListaPosLSE l2;
+    //ListaPosLDE l;
+    //ListaPosLSE l;
+    ListaPosArray l2;
     Algoritmos a;
 
 
-    l.iniciar();
-    l.insertar(10,l.traducePos(1));
-    l.insertar(31,l.traducePos(2));
-    l.insertar(75,l.traducePos(3));
-    l.insertar(145,l.traducePos(4));
-    l.insertar(4, l.traducePos(5));
-    l.insertar(13,l.traducePos(6));
+    l2.iniciar();
 
-    /*l2.iniciar();
 
-    l2.insertar(12, l2.traducePos(1));
-    l2.insertar(9, l2.traducePos(2));
-    l2.insertar(7, l2.traducePos(3));
-    l2.insertar(3, l2.traducePos(4));
-    l2.insertar(5, l2.traducePos(5));
-    l2.insertar(2, l2.traducePos(6));
-    l2.insertar(8, l2.traducePos(7));
+    l2.insertar(10,l2.traducePos(1));
+    l2.insertar(31,l2.traducePos(2));
+    l2.insertar(75,l2.traducePos(3));
+    l2.insertar(145,l2.traducePos(4));
+    l2.insertar(4, l2.traducePos(5));
+    l2.insertar(13,l2.traducePos(6));
+
+    /*ListaPosArray l1;
+    l1.iniciar();
+    l1.insertar(75,l1.traducePos(1));
+    l1.insertar(14,l1.traducePos(2));
+    l1.insertar(4, l1.traducePos(3));
     */
-    //a.seleccionRecSinCom(l);
 
-    a.mergeSort(l,l.primera(), l.ultima());
-    //l.vaciar();
-    //l.agregarAlFinal(34);
-    l.listar();
+    a.seleccionIter(l2);
+    a.listar(l2);
+
     return 0;
 }

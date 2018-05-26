@@ -2,12 +2,12 @@
 // Created by jimmy on 11/05/18.
 //
 
-#ifndef TP1_LISTAPOS_H
-#define TP1_LISTAPOS_H
+#ifndef TP1_LISTAPos_H
+#define TP1_LISTAPos_H
 
 #include <iostream>
 
-typedef int pos;
+typedef int Pos;
 
 class ListaPosArray {
 public:
@@ -32,57 +32,57 @@ public:
     //MOD:
     bool vacia();
 
-    //EFE: Agrega un elemento en la posición p
+    //EFE: Agrega un elemento en la Posición p
     //REQ: Lista inicializada
     //MOD: lista L
-    void insertar(int,pos);
+    void insertar(int, Pos);
 
-    //EFE: Agrega un elemento en la ultima posición de la lista
+    //EFE: Agrega un elemento en la ultima Posición de la lista
     //REQ: Lista inicializada
     //MOD: lista L
     void agregarAlFinal(int);
 
-    //EFE: elimina la posición de la lista "cerrando campo"
-    //REQ: Lista inicializada y no vacía. Que la posición esté en la lista.
+    //EFE: elimina la Posición de la lista "cerrando campo"
+    //REQ: Lista inicializada y no vacía. Que la Posición esté en la lista.
     //MOD: lista L.
-    void borrar(pos);
+    void borrar(Pos);
 
-    //EFE: cambia el elemento de la posición p por el nuevo elemento
-    //REQ: Lista inicializada y posición válida
+    //EFE: cambia el elemento de la Posición p por el nuevo elemento
+    //REQ: Lista inicializada y Posición válida
     //MOD: Lista L
-    void modificarElem(pos,int);
+    void modificarElem(Pos,int);
 
-    //EFE: Intercambia las posiciones p1 y p2 de la lista
+    //EFE: Intercambia las Posiciones p1 y p2 de la lista
     //REQ: Lista inicializada, p1 y p2 validas
     //MOD: Lista L
-    void intercambiar(pos,pos);
+    void intercambiar(Pos,Pos);
 
-    //EFE: devuelve la primer posición de la lista
+    //EFE: devuelve la primer Posición de la lista
     //REQ: Lista inicializada y no vacía
     //MOD:
-    pos primera();
+    Pos primera();
 
-    //EFE: devuelve la ultima posición de la lista
+    //EFE: devuelve la ultima Posición de la lista
     //REQ: Lista inicializada y no vacía.
     //MOD:
-    pos ultima();
+    Pos ultima();
 
-    //EFE: devuelve la posición precedente a p
+    //EFE: devuelve la Posición precedente a p
     //REQ: Lista inicializada y p válida
     //MOD:
-    pos siguente(pos);
+    Pos siguente(Pos);
 
-    //EFE: devuelve la posición antecedente a p
+    //EFE: devuelve la Posición antecedente a p
     //REQ: lista inicializada y p valida
     //MOD:
-    pos anterior(pos);
+    Pos anterior(Pos);
 
-    //EFE: devuelve el elemento que se encuentra en la posición p
+    //EFE: devuelve el elemento que se encuentra en la Posición p
     //REQ: lista inicializada y p valida.
     //MOD:
-    int recuperar(pos);
+    int recuperar(Pos);
 
-    //EFE: devuelve el numero de elementos/posiciones que hay en la lista
+    //EFE: devuelve el numero de elementos/Posiciones que hay en la lista
     //REQ: lista inicializada
     //MOD:
     int numElem();
@@ -92,21 +92,21 @@ public:
     //MOD:
     void listar();
 
-    //EFE: convierte de tipo de dato entero a tipo posicion
+    //EFE: convierte de tipo de dato entero a tipo Posicion
     //REQ:
     //MOD:
-    pos traducePos(int);
+    Pos traducePos(int);
 
 
-    pos primero;
-    pos ultimo_lleno;
+    Pos primero;
+    Pos ultimo_lleno;
     int nElementos;
 
 
 private:
-    pos lista[30];
+    Pos lista[30];
 
 };
 
 
-#endif //TP1_LISTAPOS_H
+#endif //TP1_LISTAPos_H
