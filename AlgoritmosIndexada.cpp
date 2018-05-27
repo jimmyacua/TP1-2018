@@ -205,9 +205,28 @@ void AlgoritmosIndexada::seleccionR(lista l, int indice, int menor) {
     }
 }
 
-void AlgoritmosIndexada::seleccionrecursivaPila(lista){
-
+void AlgoritmosIndexada::seleccionrecursivaPila(lista l){
+    pila.iniciar();
+    pila.meter(1);
+    int inicio = 1;
+    int menor = inicio;
+    int aux;
+    while(!pila.vacia() && inicio <= l.numElem()){
+        aux = inicio;
+        menor = pila.sacar();
+        while(aux <= l.numElem()){
+            if (l.recuperar(menor) > l.recuperar(aux)) {
+                menor = aux;
+                pila.meter(aux);
+                l.intercambiar(menor, inicio);
+            }
+            aux = aux+1;
+        }
+        inicio = inicio+1;
+        pila.meter(inicio);
+    }
 }
+
 
 void AlgoritmosIndexada::insercion(lista l){
     int indice;

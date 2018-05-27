@@ -7,9 +7,10 @@
 
 //#include "ListaIndexadaArray.h"
 #include "ListaIndexadaLSE.h"
-
+#include "Pila.h"
 //typedef ListaIndexadaArray lista;
 typedef ListaIndexadaLSE lista;
+//typedef Pila pila;
 class AlgoritmosIndexada {
 public:
     //Efecto:
@@ -115,6 +116,7 @@ public:
     //Modifica:
     void eliminarDes(lista,lista);
 private:
+    Pila <int> pila;
 };
 
 
