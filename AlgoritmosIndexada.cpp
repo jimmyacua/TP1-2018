@@ -291,7 +291,7 @@ void AlgoritmosIndexada::quickSortMod(lista& l, int inicio, int final){
     int p = pivote(l,inicio,final);
     if(p>0){
         int part = particion(l,p,inicio,final);
-        if(part>10){//Para la prueba completa se hace con 50
+        if(part>50){
             quickSortAho(l,inicio,part-1);
             quickSortAho(l,part,final);
         }else{
@@ -407,13 +407,11 @@ void AlgoritmosIndexada::unionDes(lista& l1,lista& l2){
     }
 }
 
-lista AlgoritmosIndexada::interseccionOrd(lista& l1,lista& l2){
+void AlgoritmosIndexada::interseccionOrd(lista& l1,lista& l2,lista& l3){
     int indice = 1;
     int recorrido;
     int insertar = 1;
     bool esta;
-    lista l3;
-    l3.iniciar();
     while(indice<=l1.numElem()){
         recorrido = 1;
         esta = false;
@@ -429,16 +427,13 @@ lista AlgoritmosIndexada::interseccionOrd(lista& l1,lista& l2){
         }
         indice++;
     }
-    return l3;
 }
 
-lista AlgoritmosIndexada::interseccionDes(lista& l1,lista& l2){
+void AlgoritmosIndexada::interseccionDes(lista& l1,lista& l2,lista& l3){
     int indice = 1;
     int recorrido;
     int insertar = 1;
     bool esta;
-    lista l3;
-    l3.iniciar();
     while(indice<=l1.numElem()){
         recorrido = 1;
         esta = false;
@@ -452,7 +447,6 @@ lista AlgoritmosIndexada::interseccionDes(lista& l1,lista& l2){
         }
         indice++;
     }
-    return l3;
 }
 
 void AlgoritmosIndexada::eliminarOrd(lista& l1,lista& l2){
