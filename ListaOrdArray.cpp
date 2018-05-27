@@ -33,11 +33,19 @@ void ListaOrdArray::insertar(int e) {
                 rear++;
                 numElementos++;
                 c = numElementos;
-            } else {
+            } else if(lista[rear] == 0){
+                lista[rear] = e;
+                numElementos++;
+                c = numElementos;
+            } else if (lista[rear] < e) {
+                rear++;
+                lista[rear] = e;
+                numElementos++;
+                c = numElementos;
+            }else {
                 c++;
             }
         }
-
     }
 }
 
@@ -72,12 +80,8 @@ int ListaOrdArray::siguiente(int e) {
             encontrado = true;
         }
     }
-    if (c = this->rear) { //cambiar
-        return -1;
-    } else {
-        return lista[c + 1];
-    } //return (this->head == nullptr) ? 0 : this->head->content;
-}
+    return lista[c+1];
+     }
 
 int ListaOrdArray::anterior(int e) {
     if (lista[0] == e){
@@ -109,6 +113,6 @@ int ListaOrdArray::numElem() {
 
 void ListaOrdArray::imprimir() {
     for (int i = 0; i < numElementos; ++i) {
-        cout << lista[i] << "-" << endl;
+        cout << lista[i] << "-";
     }
 }

@@ -68,11 +68,9 @@ public:
 
 
 private:
-
-    //int ultimoLleno;
-    int cantElem;
     Caja *primero;
     Caja *ultimo;
+    int cantElem;
 };
 
 

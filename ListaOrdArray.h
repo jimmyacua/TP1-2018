@@ -76,7 +76,7 @@ public:
     void imprimir();
 
 private:
-    int lista[30] = {};
+    int lista[10] = {};
     int rear;
     int numElementos;
 };

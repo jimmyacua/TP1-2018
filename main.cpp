@@ -1,3 +1,4 @@
+
 #include <iostream>
 //#include "ListaPosArray.h"
 #include "ListaPosLSE.h"
@@ -16,6 +17,7 @@ typedef ListaPosLSE listaPos;
 //typedef ListaPosLDE listaPos;
 
 //typedef ListaOrdArray listaOrd;
+
 typedef ListaOrdLSE listaOrd;
 
 typedef ListaIndexadaLSE listaInd;
@@ -307,9 +309,9 @@ int main() {
                                 cout << "Ingrese un numero valido" << endl;
                         }
                     }
+
                 }
             }
-                break;
 
             case 3: {  //LISTA ORDENADA
                 int decision4;
@@ -1067,24 +1069,23 @@ int main() {
                 break;
             default: {
                 cout << "Ingrese un numero valido." << endl;
+
             }
         }
     }
 
-//******************************************************************************************************************************/
-    cout << "\nFin de la prueba!" << endl;
-
-    //ListaPosLDE l2;
-
-    /*ListaPosLSE l;
-    Algoritmos a;
-
-
-    l.iniciar();
-
-
-
-
-*/
-    return 0;
+        case 0: {
+            continuar = false;
+        }
+            break;
+        default: {
+            cout << "Ingrese un numero valido." << endl;
+        }
+    }
 }
+
+//******************************************************************************************************************************/
+
+        //cout << "\nFin de la prueba!" << endl;
+        return 0;
+    }
