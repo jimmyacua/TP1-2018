@@ -16,19 +16,19 @@ public:
     //Efecto:
     //Requiere:
     //Modifica:
-    void listar(lista);
+    void listar(lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    bool simetrica(lista);
+    bool simetrica(lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    void invertir(lista);
+    void invertir(lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    bool buscar(int, lista);
+    bool buscar(int, lista&);
     //Efecto:
     //Requiere:
     //Modifica:
@@ -36,53 +36,43 @@ public:
     //Efecto:
     //Requiere:
     //Modifica:
-    bool subLista(lista,lista);
+    bool subLista(lista&,lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    bool iguales(lista,lista);
+    bool iguales(lista&,lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    void burbujaOriginal(lista);
+    void burbujaOriginal(lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    void burbujaBiDireccional(lista);
+    void burbujaBiDireccional(lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    void seleccionIterativa(lista);
+    void seleccionIterativa(lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    void seleccionRecursiva(lista);
-
-    void seleccionR(lista,int,int);
+    void seleccionRecursiva(lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    void seleccionrecursivaPila(lista);
+    void seleccionrecursivaPila(lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    void insercion(lista);
+    void insercion(lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    int pivote(lista,int,int);
+    void quickSortAho(lista&,int,int);
     //Efecto:
     //Requiere:
     //Modifica:
-    int particion(lista,int,int,int);
-    //Efecto:
-    //Requiere:
-    //Modifica:
-    void quickSortAho(lista,int,int);
-    //Efecto:
-    //Requiere:
-    //Modifica:
-    void quickSortMod(lista,int,int);
+    void quickSortMod(lista&,int,int);
     //Efecto:
     //Requiere:
     //Modifica:
@@ -90,32 +80,32 @@ public:
     //Efecto:
     //Requiere:
     //Modifica:
-    void merge(lista&, int, int, int);
+    void unionOrd(lista&,lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    void unionOrd(lista,lista);
+    void unionDes(lista&,lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    void unionDes(lista,lista);
+    lista interseccionOrd(lista&,lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    lista interseccionOrd(lista,lista);
+    lista interseccionDes(lista&,lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    lista interseccionDes(lista,lista);
+    void eliminarOrd(lista&,lista&);
     //Efecto:
     //Requiere:
     //Modifica:
-    void eliminarOrd(lista,lista);
-    //Efecto:
-    //Requiere:
-    //Modifica:
-    void eliminarDes(lista,lista);
+    void eliminarDes(lista&,lista&);
 private:
+    void seleccionR(lista&,int,int);
+    int pivote(lista&,int,int);
+    int particion(lista&,int,int,int);
+    void merge(lista&, int, int, int);
     Pila <int> pila;
 };
 

@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void AlgoritmosIndexada::listar(lista l){
+void AlgoritmosIndexada::listar(lista& l){
     int contador = 1;
     int max = l.numElem();
     while(contador <= max){
@@ -17,7 +17,7 @@ void AlgoritmosIndexada::listar(lista l){
     cout<<endl;
 }
 
-bool AlgoritmosIndexada::simetrica(lista l){
+bool AlgoritmosIndexada::simetrica(lista& l){
     int derecha = l.numElem();
     int izquierda = 1;
     bool seguir = true;
@@ -32,7 +32,7 @@ bool AlgoritmosIndexada::simetrica(lista l){
     return seguir;
 }
 
-void AlgoritmosIndexada::invertir(lista l){
+void AlgoritmosIndexada::invertir(lista& l){
     int derecha = l.numElem();
     int izquierda = 1;
     bool seguir = true;
@@ -43,13 +43,13 @@ void AlgoritmosIndexada::invertir(lista l){
     }
 }
 
-bool AlgoritmosIndexada::buscar(int indice, lista l){
+bool AlgoritmosIndexada::buscar(int elemento, lista& l){
     int indiceRecorrido = 1;
     int max = l.numElem();
     bool seguir = true;
     bool encontrado = false;
     while((indiceRecorrido<=max)&&seguir){
-        if(l.recuperar(indiceRecorrido)==l.recuperar(indice)){
+        if(l.recuperar(indiceRecorrido)==elemento){
             seguir = false;
             encontrado = true;
         }
@@ -74,7 +74,7 @@ void AlgoritmosIndexada::eliminarRepetidos(lista& l){
     }
 }
 
-bool AlgoritmosIndexada::subLista(lista l1,lista l2){
+bool AlgoritmosIndexada::subLista(lista& l1,lista& l2){
     int indiceL1 = 1;
     int indiceL2 = 1;
     int max = l2.numElem();
@@ -102,7 +102,7 @@ bool AlgoritmosIndexada::subLista(lista l1,lista l2){
     return esSublista;
 }
 
-bool AlgoritmosIndexada::iguales(lista l1,lista l2){
+bool AlgoritmosIndexada::iguales(lista& l1,lista& l2){
     int indiceL1 = 1;
     int indiceL2 = 1;
     int max = l1.numElem();
@@ -128,7 +128,7 @@ bool AlgoritmosIndexada::iguales(lista l1,lista l2){
     return iguales;
 }
 
-void AlgoritmosIndexada::burbujaOriginal(lista l){
+void AlgoritmosIndexada::burbujaOriginal(lista& l){
     int max = l.numElem();
     int indice = 1;
     bool seguir = true;
@@ -144,7 +144,7 @@ void AlgoritmosIndexada::burbujaOriginal(lista l){
     }
 }
 
-void AlgoritmosIndexada::burbujaBiDireccional(lista l){
+void AlgoritmosIndexada::burbujaBiDireccional(lista& l){/*********Esta Hay que mejorarla***********/
     int max = l.numElem();
     int indice = 1;
     bool seguir = true;
@@ -170,7 +170,7 @@ void AlgoritmosIndexada::burbujaBiDireccional(lista l){
     }
 }
 
-void AlgoritmosIndexada::seleccionIterativa(lista l){
+void AlgoritmosIndexada::seleccionIterativa(lista& l){
     int max = l.numElem();
     int min;
     for(int i=1;i<max;i++){
@@ -184,13 +184,13 @@ void AlgoritmosIndexada::seleccionIterativa(lista l){
     }
 }
 
-void AlgoritmosIndexada::seleccionRecursiva(lista l){
+void AlgoritmosIndexada::seleccionRecursiva(lista& l){
     int indice = 1;
     int menor = indice;
     seleccionR(l,indice,menor);
 }
 
-void AlgoritmosIndexada::seleccionR(lista l, int indice, int menor) {
+void AlgoritmosIndexada::seleccionR(lista& l, int indice, int menor) {
     int max = l.numElem();
     if(indice<=max){
         for(int i = indice;i<=max;i++){
@@ -205,7 +205,7 @@ void AlgoritmosIndexada::seleccionR(lista l, int indice, int menor) {
     }
 }
 
-void AlgoritmosIndexada::seleccionrecursivaPila(lista l){
+void AlgoritmosIndexada::seleccionrecursivaPila(lista& l){
     pila.iniciar();
     pila.meter(1);
     int inicio = 1;
@@ -228,7 +228,7 @@ void AlgoritmosIndexada::seleccionrecursivaPila(lista l){
 }
 
 
-void AlgoritmosIndexada::insercion(lista l){
+void AlgoritmosIndexada::insercion(lista& l){
     int indice;
     for(int i=1;i<=l.numElem();i++){
         indice = i;
@@ -239,7 +239,7 @@ void AlgoritmosIndexada::insercion(lista l){
     }
 }
 
-int AlgoritmosIndexada::pivote(lista l, int inicio, int final) {
+int AlgoritmosIndexada::pivote(lista& l, int inicio, int final) {
     if(inicio==final){
         return 0;
     }
@@ -255,7 +255,7 @@ int AlgoritmosIndexada::pivote(lista l, int inicio, int final) {
     return 0;
 }
 
-int AlgoritmosIndexada::particion(lista l, int pivote, int inicio, int final) {
+int AlgoritmosIndexada::particion(lista& l, int pivote, int inicio, int final) {
     if(pivote>0){
         int derecha = final;
         int izquierda = inicio;
@@ -275,7 +275,7 @@ int AlgoritmosIndexada::particion(lista l, int pivote, int inicio, int final) {
     }
 }
 
-void AlgoritmosIndexada::quickSortAho(lista l, int inicio, int final){
+void AlgoritmosIndexada::quickSortAho(lista& l, int inicio, int final){
     int p = pivote(l,inicio,final);
     if(p>0){
         int part = particion(l,p,inicio,final);
@@ -283,8 +283,8 @@ void AlgoritmosIndexada::quickSortAho(lista l, int inicio, int final){
         quickSortAho(l,part,final);
     }
 }
-void AlgoritmosIndexada::quickSortMod(lista l, int inicio, int final){
-    int p = pivote(l,inicio,final);
+void AlgoritmosIndexada::quickSortMod(lista& l, int inicio, int final){
+    int p = final/2;
     if(p>0){
         int part = particion(l,p,inicio,final);
         if(part>10){//Para la prueba completa se hace con 50
@@ -359,7 +359,7 @@ void AlgoritmosIndexada::merge(lista& l, int inicio, int medio, int final){
     //-------------------------------------------------------------
 }
 
-void AlgoritmosIndexada::unionOrd(lista l1,lista l2){
+void AlgoritmosIndexada::unionOrd(lista& l1,lista& l2){
     int indice = 1;
     int recorrido;
     int max = l2.numElem();
@@ -388,7 +388,7 @@ void AlgoritmosIndexada::unionOrd(lista l1,lista l2){
     }
 }
 
-void AlgoritmosIndexada::unionDes(lista l1,lista l2){
+void AlgoritmosIndexada::unionDes(lista& l1,lista& l2){
     int indice = 1;
     int recorrido;
     int max = l2.numElem();
@@ -397,8 +397,10 @@ void AlgoritmosIndexada::unionDes(lista l1,lista l2){
         recorrido = 1;
         esta = false;
         while((recorrido<=l1.numElem())&&!esta){
-            if(l2.recuperar(indice)==l2.recuperar(recorrido)){
+            if(l2.recuperar(indice)==l1.recuperar(recorrido)){
                 esta = true;
+            }else{
+                recorrido++;
             }
         }
         if(!esta){
@@ -408,7 +410,7 @@ void AlgoritmosIndexada::unionDes(lista l1,lista l2){
     }
 }
 
-lista AlgoritmosIndexada::interseccionOrd(lista l1,lista l2){
+lista AlgoritmosIndexada::interseccionOrd(lista& l1,lista& l2){
     int indice = 1;
     int recorrido;
     int insertar = 1;
@@ -433,7 +435,7 @@ lista AlgoritmosIndexada::interseccionOrd(lista l1,lista l2){
     return l3;
 }
 
-lista AlgoritmosIndexada::interseccionDes(lista l1,lista l2){
+lista AlgoritmosIndexada::interseccionDes(lista& l1,lista& l2){
     int indice = 1;
     int recorrido;
     int insertar = 1;
@@ -456,7 +458,7 @@ lista AlgoritmosIndexada::interseccionDes(lista l1,lista l2){
     return l3;
 }
 
-void AlgoritmosIndexada::eliminarOrd(lista l1,lista l2){
+void AlgoritmosIndexada::eliminarOrd(lista& l1,lista& l2){
     int indice = 1;
     int recorrido;
     bool esta;
@@ -477,7 +479,7 @@ void AlgoritmosIndexada::eliminarOrd(lista l1,lista l2){
     }
 }
 
-void AlgoritmosIndexada::eliminarDes(lista l1,lista l2){
+void AlgoritmosIndexada::eliminarDes(lista& l1,lista& l2){
     int indice = 1;
     int recorrido;
     bool esta;

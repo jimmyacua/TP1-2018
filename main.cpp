@@ -29,17 +29,30 @@ int main(){
     l.insertar(23,6);
     l.insertar(1,7);
     l.insertar(6,8);
-    l.insertar(15,9);
+    l.insertar(17,9);
     l.insertar(43,10);
+    listaInd l2;
+    l2.iniciar();
+    l2.insertar(78,1);
+    l2.insertar(77,2);
+    l2.insertar(76,3);
+    l2.insertar(11,4);
+    l2.insertar(75,5);
+    l2.insertar(74,6);
+    l2.insertar(14,7);
+    l2.insertar(63,8);
+    l2.insertar(73,9);
+    l2.insertar(72,10);
     //l.listar();
     AlgoritmosIndexada alg;
     alg.listar(l);
-    //alg.eliminarRepetidos(l);
-    //cout<<l.numElem();
-    //l.listar();
-    alg.seleccionrecursivaPila(l);
-    //cout<<l.numElem();
-    alg.listar(l);
+    alg.listar(l2);
+    if(alg.buscar(63,l)){alg.listar(l);}
+    if(alg.buscar(1,l2)){ alg.listar(l2);}
+
+
+
+
     return 0;
 }
     /*int main() {
