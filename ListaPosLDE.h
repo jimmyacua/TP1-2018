@@ -14,14 +14,14 @@ public:
     Pos *anterior;
 
     Pos(){
-        sgt = NULL;
-        anterior = NULL;
+        sgt = 0;
+        anterior = 0;
     }
 
     Pos(int e){
         elemento = e;
-        sgt = NULL;
-        anterior = NULL;
+        sgt = 0;
+        anterior = 0;
     }
 
     int obtener(Pos){
