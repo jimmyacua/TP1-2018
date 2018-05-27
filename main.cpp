@@ -51,6 +51,8 @@ int main(){
     l3.iniciar();
     l3 = alg.interseccionDes(l,l2);
     alg.listar(l3);
+    alg.mergeSort(l3,1,l3.numElem());
+    alg.listar(l3);
     if(alg.buscar(15,l)){alg.listar(l);}
     if(alg.buscar(23,l2)){ alg.listar(l2);}
 

@@ -303,64 +303,54 @@ void AlgoritmosIndexada::quickSortMod(lista& l, int inicio, int final){
 
 void AlgoritmosIndexada::mergeSort(lista& l, int inicio, int final){
     if(inicio<final){
-        int mitad = inicio;
-        while(mitad<final){
-            mitad++;
-        }
-        mitad = mitad/2;
+        int mitad = (inicio+(final-inicio))/2;
         mergeSort(l,inicio,mitad);
         mergeSort(l,mitad+1,final);
-
         merge(l,inicio,mitad,final);
     }
 }
 
 void AlgoritmosIndexada::merge(lista& l, int inicio, int medio, int final){
+    int i, j, k;
+    int n1 = medio-inicio+1;
+    int n2 =  final - medio;
     lista l1;
     l1.iniciar();
     lista l2;
     l2.iniciar();
-    int insertar = 1;
-    int recorrido = inicio;
-    while((recorrido>0)&&(recorrido<=medio)){
-        l1.insertar(l.recuperar(recorrido),insertar);
-        recorrido++;
-        insertar++;
+
+    /*****Copiar Listas*****/
+    for (i = 0; i < n1; i++) {//Puede ser que i sea 0 y no 1
+        l1.insertar(l.recuperar(inicio+i),i+1);
     }
-    recorrido = medio+1;
-    insertar = 1;
-    while((recorrido>0)&&(recorrido<=final)){
-        l2.insertar(l.recuperar(recorrido),insertar);
-        recorrido++;
-        insertar++;
+    for (j = 0; j < n2; j++) {
+        l2.insertar(l.recuperar(medio+ 1 + j), j+1);
     }
-    insertar = l2.numElem();
-    int indice = 1;
-    int indiceL1 = 1;
-    int indiceL2 = 1;/*******CUIDADO AQUI***************/
-    while((indiceL1<=medio)&&(indiceL2<=insertar)){
-        if(l1.recuperar(indiceL1)<=l2.recuperar(indiceL2)){
-            l.modificarElem(l1.recuperar(indiceL1),indice);
-            indiceL1++;
+    i=1;
+    j=1;
+    k = inicio;
+    while((i<=n1)&&(j<=n2)){
+        if(l1.recuperar(i)<=l2.recuperar(j)){
+            l.modificarElem(l1.recuperar(i),k);
+            i++;
         }else{
-            l.modificarElem(l2.recuperar(indiceL2),indice);
-            indiceL2++;
+            l.modificarElem(l2.recuperar(j),k);
+            j++;
         }
-        indice++;
+        k++;
     }
     /*****Meter los que "sobran"*****/
-    while(indiceL1<=medio){
-        l.modificarElem(l1.recuperar(indiceL1),indice);
-        indiceL1++;
-        indice++;
+    while(i<=n1){
+        l.modificarElem(l1.recuperar(i),k);
+        i++;
+        k++;
     }
 
-    while(indiceL2<=insertar){
-        l.modificarElem(l2.recuperar(indiceL2),indice);
-        indiceL2++;
-        indice++;
+    while(j<=n2){
+        l.modificarElem(l2.recuperar(j),k);
+        j++;
+        k++;
     }
-    //-------------------------------------------------------------
 }
 
 void AlgoritmosIndexada::unionOrd(lista& l1,lista& l2){
