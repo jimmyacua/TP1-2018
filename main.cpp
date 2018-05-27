@@ -21,34 +21,38 @@ typedef ListaIndexadaLSE listaInd;
 int main(){
     listaInd l;
     l.iniciar();
-    l.insertar(12,1);
-    l.insertar(32,2);
+    l.insertar(1,1);
+    l.insertar(5,2);
     l.insertar(3,3);
-    l.insertar(15,4);
-    l.insertar(4,5);
-    l.insertar(23,6);
-    l.insertar(1,7);
-    l.insertar(6,8);
+    l.insertar(7,4);
+    l.insertar(13,5);
+    l.insertar(9,6);
+    l.insertar(11,7);
+    l.insertar(15,8);
     l.insertar(17,9);
-    l.insertar(43,10);
+    l.insertar(19,10);
     listaInd l2;
     l2.iniciar();
-    l2.insertar(78,1);
-    l2.insertar(77,2);
-    l2.insertar(76,3);
-    l2.insertar(11,4);
-    l2.insertar(75,5);
-    l2.insertar(74,6);
-    l2.insertar(14,7);
-    l2.insertar(63,8);
-    l2.insertar(73,9);
-    l2.insertar(72,10);
+    l2.insertar(1,1);
+    l2.insertar(3,2);
+    l2.insertar(2,3);
+    l2.insertar(5,4);
+    l2.insertar(7,5);
+    l2.insertar(13,6);
+    l2.insertar(11,7);
+    l2.insertar(17,8);
+    l2.insertar(23,9);
+    l2.insertar(19,10);
     //l.listar();
     AlgoritmosIndexada alg;
     alg.listar(l);
     alg.listar(l2);
-    if(alg.buscar(63,l)){alg.listar(l);}
-    if(alg.buscar(1,l2)){ alg.listar(l2);}
+    lista l3;
+    l3.iniciar();
+    l3 = alg.interseccionDes(l,l2);
+    alg.listar(l3);
+    if(alg.buscar(15,l)){alg.listar(l);}
+    if(alg.buscar(23,l2)){ alg.listar(l2);}
 
 
 

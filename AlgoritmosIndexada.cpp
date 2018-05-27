@@ -144,15 +144,18 @@ void AlgoritmosIndexada::burbujaOriginal(lista& l){
     }
 }
 
-void AlgoritmosIndexada::burbujaBiDireccional(lista& l){/*********Esta Hay que mejorarla***********/
+void AlgoritmosIndexada::burbujaBiDireccional(lista& l){
     int max = l.numElem();
     int indice = 1;
+    int ultDerecha = max;
+    int ultIzquierda = 1;
     bool seguir = true;
     while((indice<max)&&seguir){
         seguir = false;
-        for(int j=1;j<max;j++){
+        for(int j=ultIzquierda;j<max;j++){
             if(l.recuperar(j)>l.recuperar(j+1)){
                 l.intercambiar(j,j+1);
+                ultDerecha = j;
                 seguir = true;
             }
         }
@@ -160,9 +163,10 @@ void AlgoritmosIndexada::burbujaBiDireccional(lista& l){/*********Esta Hay que m
             return;
         }
         seguir = false;
-        for(int k=max;k>2;k--){
+        for(int k=ultDerecha;k>1;k--){
             if(l.recuperar(k)<l.recuperar(k-1)){
                 l.intercambiar(k,k-1);
+                ultIzquierda = k;
                 seguir = true;
             }
         }
@@ -284,7 +288,7 @@ void AlgoritmosIndexada::quickSortAho(lista& l, int inicio, int final){
     }
 }
 void AlgoritmosIndexada::quickSortMod(lista& l, int inicio, int final){
-    int p = final/2;
+    int p = pivote(l,inicio,final);
     if(p>0){
         int part = particion(l,p,inicio,final);
         if(part>10){//Para la prueba completa se hace con 50
