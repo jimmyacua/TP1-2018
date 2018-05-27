@@ -1,3 +1,4 @@
+
 #include <iostream>
 //#include "ListaPosArray.h"
 #include "ListaPosLSE.h"
@@ -8,8 +9,6 @@
 //#include "ListaIndexadaArray.h"
 #include "Pila.h"
 #include "algoritmosOrd.h"
-
-using namespace std;
 
 //typedef ListaPosLSE listaPos;
 //    typedef ListaPosArray listaPos;
@@ -572,6 +571,7 @@ while (continuar) {
         //cout << "\nFin de la prueba!" << endl;
         return 0;
     }
+
 
 
 
