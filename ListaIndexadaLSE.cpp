@@ -33,6 +33,7 @@ void ListaIndexadaLSE::vaciar(){
     }
     primero = NULL;
     //primero->sgt = NULL;
+            this->cantElem = 0;
 }
 
 bool ListaIndexadaLSE::vacia(){

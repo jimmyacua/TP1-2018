@@ -549,7 +549,12 @@ int main() {
                         }
                             break;
                         case 2: {
-                            algoritmosLP.simetrica(Lp);
+                            bool r = algoritmosLP.simetrica(Lp);
+                                if(r){
+                                    cout << "La lista es simetrica" << endl;
+                                } else{
+                                    cout << "La lista NO es simetrica" << endl;
+                                }
                         }
                             break;
                         case 3: {
@@ -828,7 +833,12 @@ int main() {
                         }
                             break;
                         case 2: {
-                            algoritmosLI.simetrica(L);
+                            bool r = algoritmosLI.simetrica(L);
+                            if(r){
+                                cout << "La lista es simetrica" << endl;
+                            } else{
+                                cout << "La lista NO es simetrica" << endl;
+                            }
                         }
                             break;
                         case 3: {
