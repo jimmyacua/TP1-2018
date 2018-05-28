@@ -10,130 +10,130 @@
 //#include "ListaPosLDE.h"
 #include "Pila.h"
 
-//typedef ListaPosArray lista;
-typedef ListaPosLSE lista;
-//typedef ListaPosLDE lista;
+//typedef ListaPosArray listaP;
+typedef ListaPosLSE listaP;
+//typedef ListaPosLDE listaP;
 
 typedef Pos* pos; //typedef para LSE y LDE
 //typedef Pos pos;  //typedef para lista por array
 
 class Algoritmos {
 public:
-    /* EFE: Muestra todos los elementos que están en la lista
-     * REQ: lista inicializada y no vacía
+    /* EFE: Muestra todos los elementos que están en la listaP
+     * REQ: listaP inicializada y no vacía
      * MOD: */
-    void listar(lista&);
+    void listar(listaP&);
 
-    /* EFE: devuelve true si la lista es simetrica, false en caso contrario
-     * REQ: lista inicializada y no vacía
+    /* EFE: devuelve true si la listaP es simetrica, false en caso contrario
+     * REQ: listaP inicializada y no vacía
      * MOD: */
-    bool simetrica(lista&);
+    bool simetrica(listaP&);
 
-    /* EFE: invierte la lista
-     * REQ: lista inicializada y no vacía
-     * MOD: lista L*/
-    void invertir(lista&);
+    /* EFE: invierte la listaP
+     * REQ: listaP inicializada y no vacía
+     * MOD: listaP L*/
+    void invertir(listaP&);
 
-    /* EFE: devuelve true si el elemento a buscar está en la lista, false si no.
-     * REQ: lista inicializada y no vacía
+    /* EFE: devuelve true si el elemento a buscar está en la listaP, false si no.
+     * REQ: listaP inicializada y no vacía
      * MOD: */
-    bool buscar(lista, int);
+    bool buscar(listaP, int);
 
-    /* EFE: elimina los elementos repetidos en la lista, dejando uno de los repetidos
-     * REQ: lista inicializada y no vacía
-     * MOD: lista L*/
-    void elimRepetidos(lista&);
+    /* EFE: elimina los elementos repetidos en la listaP, dejando uno de los repetidos
+     * REQ: listaP inicializada y no vacía
+     * MOD: listaP L*/
+    void elimRepetidos(listaP&);
 
     /* EFE: devuelve true si L1 está contenida en L2, false si no
-     * REQ: listas inicializadas
+     * REQ: listaPs inicializadas
      * MOD: */
-    bool sublista(lista&, lista&);
+    bool subLista(listaP&, listaP&);
 
-    /* EFE: devuelve true si las dos listas son iguales, false en caso contrario
-     * REQ: listas inicializadas
+    /* EFE: devuelve true si las dos listaPs son iguales, false en caso contrario
+     * REQ: listaPs inicializadas
      * MOD: */
-    bool iguales(lista, lista);
+    bool iguales(listaP, listaP);
 
-    /* EFE: ordena la lista ascendentemente
-     * REQ: lista inicializada y no vacía
-     * MOD: lista L*/
-    void burbuja(lista&);
+    /* EFE: ordena la listaP ascendentemente
+     * REQ: listaP inicializada y no vacía
+     * MOD: listaP L*/
+    void burbuja(listaP&);
 
-    /* EFE: ordena la lista ascendentemente
-     * REQ: lista inicializada y no vacía
-     * MOD: lista L*/
-    void burbujaBidireccinal(lista&);
+    /* EFE: ordena la listaP ascendentemente
+     * REQ: listaP inicializada y no vacía
+     * MOD: listaP L*/
+    void burbujaBidireccinal(listaP&);
 
-    /* EFE: ordena la lista ascendentemente
-     * REQ: lista inicializada y no vacía
-     * MOD: lista L */
-    void seleccionIter(lista&);
+    /* EFE: ordena la listaP ascendentemente
+     * REQ: listaP inicializada y no vacía
+     * MOD: listaP L */
+    void seleccionIter(listaP&);
 
-    /* EFE: ordena la lista ascendentemente usando la recursividad del compilador
-     * REQ: lista inicializada y no vacía
-     * MOD: lista L*/
-    void seleccionRec(lista&);
+    /* EFE: ordena la listaP ascendentemente usando la recursividad del compilador
+     * REQ: listaP inicializada y no vacía
+     * MOD: listaP L*/
+    void seleccionRec(listaP&);
 
-    /* EFE: ordena la lista ascendentemente sin usar la pila del compilador.
-     * REQ: lista inicializada y no vacía
-     * MOD: lista L*/
-    void seleccionRecSinCom(lista&);
+    /* EFE: ordena la listaP ascendentemente sin usar la pila del compilador.
+     * REQ: listaP inicializada y no vacía
+     * MOD: listaP L*/
+    void seleccionRecSinCom(listaP&);
 
-    /* EFE: ordena la lista ascendentemente
-     * REQ: lista inicializada y no vacía
-     * MOD: lista L*/
-    void insercion(lista&);
+    /* EFE: ordena la listaP ascendentemente
+     * REQ: listaP inicializada y no vacía
+     * MOD: listaP L*/
+    void insercion(listaP&);
 
-    /* EFE: ordena la lista ascendentemente
-     * REQ: lista inicializada, vacía y posiciones validas
-     * MOD: lista L*/
-    void quickSortAho(lista&, pos, pos);
+    /* EFE: ordena la listaP ascendentemente
+     * REQ: listaP inicializada, vacía y posiciones validas
+     * MOD: listaP L*/
+    void quickSortAho(listaP&, pos, pos);
 
-    /* EFE: ordena la lista ascendentemente tal que si n es menor a 50 se usa inserción
-     * REQ: lista inicializada, no vacía y posiciones validas
-     * MOD: lista L*/
-    void quickSortMod(lista, pos, pos);
+    /* EFE: ordena la listaP ascendentemente tal que si n es menor a 50 se usa inserción
+     * REQ: listaP inicializada, no vacía y posiciones validas
+     * MOD: listaP L*/
+    void quickSortMod(listaP, pos, pos);
 
-    /* EFE: ordena la lista ascendentemente
-     * REQ: lista inicializada, no vacía y posiciones validas
-     * MOD: lista L*/
-    void mergeSort(lista&, pos, pos);
+    /* EFE: ordena la listaP ascendentemente
+     * REQ: listaP inicializada, no vacía y posiciones validas
+     * MOD: listaP L*/
+    void mergeSort(listaP&, pos, pos);
 
     /* EFE: agrega a L1 los elementos que están en L2, de manera que en L1 no queden elementos repetidos
-     * REQ: listas inicializadas, no vacias y  ordenadas. Que no hayan elementos repetidos
-     * MOD: lista L1*/
-    void unionOrdenadas(lista&, lista&);
+     * REQ: listaPs inicializadas, no vacias y  ordenadas. Que no hayan elementos repetidos
+     * MOD: listaP L1*/
+    void unionOrdenadas(listaP&, listaP&);
 
     /* EFE: agrega a L1 los elementos que están en L2, de manera que en L1 no queden elementos repetidos
-     * REQ: listas inicializadas y  no vacias. Que no hayan elementos repetidos.
-     * MOD: lista L1*/
-    void unionDesord(lista&, lista&);
+     * REQ: listaPs inicializadas y  no vacias. Que no hayan elementos repetidos.
+     * MOD: listaP L1*/
+    void unionDesord(listaP&, listaP&);
 
     /* EFE: deja en L3 el resultado de la intersección de L1 y L2
-     * REQ: que L1 y L2 no tengan elementos repetidos, listas inicializadas, no vacias y ordenadas
+     * REQ: que L1 y L2 no tengan elementos repetidos, listaPs inicializadas, no vacias y ordenadas
      * MOD:  L3*/
-    void interseccionOrd(lista&, lista&, lista&);
+    void interseccionOrd(listaP&, listaP&, listaP&);
 
     /* EFE: deja en L3 el resultado de la intersección de L1 y L2
-     * REQ: que L1 y L2 no tengan elementos repetidos, listas inicializadas y no vacias
+     * REQ: que L1 y L2 no tengan elementos repetidos, listaPs inicializadas y no vacias
      * MOD:  L3*/
-    void interseccionDesord(lista&, lista&, lista&);
+    void interseccionDesord(listaP&, listaP&, listaP&);
 
     /* EFE: Elimina de L1 los elementos que están en L2.
-     * REQ: Listas inicializadas, no vacias y ordenadas.
-     * MOD: lista L1*/
-    void eliminarOrde(lista&, lista&);
+     * REQ: listaPs inicializadas, no vacias y ordenadas.
+     * MOD: listaP L1*/
+    void eliminarOrde(listaP&, listaP&);
 
     /* EFE:Elimina de L1 los elementos que están en L2.
-     * REQ: Listas inicializadas y no vacias.
-     * MOD: lista L1*/
-    void eliminarDesord(lista&, lista&);
+     * REQ: listaPs inicializadas y no vacias.
+     * MOD: listaP L1*/
+    void eliminarDesord(listaP&, listaP&);
 
 private:
-    void seleccionR(lista&, pos, pos, int);
-    pos pivote(lista&, pos, pos);
-    pos particion(lista&, pos, pos, pos);
-    void merge(lista&, pos, pos, pos);
+    void seleccionR(listaP&, pos, pos, int);
+    pos pivote(listaP&, pos, pos);
+    pos particion(listaP&, pos, pos, pos);
+    void merge(listaP&, pos, pos, pos);
     Pila<pos> pila;
 
 };
