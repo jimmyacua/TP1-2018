@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool algoritmosOrd::iguales(lista l1, lista l2) {
+bool algoritmosOrd::iguales(listaO l1, listaO l2) {
     if (l1.numElem() != l2.numElem()){
         return false;
     } else {
@@ -21,8 +21,8 @@ bool algoritmosOrd::iguales(lista l1, lista l2) {
     return true;
 }
 
-lista algoritmosOrd::copiar(lista l1) {
-    lista l2 = lista();
+listaO algoritmosOrd::copiar(listaO l1) {
+    listaO l2 = listaO();
     auto e1 = l1.primero();
     for(int i = 0;i < l1.numElem(); i++){
         l2.insertar(e1);
@@ -31,7 +31,7 @@ lista algoritmosOrd::copiar(lista l1) {
     return l2;
 }
 
-bool algoritmosOrd::contenida(lista l1, lista l2) {
+bool algoritmosOrd::contenida(listaO l1, listaO l2) {
     if (l1.numElem() > l2.numElem()){
         return false;
     }else{
@@ -58,7 +58,7 @@ bool algoritmosOrd::contenida(lista l1, lista l2) {
     }
 }
 
-bool algoritmosOrd::pertenece(lista l1, int e) {
+bool algoritmosOrd::pertenece(listaO l1, int e) {
     auto e1 = l1.primero();
     for(int i = 0; i<=l1.numElem(); i++){
         if (e == e1){
@@ -69,7 +69,7 @@ bool algoritmosOrd::pertenece(lista l1, int e) {
     return false;
 }
 
-void algoritmosOrd::eliminar(lista &l1, lista &l2) {
+void algoritmosOrd::eliminar(listaO &l1, listaO &l2) {
     auto e1 = l1.primero();
     auto e2 = l2.primero();
     auto eaux = e1;
@@ -98,7 +98,7 @@ void algoritmosOrd::eliminar(lista &l1, lista &l2) {
     }
 }
 
-void algoritmosOrd::unionV1(lista &l1, lista &l2) {
+void algoritmosOrd::unionV1(listaO &l1, listaO &l2) {
     auto e2 = l2.primero();
     int numElem = l2.numElem();
     for(int i = 0; i < numElem; i++){
@@ -107,8 +107,8 @@ void algoritmosOrd::unionV1(lista &l1, lista &l2) {
     }
 }
 
-lista algoritmosOrd::unionV2(lista &l1, lista &l2) {
-    lista l3 = lista();
+listaO algoritmosOrd::unionV2(listaO &l1, listaO &l2) {
+    listaO l3 = listaO();
     auto e1 = l1.primero();
     auto e2 = l2.primero();
     int i = 0;
@@ -145,8 +145,8 @@ lista algoritmosOrd::unionV2(lista &l1, lista &l2) {
     return l3;
 }
 
-lista algoritmosOrd::interseccionV1(lista &l1, lista &l2) {
-    lista l3;
+listaO algoritmosOrd::interseccionV1(listaO &l1, listaO &l2) {
+    listaO l3;
     l3.iniciar();
     auto e = l1.primero();
     int numElem = l1.numElem();
@@ -159,8 +159,8 @@ lista algoritmosOrd::interseccionV1(lista &l1, lista &l2) {
     return l3;
 }
 
-lista algoritmosOrd::interseccionV2(lista &l1, lista &l2) {
-    lista l3;
+listaO algoritmosOrd::interseccionV2(listaO &l1, listaO &l2) {
+    listaO l3;
     l3.iniciar();
     auto e1 = l1.primero();
     auto e2 = l2.primero();

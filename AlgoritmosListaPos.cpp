@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void Algoritmos::listar(lista& l) {
+void Algoritmos::listar(listaP& l) {
     pos p = l.primera();
     int cont = 1;
     while(p != 0 && cont <= l.numElem()){
@@ -17,7 +17,7 @@ void Algoritmos::listar(lista& l) {
     }
 }
 
-bool Algoritmos::simetrica(lista& l) {
+bool Algoritmos::simetrica(listaP& l) {
     pos inicio = l.primera();
     pos final = l.ultima();
     bool simetricas = true;
@@ -31,7 +31,7 @@ bool Algoritmos::simetrica(lista& l) {
     return simetricas;
 }
 
-void Algoritmos::invertir(lista& l) {
+void Algoritmos::invertir(listaP& l) {
     pos inicio = l.primera();
     pos final = l.ultima();
     while((inicio != final) && (l.siguente(final) != inicio)){
@@ -41,7 +41,7 @@ void Algoritmos::invertir(lista& l) {
     }
 }
 
-bool Algoritmos::buscar(lista l, int e) {
+bool Algoritmos::buscar(listaP l, int e) {
     pos p = l.primera();
     bool encontrado = false;
     while(p != 0 && !encontrado){
@@ -53,7 +53,7 @@ bool Algoritmos::buscar(lista l, int e) {
     return encontrado;
 }
 
-void Algoritmos::elimRepetidos(lista& l) {
+void Algoritmos::elimRepetidos(listaP& l) {
     pos p = l.primera();
     int cont = 1;
     while(p != 0 && cont <= l.numElem()){
@@ -71,7 +71,7 @@ void Algoritmos::elimRepetidos(lista& l) {
     }
 }
 
-bool Algoritmos::sublista(lista& l1, lista& l2) {
+bool Algoritmos::subLista(listaP& l1, listaP& l2) {
     pos p2 = l2.primera();
     pos p1 = l1.primera();
     bool esSublista = false;
@@ -97,7 +97,7 @@ bool Algoritmos::sublista(lista& l1, lista& l2) {
 
 }
 
-bool Algoritmos::iguales(lista l1, lista l2) {
+bool Algoritmos::iguales(listaP l1, listaP l2) {
     if(l1.numElem() != l2.numElem()){
         return false;
     }
@@ -118,7 +118,7 @@ bool Algoritmos::iguales(lista l1, lista l2) {
     }
 }
 
-void Algoritmos::burbuja(lista& l) {
+void Algoritmos::burbuja(listaP& l) {
     pos p = l.siguente(l.primera());
     int cont1 = 1;
     while(p != 0 && cont1 <= l.numElem()){
@@ -134,7 +134,7 @@ void Algoritmos::burbuja(lista& l) {
     }
 }
 
-void Algoritmos::burbujaBidireccinal(lista& l) {
+void Algoritmos::burbujaBidireccinal(listaP& l) {
     bool listo = true;
     pos inicio = l.primera();
     pos final = l.ultima();
@@ -167,7 +167,7 @@ void Algoritmos::burbujaBidireccinal(lista& l) {
     }
 }
 
-void Algoritmos::seleccionIter(lista& l){
+void Algoritmos::seleccionIter(listaP& l){
     pos min;
     pos p = l.primera();
     int cont1 = 1;
@@ -190,14 +190,14 @@ void Algoritmos::seleccionIter(lista& l){
     }
 }
 
-void Algoritmos::seleccionRec(lista& l) {
+void Algoritmos::seleccionRec(listaP& l) {
     pos inicio = l.primera();
     pos menor = inicio;
     int cont = 1;
     seleccionR(l,inicio, menor, cont);
 }
 
-void Algoritmos::seleccionR(lista& l, pos inicio, pos menor, int cont) {
+void Algoritmos::seleccionR(listaP& l, pos inicio, pos menor, int cont) {
     if(inicio != 0 && cont < l.numElem()){
         pos aux = inicio;
         int cont2 = cont;
@@ -215,7 +215,7 @@ void Algoritmos::seleccionR(lista& l, pos inicio, pos menor, int cont) {
     }
 }
 
-void Algoritmos::seleccionRecSinCom(lista& l) {
+void Algoritmos::seleccionRecSinCom(listaP& l) {
     pila.iniciar();
     pila.meter(l.primera());
     pos inicio = l.primera();
@@ -243,7 +243,7 @@ void Algoritmos::seleccionRecSinCom(lista& l) {
     }
 }
 
-void Algoritmos::insercion(lista& l) {
+void Algoritmos::insercion(listaP& l) {
     pos p = l.primera();
     while (p != l.ultima()) {
         pos p2 = l.siguente(p);
@@ -257,7 +257,7 @@ void Algoritmos::insercion(lista& l) {
     }
 }
 
-pos Algoritmos::pivote(lista& l, pos inicio, pos final){
+pos Algoritmos::pivote(listaP& l, pos inicio, pos final){
     if(inicio == final){
         return 0;
     }
@@ -275,7 +275,7 @@ pos Algoritmos::pivote(lista& l, pos inicio, pos final){
     return 0;
 }
 
-pos Algoritmos::particion(lista& l, pos pivot, pos inicio, pos final) {
+pos Algoritmos::particion(listaP& l, pos pivot, pos inicio, pos final) {
     if (pivot != 0) {
         pos z = inicio;
         pos d = final;
@@ -295,7 +295,7 @@ pos Algoritmos::particion(lista& l, pos pivot, pos inicio, pos final) {
     }
 }
 
-void Algoritmos::quickSortAho(lista& l, pos inicio, pos final) {
+void Algoritmos::quickSortAho(listaP& l, pos inicio, pos final) {
     pos pivot = pivote(l, inicio, final);
     if(pivot != 0){
         pos part = particion(l,pivot, inicio, final);
@@ -304,7 +304,7 @@ void Algoritmos::quickSortAho(lista& l, pos inicio, pos final) {
     }
 }
 
-void Algoritmos::quickSortMod(lista l, pos inicio, pos final) {
+void Algoritmos::quickSortMod(listaP l, pos inicio, pos final) {
     pos pivot = pivote(l, inicio, final);
     if(pivot != 0){
         pos part = particion(l,pivot, inicio, final);
@@ -323,7 +323,7 @@ void Algoritmos::quickSortMod(lista l, pos inicio, pos final) {
     }
 }
 
-void Algoritmos::mergeSort(lista& l, pos inicio, pos final) {
+void Algoritmos::mergeSort(listaP& l, pos inicio, pos final) {
     if(inicio != final && l.siguente(inicio) != final){
         int mid = 1;
         pos c = inicio;
@@ -346,11 +346,11 @@ void Algoritmos::mergeSort(lista& l, pos inicio, pos final) {
     }
 }
 
-void Algoritmos::merge(lista& l, pos inicio, pos mitad, pos final) {
-    lista l1;
+void Algoritmos::merge(listaP& l, pos inicio, pos mitad, pos final) {
+    listaP l1;
     l1.iniciar();
 
-    lista l2;
+    listaP l2;
     l2.iniciar();
 
 
@@ -400,7 +400,7 @@ void Algoritmos::merge(lista& l, pos inicio, pos mitad, pos final) {
     }
 }
 
-void Algoritmos::unionOrdenadas(lista& l1, lista& l2) {
+void Algoritmos::unionOrdenadas(listaP& l1, listaP& l2) {
     pos p2 = l2.primera();
     int cont = 1;
     while(p2 != 0 && cont <= l2.numElem()){
@@ -422,7 +422,7 @@ void Algoritmos::unionOrdenadas(lista& l1, lista& l2) {
     }
 }
 
-void Algoritmos::unionDesord(lista& l1, lista& l2) {
+void Algoritmos::unionDesord(listaP& l1, listaP& l2) {
     pos p2 = l2.primera();
     int cont = 1;
     while(p2 != 0 && cont <= l2.numElem()){
@@ -444,7 +444,7 @@ void Algoritmos::unionDesord(lista& l1, lista& l2) {
     }
 }
 
-void Algoritmos::interseccionOrd(lista& l1, lista& l2, lista& l3) {
+void Algoritmos::interseccionOrd(listaP& l1, listaP& l2, listaP& l3) {
     l3.iniciar();
     pos p1 = l1.primera();
     int cont1 = 1;
@@ -467,7 +467,7 @@ void Algoritmos::interseccionOrd(lista& l1, lista& l2, lista& l3) {
     }
 }
 
-void Algoritmos::interseccionDesord(lista& l1, lista& l2, lista& l3) {
+void Algoritmos::interseccionDesord(listaP& l1, listaP& l2, listaP& l3) {
     l3.iniciar();
     pos p1 = l1.primera();
     int cont1 = 1;
@@ -490,7 +490,7 @@ void Algoritmos::interseccionDesord(lista& l1, lista& l2, lista& l3) {
     }
 }
 
-void Algoritmos::eliminarOrde(lista& l1, lista& l2) {
+void Algoritmos::eliminarOrde(listaP& l1, listaP& l2) {
     int cont= 1;
     pos p1 = l1.primera();
     while(p1 != 0 && cont <= l1.numElem()){
@@ -513,7 +513,7 @@ void Algoritmos::eliminarOrde(lista& l1, lista& l2) {
     }
 }
 
-void Algoritmos::eliminarDesord(lista& l1, lista& l2) {
+void Algoritmos::eliminarDesord(listaP& l1, listaP& l2) {
     pos p1 = l1.primera();
     int cont1 = 1;
     while(p1 != 0 && cont1 <= l1.numElem()){
