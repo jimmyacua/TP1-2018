@@ -357,7 +357,7 @@ void AlgoritmosIndexada::merge(lista& l, int inicio, int medio, int final){
 }
 
 void AlgoritmosIndexada::unionOrd(lista& l1,lista& l2){
-    int indice = 1;
+    /*int indice = 1;
     int recorrido;
     int max = l2.numElem();
     bool esta = false;
@@ -382,6 +382,22 @@ void AlgoritmosIndexada::unionOrd(lista& l1,lista& l2){
             }
         }
         indice++;
+    }
+     */
+    int iL2 = 1;
+    while(iL2 < l2.numElem()){
+        bool existe = false;
+        int iL1 = 1;
+        while(iL1 < l1.numElem()){
+            if(l1.recuperar(iL1) == l2.recuperar(iL2)){
+                existe = true;
+            }
+            iL1++;
+        }
+        if(!existe){
+            l1.insertar(l2.recuperar(iL2),iL1);
+        }
+        iL2++;
     }
 }
 
