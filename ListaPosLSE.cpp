@@ -8,7 +8,7 @@
 using namespace std;
 
 void ListaPosLSE::iniciar() {
- //   primero = new Pos();
+    primero = new Pos();
     nElementos = 0;
     ultimo = primero;
 }
@@ -16,7 +16,7 @@ void ListaPosLSE::iniciar() {
 void ListaPosLSE::destruir() {
     Pos* anterior;
     Pos* temp = primero;
-    while(temp != NULL){
+    while(temp != 0){
         anterior = temp;
         temp = temp->sgt;
         delete anterior;
@@ -26,12 +26,13 @@ void ListaPosLSE::destruir() {
 void ListaPosLSE::vaciar() {
     Pos* anterior;
     Pos* temp = primero->sgt;
-    while(temp != NULL){
+    while(temp != 0){
         anterior = temp;
         temp = temp->sgt;
         delete anterior;
     }
-    primero = NULL;
+    primero->sgt = 0;
+    nElementos = 0;
 }
 
 bool ListaPosLSE::vacia() {
@@ -47,7 +48,13 @@ void ListaPosLSE::insertar(int e, pos p) {
         Pos* aux = new Pos(e);
         primero = aux;
         ultimo = primero;
-    } else{
+    } else if(p == primero){
+            Pos* aux = new Pos(e);
+            Pos* copia = primero;
+            aux->sgt = copia;
+            primero = aux;
+    }
+    else {
         Pos *aux = primero;
         while(aux->sgt != p){
             aux = aux->sgt;
@@ -56,9 +63,9 @@ void ListaPosLSE::insertar(int e, pos p) {
         temp->sgt = p;
         aux->sgt = temp;
         //--------------------------------
-        if(ultimo->sgt != NULL){
+        if(ultimo->sgt != 0){
            Pos* ult = primero;
-           while(ult->sgt != NULL){
+           while(ult->sgt != 0){
                ult = ult->sgt;
            }
            ultimo = ult;
@@ -70,12 +77,12 @@ void ListaPosLSE::insertar(int e, pos p) {
 
 void ListaPosLSE::borrar(pos p) {
     Pos* aux = primero;
-    Pos* anterior = NULL;
-    while(aux != NULL && aux != p){
+    Pos* anterior = 0;
+    while(aux != 0 && aux != p){
         anterior = aux;
         aux = aux->sgt;
     }
-    if(anterior == NULL){ //puede que no está el elemento en la lista
+    if(anterior == 0){ //puede que no está el elemento en la lista
         primero = primero->sgt;
         delete aux;
         nElementos--;
@@ -89,12 +96,16 @@ void ListaPosLSE::borrar(pos p) {
 
 void ListaPosLSE::agregarAlFinal(int e) {
     Pos* p = new Pos(e);
-    Pos* aux = primero;
-    while(aux->sgt != NULL){
-        aux = aux->sgt;
+    if(nElementos==0){
+        primero = p;
+    }else {
+        Pos *aux = primero;
+        while (aux->sgt != 0) {
+            aux = aux->sgt;
+        }
+        aux->sgt = p;
+        ultimo = p;
     }
-    aux->sgt = p;
-    ultimo = p;
     nElementos++;
 }
 
@@ -106,6 +117,7 @@ void ListaPosLSE::intercambiar(pos p1, pos p2) {
 
 int ListaPosLSE::recuperar(pos p) {
     return p->elemento;
+
 }
 
 void ListaPosLSE::modificarElem(pos p, int e) {
@@ -122,13 +134,13 @@ pos ListaPosLSE::siguente(pos p) {
 
 pos ListaPosLSE::anterior(pos p) {
     Pos* aux = primero;
-    while(aux->sgt != p && aux->sgt != NULL){
+    while(aux->sgt != p && aux->sgt != 0){
         aux = aux->sgt;
     }
     if(aux->sgt == p){
         return aux;
     } else{
-        return NULL;
+        return 0;
     }
 }
 
@@ -143,7 +155,7 @@ int ListaPosLSE::numElem() {
 pos ListaPosLSE::traducePos(int e) {
     Pos* p = primero;
     int contador = 1;
-    while(p != NULL && contador < e){
+    while(p != 0 && contador < e){
         p = p->sgt;
         contador++;
     }
@@ -152,7 +164,7 @@ pos ListaPosLSE::traducePos(int e) {
 
 void ListaPosLSE::listar() {
     Pos* p = primero;
-    while(p != NULL){
+    while(p != 0){
         cout << p->elemento << endl;
         p = p->sgt;
     }

@@ -16,7 +16,7 @@ void ListaPosLDE::iniciar() {
 void ListaPosLDE::destruir() {
     Pos* ant;
     Pos* temp = primero;
-    while(temp != NULL){
+    while(temp != 0){
         ant = temp;
         temp = temp->sgt;
         delete ant;
@@ -26,12 +26,12 @@ void ListaPosLDE::destruir() {
 void ListaPosLDE::vaciar() {
     Pos* ant;
     Pos* temp = primero->sgt;
-    while(temp != NULL){
+    while(temp != 0){
         ant = temp;
         temp = temp->sgt;
         delete ant;
     }
-    primero = NULL;
+    primero = 0;
 }
 
 bool ListaPosLDE::vacia() {
@@ -60,9 +60,9 @@ void ListaPosLDE::insertar(int e, pos p) {
 
         nElementos++;
         //--------------------------------
-        if (ultimo->sgt != NULL) {
+        if (ultimo->sgt != 0) {
             Pos *ult = primero;
-            while (ult->sgt != NULL) {
+            while (ult->sgt != 0) {
                 ult = ult->sgt;
             }
             ultimo = ult;
@@ -119,7 +119,7 @@ int ListaPosLDE::numElem(){
 pos ListaPosLDE::traducePos(int e) {
     Pos* p = primero;
     int contador = 1;
-    while(p != NULL && contador < e){
+    while(p != 0 && contador < e){
         p = p->sgt;
         contador++;
     }
@@ -128,7 +128,7 @@ pos ListaPosLDE::traducePos(int e) {
 
 void ListaPosLDE::listar() {
     Pos* p = primero;
-    while(p != NULL){
+    while(p != 0){
         cout << p->elemento << endl;
         p = p->sgt;
     }

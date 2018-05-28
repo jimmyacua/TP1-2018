@@ -9,7 +9,7 @@ using namespace std;
 
 void ListaPosArray::iniciar() {
     ultimo_lleno = 0;
-    primero = lista[1];
+    primero = 1;
     nElementos = 0;
 }
 
@@ -19,7 +19,10 @@ void ListaPosArray::destruir(){
     nElementos = 0;
 }
 
-void ListaPosArray::vaciar() {}
+void ListaPosArray::vaciar() {
+    primero = lista[1];
+    nElementos = 0;
+}
 
 bool ListaPosArray::vacia() {
     if(ultimo_lleno == 0){
@@ -30,7 +33,7 @@ bool ListaPosArray::vacia() {
     }
 }
 
-void ListaPosArray::insertar(int e, pos p) {
+void ListaPosArray::insertar(int e, Pos p) {
     if(p == ultimo_lleno+1){
         lista[p] = e;
         ultimo_lleno = p;
@@ -38,7 +41,7 @@ void ListaPosArray::insertar(int e, pos p) {
     }
     else {
         ultimo_lleno++;
-        pos cont = ultimo_lleno;
+        Pos cont = ultimo_lleno;
         while(cont > p){
             lista[cont] = lista[cont-1];
             cont--;
@@ -46,7 +49,6 @@ void ListaPosArray::insertar(int e, pos p) {
         lista[p] = e;
         nElementos++;
     }
-
 }
 
 void ListaPosArray::agregarAlFinal(int e) {
@@ -55,11 +57,11 @@ void ListaPosArray::agregarAlFinal(int e) {
     nElementos++;
 }
 
-void ListaPosArray::borrar(pos p) {
+void ListaPosArray::borrar(Pos p) {
     if(p == ultimo_lleno){
         ultimo_lleno--;
     } else{
-        pos cont = p;
+        Pos cont = p;
         while(cont <= ultimo_lleno){
             lista[cont] = lista[cont+1];
             cont++;
@@ -69,34 +71,34 @@ void ListaPosArray::borrar(pos p) {
     nElementos--;
 }
 
-int ListaPosArray::recuperar(pos p) {
+int ListaPosArray::recuperar(Pos p) {
     return lista[p];
 }
 
-void ListaPosArray::modificarElem(pos p, int e) {
+void ListaPosArray::modificarElem(Pos p, int e) {
     lista[p] = e;
 }
 
-void ListaPosArray::intercambiar(pos p1, pos p2) {
+void ListaPosArray::intercambiar(Pos p1, Pos p2) {
     int e = lista[p1];
     lista[p1] = lista[p2];
     lista[p2] = e;
 }
 
-pos ListaPosArray::primera() {
+Pos ListaPosArray::primera() {
     return primero;
 }
 
-pos ListaPosArray::ultima() {
+Pos ListaPosArray::ultima() {
     return ultimo_lleno;
 }
 
-pos ListaPosArray::siguente(pos p) {
-    return lista[p+1];
+Pos ListaPosArray::siguente(Pos p) {
+    return p + 1;
 }
 
-pos ListaPosArray::anterior(pos p) {
-    return  lista[p-1];
+Pos ListaPosArray::anterior(Pos p) {
+    return p-1;
 }
 
 int ListaPosArray::numElem() {
@@ -104,17 +106,19 @@ int ListaPosArray::numElem() {
 }
 
 void ListaPosArray::listar() {
-    pos cont = 1;
+    Pos cont = 1;
     while(cont <= nElementos){
         cout << lista[cont] << endl;
         cont++;
     }
 }
 
-pos ListaPosArray::traducePos(int e) {
-    pos p = primero;
-    while(p < ultimo_lleno && lista[p] != e){
+Pos ListaPosArray::traducePos(int e) {
+    Pos p = this->primero;
+    int cont = 1;
+    while(cont < e){
         p++;
+        cont++;
     }
     return p;
 }

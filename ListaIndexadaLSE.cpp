@@ -8,9 +8,9 @@
 using namespace std;
 
 void ListaIndexadaLSE::iniciar(){
- cantElem = 0;
- primero = new Caja();
- ultimo = primero;
+    cantElem = 0;
+    primero = new Caja();
+    ultimo = primero;
 }
 
 void ListaIndexadaLSE::destruir(){

@@ -5,11 +5,11 @@
 #ifndef TP1_ALGORITMOSINDEXADA_H
 #define TP1_ALGORITMOSINDEXADA_H
 
-#include "ListaIndexadaArray.h"
-//#include "ListaIndexadaLSE.h"
+//#include "ListaIndexadaArray.h"
+#include "ListaIndexadaLSE.h"
 #include "Pila.h"
-typedef ListaIndexadaArray lista;
-//typedef ListaIndexadaLSE lista;
+//typedef ListaIndexadaArray lista;
+typedef ListaIndexadaLSE lista;
 //typedef Pila pila;
 class AlgoritmosIndexada {
 public:
