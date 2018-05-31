@@ -76,7 +76,7 @@ public:
 //Efecto: Ordena la lista ascendentemente
     //Requiere: Lista inicializada, no vacia y posiciones válidas
     //Modifica: Lista L
-    void mergeSort(lista&,int, int);
+    void mergeSort(lista&,int, int) ;
     //Efecto: Agrega a L1 los elementos que están en L2, de manera que en L1 no queden elementos repetidos
     //Requiere: Listas inicializadas, no vacias y  ordenadas. Que no hayan elementos repetidos
     //Modifica: Lista L1

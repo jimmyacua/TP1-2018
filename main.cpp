@@ -5,12 +5,14 @@
 //#include "ListaPosLDE.h"
 //#include "ListaOrdArray.h"
 #include "ListaOrdLSE.h"
-//#include "ListaIndexadaArray.h"
+#include "ListaIndexadaArray.h"
 #include "ListaIndexadaLSE.h"
 #include "Pila.h"
 #include "AlgoritmosListaPos.h"
 #include "AlgoritmosIndexada.h"
 #include "algoritmosOrd.h"
+#include <time.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -24,10 +26,53 @@ typedef ListaOrdLSE listaOrd;
 typedef ListaIndexadaLSE listaInd;
 //typedef ListaIndexadaArray listaInd;
 
-
 int main() {
 
-    int desicion;
+    //MergeSort->ListaIndexada->LSE
+    /*AlgoritmosIndexada a;
+    listaInd lista;
+    lista.iniciar();
+    int n = 0;
+    int i = 0;
+    for(i; i <= 250000; i++){
+        n = rand() % 250000 + 1;
+        lista.insertar(n, i);
+    }
+
+    clock_t start = clock();
+    a.mergeSort(lista, 0, i);
+    clock_t stop = clock();
+    float secs = ((float)(stop-start))/CLOCKS_PER_SEC;
+    cout <<"Time = " << secs << endl;
+*/
+
+    AlgoritmosIndexada a;
+    listaInd lista;
+    lista.iniciar();
+    int i = 0;
+    int j = 0;
+    for(i= 50000; i > 0; i--){
+        lista.insertar(i, j);
+        j++;
+    }
+
+    clock_t start = clock();
+    a.mergeSort(lista, 0, j);
+    clock_t stop = clock();
+    float secs = ((float)(stop-start))/CLOCKS_PER_SEC;
+    cout <<"Time = " << secs << endl;
+        return 0;
+    }
+
+
+
+
+
+
+
+
+
+    /*int desicion;
     bool continuar = true;
     while (continuar) {
         cout << "MENU DE OPCIONES\n" << endl;
@@ -1253,7 +1298,3 @@ int main() {
     }
 
 //******************************************************************************************************************************/
-
-        cout << "\nFin de la prueba!" << endl;
-        return 0;
-    }

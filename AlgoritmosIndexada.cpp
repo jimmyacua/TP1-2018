@@ -301,7 +301,7 @@ void AlgoritmosIndexada::quickSortMod(lista& l, int inicio, int final){
     }
 }
 
-void AlgoritmosIndexada::mergeSort(lista& l, int inicio, int final){
+void AlgoritmosIndexada::mergeSort(lista& l, int inicio, int final) {
     if(inicio<final){
         int cantElem = 0;
         int min = inicio;
