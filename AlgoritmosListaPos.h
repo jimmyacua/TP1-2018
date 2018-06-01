@@ -5,17 +5,17 @@
 #ifndef TP1_ALGORITMOS_H
 #define TP1_ALGORITMOS_H
 
-//#include "ListaPosArray.h"
-#include "ListaPosLSE.h"
+#include "ListaPosArray.h"
+//#include "ListaPosLSE.h"
 //#include "ListaPosLDE.h"
 #include "Pila.h"
 
-//typedef ListaPosArray listaP;
-typedef ListaPosLSE listaP;
+typedef ListaPosArray listaP;
+//typedef ListaPosLSE listaP;
 //typedef ListaPosLDE listaP;
 
-typedef Pos* pos; //typedef para LSE y LDE
-//typedef Pos pos;  //typedef para lista por array
+//typedef Pos* pos; //typedef para LSE y LDE
+typedef Pos pos;  //typedef para lista por array
 
 class Algoritmos {
 public:

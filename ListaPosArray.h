@@ -104,7 +104,7 @@ public:
 
 
 private:
-    Pos lista[30];
+    Pos lista[500000];
 
 };
 

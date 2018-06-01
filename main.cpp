@@ -1,9 +1,9 @@
 
 #include <iostream>
-//#include "ListaPosArray.h"
-#include "ListaPosLSE.h"
+#include "ListaPosArray.h"
+//#include "ListaPosLSE.h"
 //#include "ListaPosLDE.h"
-//#include "ListaOrdArray.h"
+#include "ListaOrdArray.h"
 #include "ListaOrdLSE.h"
 #include "ListaIndexadaArray.h"
 #include "ListaIndexadaLSE.h"
@@ -16,8 +16,8 @@
 
 using namespace std;
 
-typedef ListaPosLSE listaPos;
-//typedef ListaPosArray listaPos;
+//typedef ListaPosLSE listaPos;
+typedef ListaPosArray listaPos;
 //typedef ListaPosLDE listaPos;
 
 //typedef ListaOrdArray listaOrd;
@@ -28,7 +28,7 @@ typedef ListaIndexadaLSE listaInd;
 
 int main() {
 
-    //MergeSort->ListaIndexada->LSE
+    //---------------------------------MergeSort->ListaIndexada->LSE--------------------------------------------------
     /*AlgoritmosIndexada a;
     listaInd lista;
     lista.iniciar();
@@ -44,7 +44,7 @@ int main() {
     clock_t stop = clock();
     float secs = ((float)(stop-start))/CLOCKS_PER_SEC;
     cout <<"Time = " << secs << endl;
-*/
+
 
     AlgoritmosIndexada a;
     listaInd lista;
@@ -58,6 +58,69 @@ int main() {
 
     clock_t start = clock();
     a.mergeSort(lista, 0, j);
+    clock_t stop = clock();
+    float secs = ((float)(stop-start))/CLOCKS_PER_SEC;
+    cout <<"Time = " << secs << endl;
+     */
+
+     //---------------------------------------------Selección-----------------------------------------------------------
+
+    Algoritmos a;
+    /*listaPos lista;
+    lista.iniciar();
+    int n = 0;
+    int i = 0;
+    for(i; i <= 500000; i++){
+        n = rand() % 50000 + 1;
+        lista.insertar(n, i);
+    }
+    clock_t start = clock();
+    a.seleccionIter(lista);
+    clock_t stop = clock();
+    float secs = ((float)(stop-start))/CLOCKS_PER_SEC;
+    cout <<"Time = " << secs << endl;
+
+    listaPos lista;
+    lista.iniciar();
+    int i = 0;
+    int j = 0;
+    for(i= 500000; i > 0; i--){
+        lista.insertar(i, j);
+        j++;
+    }
+
+    clock_t start = clock();
+    a.seleccionIter(lista);
+    clock_t stop = clock();
+    float secs = ((float)(stop-start))/CLOCKS_PER_SEC;
+    cout <<"Time = " << secs << endl;
+
+    listaPos lista;
+    lista.iniciar();
+    int n = 0;
+    int i = 0;
+    for(i; i <= 500000; i++){
+        n = rand() % 500000 + 1;
+        lista.insertar(n, i);
+    }
+    clock_t start = clock();
+    a.seleccionRec(lista);
+    clock_t stop = clock();
+    float secs = ((float)(stop-start))/CLOCKS_PER_SEC;
+    cout <<"Time = " << secs << endl;*/
+
+
+    listaPos lista;
+    lista.iniciar();
+    int i = 0;
+    int j = 0;
+    for(i= 500000; i > 0; i--){
+        lista.insertar(i, j);
+        j++;
+    }
+
+    clock_t start = clock();
+    a.seleccionRec(lista);
     clock_t stop = clock();
     float secs = ((float)(stop-start))/CLOCKS_PER_SEC;
     cout <<"Time = " << secs << endl;
